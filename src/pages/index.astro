@@ -1,0 +1,31 @@
+---
+import BaseHead from "../components/BaseHead.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+	</head>
+	<body>
+		<div
+			class="flex flex-col items-center justify-center min-h-screen bg-black text-white"
+		>
+			<!-- Title Section -->
+			<div class="relative">
+				<h1 class="text-9xl font-bold font-anuphan">
+					Portfolio <span
+						class="absolute text-purple-500 font-alex text-7xl font-normal bottom-14 right-0"
+						>Design</span
+					>
+				</h1>
+				<Header/>
+			</div>
+		</div>
+
+		<Footer />
+	</body>
+</html>

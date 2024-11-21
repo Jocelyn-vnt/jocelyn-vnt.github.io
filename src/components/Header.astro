@@ -1,0 +1,18 @@
+---
+import HeaderLink from "./HeaderLink.astro";
+import { SITE_TITLE } from "../consts";
+---
+
+<header>
+	<!-- <h2><a href="/">{SITE_TITLE}</a></h2> -->
+	<nav>
+		<div class="flex  mt-10 bg-white text-black px-6 py-2 rounded-full shadow-lg">
+			<div class="flex w-full justify-between">
+				<HeaderLink class="flex items-center hover:text-black transition text-2xl font-light" href="/"><img class="w-8" src="/public/ph_arrow-up-thin.svg" alt=""/>Home</HeaderLink>
+				<HeaderLink class="flex items-center hover:text-black transition text-2xl font-light" href="/blog"><img class="w-8" src="/public/ph_arrow-up-thin.svg" alt=""/>Blog</HeaderLink>
+				<HeaderLink class="flex items-center hover:text-black transition text-2xl font-light" href="/about"><img class="w-8" src="/public/ph_arrow-up-thin.svg" alt=""/>About</HeaderLink>
+				
+			</div>
+		</div>
+	</nav>
+</header>

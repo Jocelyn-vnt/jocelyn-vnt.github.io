@@ -1,0 +1,95 @@
+---
+import Layout from "../layouts/BlogPost.astro";
+import Header from "../components/Header.astro";
+---
+
+<Layout
+	title="About Me"
+	description="Lorem ipsum dolor sit amet"
+	pubDate={new Date("August 08 2021")}
+	/>
+	<Header />
+<section class="grid grid-cols-2">
+	<section class="grid grid-cols-1">
+		<div class="">
+			<div>
+				<h1>Jocelyn</h1>
+				<h2>Vinatié</h2>
+				<p>
+					Creative and passionate about digital design, I specialize
+					in graphic design, UI/UX design and animation. I have worked
+					on several projects, combining aesthetics and utility. I am
+					curious, I work very well in a team and I adapt.
+				</p>
+			</div>
+		</div>
+
+		<div class="grid grid-cols-2">
+			<!-- EDUCATION -->
+			<div>
+				<div>
+					<h3>Education</h3>
+					<h3>Education</h3>
+				</div>
+				<ul>
+					<li>Baccalauréat STI2D :</li>
+					<li>Sliecialty Information and Digital Systems </li>
+					<li>Lycée Gustave Eiffel, Bordeaux (33)</li>
+				</ul>
+				<ul>
+					<li>IUT, Limoges (87) :</li>
+					<li>BUT Multimedia and Internet Trades</li>
+					<li>Digital Creation Journey</li>
+				</ul>
+			</div>
+
+			<!-- EXPERIENCES -->
+			<div>
+				<div>
+					<h3>Experiences</h3>
+					<h3>Experiences</h3>
+				</div>
+				<ul>
+					<li>SAYTOUTCOM (87)</li>
+					<li>Graphic Design - Motion design - Video editing</li>
+				</ul>
+				<ul>
+					<li>WENZEO (33) :</li>
+					<li>Video editing - Graphic Design - Photo editing</li>
+				</ul>
+			</div>
+
+			<!-- SKILLS -->
+			<div>
+				<div>
+					<h3>Skills</h3>
+					<h3>Skills</h3>
+				</div>
+				<p>Graphic Design Illustration, Brand Design, Video Editing, Motion Design, UI/UX, Web Design. Communication.</p>
+			</div>
+
+			<!-- Software -->
+			<div>
+				<div>
+					<h3>Software</h3>
+					<h3>Software</h3>
+				</div>
+				<p>Premier Pro - After Effect - Illustrator - Figma - Blender - HTML - CSS</p>
+			</div>
+		</div>
+	</section>
+	<section class="grid grid-cols-1">
+		<div class="grid grid-cols-3 grid-rows-3 gap-0 h-screen">
+			<!-- Bloc rose -->
+			<div class="bg-pink-600 col-span-2 row-span-1"></div>
+			<!-- Bloc rouge -->
+			<div class="bg-red-800 col-span-1 row-span-2"></div>
+			<!-- Bloc marron -->
+			<div class="bg-red-900 col-span-2 row-span-1"></div>
+			<!-- Bloc bleu-vert -->
+			<div class="bg-teal-800 col-span-3 row-span-1"></div>
+		  </div>
+		  
+	</section>
+</section>
+
