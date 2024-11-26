@@ -10,7 +10,7 @@ export default {
 			  backgroundImage: {
 				'KusmiTea': "url('/Kusmi-Tea.jpg')",
 				'Teaser': "url('/Teaser.png')",
-				'footer-texture': "url('/img/footer-texture.png')",
+				'footer-texture': "url('/img/footer-texture.png')"
 			  },
 			  animation: {
 				"loop-scroll": 'loop-scroll 10s linear infinite',
@@ -27,6 +27,6 @@ export default {
 	plugins: [],
 	safelist: [
 		'bg-KusmiTea',
-		'bg-Teaser',
+		'bg-Teaser'
 	  ],
 }

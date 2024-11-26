@@ -6,6 +6,6 @@ const {titre, img} = Astro.props
 
 <HeaderLink class=`col-span-1  rounded-xl overflow-hidden flex justify-center items-center relative group bg-${img} bg-cover bg-center h-60` href="/">
     <div class="absolute inset-0 flex justify-center items-center bg-purple-500/30 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition duration-300">
-        <span class="text-white font-bold hover:cursor-default select-none uppercase">CONTENT {titre}</span>
+        <span class="text-white font-bold hover:cursor-default select-none uppercase">{titre}</span>
     </div>
 </HeaderLink>
