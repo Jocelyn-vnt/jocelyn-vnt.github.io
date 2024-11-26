@@ -1,95 +1,87 @@
----
-import Layout from "../layouts/BlogPost.astro";
-import Header from "../components/Header.astro";
----
+	---
+	import Layout from "../layouts/BlogPost.astro";
+	import BaseHead from "../components/BaseHead.astro";
+	import Header from "../components/Header.astro";
+	import HeaderLink from "../components/HeaderLink.astro";
+	import CardLoader from "../components/CardLoader.astro";
+	import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
+	---
+	<head>
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+	</head>
+	<div class="fixed flex w-full justify-center items-center pt-5 z-50">
+		<Header />
+	</div>
 
-<Layout
-	title="About Me"
-	description="Lorem ipsum dolor sit amet"
-	pubDate={new Date("August 08 2021")}
-	/>
-	<Header />
-<section class="grid grid-cols-2">
-	<section class="grid grid-cols-1">
-		<div class="">
+	<section class="grid grid-cols-1 md:grid-cols-2  text-white py-20 position fixed">
+		<section class="px-5 gap-5">
+		<div>
 			<div>
-				<h1>Jocelyn</h1>
-				<h2>Vinatié</h2>
-				<p>
-					Creative and passionate about digital design, I specialize
-					in graphic design, UI/UX design and animation. I have worked
-					on several projects, combining aesthetics and utility. I am
-					curious, I work very well in a team and I adapt.
-				</p>
+			<div>
+				<img class="max-w-full h-auto mx-auto" src="./JV.svg" alt="" />
+			</div>
+			<p class="text-sm font-anuphan md:text-left">
+				Creative and passionate about digital design, I specialize
+				in graphic design, UI/UX design and animation. I have worked
+				on several projects, combining aesthetics and utility. I am
+				curious, I work very well in a team and I adapt.
+			</p>
 			</div>
 		</div>
-
-		<div class="grid grid-cols-2">
-			<!-- EDUCATION -->
-			<div>
-				<div>
-					<h3>Education</h3>
-					<h3>Education</h3>
-				</div>
-				<ul>
-					<li>Baccalauréat STI2D :</li>
-					<li>Sliecialty Information and Digital Systems </li>
-					<li>Lycée Gustave Eiffel, Bordeaux (33)</li>
-				</ul>
-				<ul>
-					<li>IUT, Limoges (87) :</li>
-					<li>BUT Multimedia and Internet Trades</li>
-					<li>Digital Creation Journey</li>
-				</ul>
-			</div>
-
-			<!-- EXPERIENCES -->
-			<div>
-				<div>
-					<h3>Experiences</h3>
-					<h3>Experiences</h3>
-				</div>
-				<ul>
-					<li>SAYTOUTCOM (87)</li>
-					<li>Graphic Design - Motion design - Video editing</li>
-				</ul>
-				<ul>
-					<li>WENZEO (33) :</li>
-					<li>Video editing - Graphic Design - Photo editing</li>
-				</ul>
-			</div>
-
-			<!-- SKILLS -->
-			<div>
-				<div>
-					<h3>Skills</h3>
-					<h3>Skills</h3>
-				</div>
-				<p>Graphic Design Illustration, Brand Design, Video Editing, Motion Design, UI/UX, Web Design. Communication.</p>
-			</div>
-
-			<!-- Software -->
-			<div>
-				<div>
-					<h3>Software</h3>
-					<h3>Software</h3>
-				</div>
-				<p>Premier Pro - After Effect - Illustrator - Figma - Blender - HTML - CSS</p>
-			</div>
+	
+		<!-- Section avec les expériences, compétences, etc. -->
+	<div class="grid grid-cols-1 md:grid-cols-2 text-white font-anuphan text-sm gap-[20px]">
+		<!-- EDUCATION -->
+		<div class="flex flex-col gap-[20px] md:items-start">
+		<img class="w-auto max-h-10" src="./Edu.svg" alt="" />
+		<ul>
+			<li class="font-bold text-md">High School Diploma STI2D :</li>
+			<li>Specialty Information and Digital Systems</li>
+			<li>High School, Gustave Eiffel, Bordeaux</li>
+		</ul>
+		<ul>
+			<li class="font-bold text-md">BUT Multimedia and Internet Professions :</li>
+			<li>Digital Creation Course</li>
+			<li>IUT, Limoges (87)</li>
+		</ul>
 		</div>
+	
+		<!-- EXPERIENCES -->
+		<div class="flex flex-col gap-[20px] md:items-start">
+		<img class="w-auto max-h-10" src="./Xp.svg" alt="" />
+		<ul>
+			<li class="font-bold text-md">SAYTOUTCOM (87)</li>
+			<li>Graphic Design - Motion design - Video editing</li>
+		</ul>
+		<ul>
+			<li class="font-bold text-md">WENZEO (33) :</li>
+			<li>Video editing - Graphic Design - Photo editing</li>
+		</ul>
+		</div>
+	
+		<!-- SKILLS -->
+		<div class="flex flex-col gap-[20px] md:items-start">
+		<img class="w-auto max-h-10" src="./Skills.svg" alt="" />
+		<p class="md:text-left">
+			Graphic Design Illustration, Brand Design, Video Editing,
+			Motion Design, UI/UX, Web Design. Communication.
+		</p>
+		</div>
+	
+		<!-- SOFTWARE -->
+		<div class="flex flex-col gap-[20px] md:items-start">
+		<img class="w-auto max-h-10" src="./Software.svg" alt="" />
+		<p class="md:text-left">
+			Premier Pro - After Effect - Illustrator - Figma - Blender -
+			HTML - CSS
+		</p>
+		</div>
+	</div>
+	
+		</section>
+	
+		<section class="h-full">
+		<CardLoader/>
+		</section>
 	</section>
-	<section class="grid grid-cols-1">
-		<div class="grid grid-cols-3 grid-rows-3 gap-0 h-screen">
-			<!-- Bloc rose -->
-			<div class="bg-pink-600 col-span-2 row-span-1"></div>
-			<!-- Bloc rouge -->
-			<div class="bg-red-800 col-span-1 row-span-2"></div>
-			<!-- Bloc marron -->
-			<div class="bg-red-900 col-span-2 row-span-1"></div>
-			<!-- Bloc bleu-vert -->
-			<div class="bg-teal-800 col-span-3 row-span-1"></div>
-		  </div>
-		  
-	</section>
-</section>
-
+	
