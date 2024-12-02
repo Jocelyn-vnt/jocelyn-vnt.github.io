@@ -1,33 +1,35 @@
 ---
 import Header from "./HeaderLink.astro";
 import Card from "./Card.astro";
+const {loop} = Astro.props
 ---
-<div class="wrapper flex flex-col overflow-hidden gap-5">
-    <div class="animate-loop-scroll flex flex-col gap-5">
+<div class="wrapper flex flex-col overflow-hidden">
+    <div class=`animate-${loop} flex flex-col space-y-5`>
       <div class="">
-        <Card titre="WebDesign" img="KusmiTea"/>
+        <Card titre="Web Design" img="KusmiTea"/>
       </div>
       <div class="">
         <Card titre="Motion Design" img="Teaser"/>
       </div>
       <div class="">
-        <Card/>
+        <Card titre="Brand Identity" img="LogoSAE401"/>
       </div>
       <div class="">
-        <Card/>
+        <Card titre="Video Editing" img="CEBX"/>
       </div>
+      
       <!-- Duplicate for seamless looping -->
-      <div class="" aria-hidden="true">
+      <div aria-hidden="true">
         <Card titre="WebDesign" img="KusmiTea"/>
       </div>
       <div class="" aria-hidden="true">
         <Card titre="Motion Design" img="Teaser"/>
       </div>
       <div class="" aria-hidden="true">
-        <Card/>
+        <Card titre="Brand Identity" img="LogoSAE401"/>
       </div>
       <div class="" aria-hidden="true">
-        <Card/>
+        <Card titre="Video Editing" img="CEBX"/>
       </div>
     </div>
   </div>
