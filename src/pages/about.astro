@@ -8,7 +8,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 import ProjectCard from "../components/ProjectCard.astro";
 ---
 
-<head lang="en">
+<head>
   <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
 </head>
 <div class="fixed flex w-full justify-center items-center pt-5 z-50">
@@ -18,7 +18,7 @@ import ProjectCard from "../components/ProjectCard.astro";
 <!-- Section parallaxe -->
 <div class="hover:bg-red">
 
-  <a href="/votre-nouvelle-page">
+  
     <div
       class="parallax group bg-white rounded-lg shadow-lg p-10 absolute top-[100%] left-[10%] px-5 py-3 z-10 hover:bg-red-100"
       data-speed="-2">
@@ -32,9 +32,9 @@ import ProjectCard from "../components/ProjectCard.astro";
         </svg>
       </div>
       <figure class="absolute -top-[60px] right-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-        <img src="/Kusmi-Tea.jpg" alt="" class="w-40 h-auto relative">
-        <figcaption class="absolute top-full mt-2 flex text-xs">
-          <button class="border p-1 bg-black text-white border-white cursor-default">Web design</button>
+        <img src="/Kusmi-Tea.jpg" alt="Image Logo KusmiTea" class="w-40 h-auto relative">
+        <figcaption class="absolute top-full mt-2 flex text-xs w-full">
+          <a href="/" class="flex border p-1 w-full bg-black text-white border-white justify-center">See more</a>
         </figcaption>
       </figure>
     </div>
@@ -75,7 +75,7 @@ import ProjectCard from "../components/ProjectCard.astro";
     <div class="w-full">
       <div class="w-full">
         <div class="w-full">
-          <img class="w-full h-auto mx-auto" src="/JV.svg" alt="" />
+          <img class="w-full h-auto mx-auto" src="/JV.svg" alt="Jocelyn Vinatié" />
         </div>
         <div class="flex flex-col md:flex-row w-full justify-center items-center gap-10">
           <div class="flex flex-col items-center gap-5">
@@ -97,7 +97,7 @@ import ProjectCard from "../components/ProjectCard.astro";
     <div class="grid grid-cols-1 md:grid-cols-2 text-white font-anuphan text-sm gap-8">
       <!-- EDUCATION -->
       <div class="flex flex-col gap-[20px] md:items-end text-center md:text-right">
-        <img class="w-auto max-h-10 mx-auto md:mx-0" src="/Edu.svg" alt="" />
+        <img class="w-auto max-h-10 mx-auto md:mx-0" src="/Edu.svg" alt="Education" />
         <ul>
           <li class="font-bold text-md">High School Diploma STI2D :</li>
           <li>Specialty Information and Digital Systems</li>
@@ -112,7 +112,7 @@ import ProjectCard from "../components/ProjectCard.astro";
 
       <!-- EXPERIENCES -->
       <div class="flex flex-col gap-[20px] md:items-start text-center md:text-left">
-        <img class="w-auto max-h-10 mx-auto md:mx-0" src="/Xp.svg" alt="" />
+        <img class="w-auto max-h-10 mx-auto md:mx-0" src="/Xp.svg" alt="Experiences" />
         <ul>
           <li class="font-bold text-md">SAYTOUTCOM (87)</li>
           <li>Graphic Design - Motion design - Video editing</li>
@@ -125,7 +125,7 @@ import ProjectCard from "../components/ProjectCard.astro";
 
       <!-- SKILLS -->
       <div class="flex flex-col gap-[20px] md:items-end text-center md:text-right">
-        <img class="w-auto max-h-10 mx-auto md:mx-0" src="/Skills.svg" alt="" />
+        <img class="w-auto max-h-10 mx-auto md:mx-0" src="/Skills.svg" alt="Skills" />
         <p class="w-full md:w-96">
           Graphic Design Illustration, Brand Design, Video Editing, Motion Design, UI/UX, Web Design. Communication.
         </p>
@@ -133,14 +133,14 @@ import ProjectCard from "../components/ProjectCard.astro";
 
       <!-- SOFTWARE -->
       <div class="flex flex-col gap-[20px] md:items-start text-center md:text-left">
-        <img class="w-auto max-h-10 mx-auto md:mx-0" src="/Software.svg" alt="" />
+        <img class="w-auto max-h-10 mx-auto md:mx-0" src="/Software.svg" alt="Softwares" />
         <p class="w-full md:w-96">
           Premier Pro - After Effect - Illustrator - Figma - Blender - HTML - CSS
         </p>
       </div>
     </div>
 
-    <a href="/blog"
+    <a href="/"
       class="px-5 py-3 border rounded-full font-anuphan font-bold hover:bg-white hover:border-white hover:text-black">Projects</a>
   </section>
 </section>
