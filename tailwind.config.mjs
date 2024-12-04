@@ -17,12 +17,6 @@ export default {
 
 			
 			},
-			animation: {
-				"loop-scroll": 'loop-scroll 15s linear infinite',
-				"loop-reverse": 'loop-reverse 15s linear infinite',
-				'gradient-flow': 'gradient-flow 6s ease-in-out infinite',
-
-			},
 			keyframes: {
 				"loop-scroll": {
 					from: {
@@ -51,10 +45,43 @@ export default {
 						backgroundPosition: '0% 50%'
 					},
 				},
+				slideIn: {
+					'0%': { opacity: 0, transform: 'translateY(20px)' },
+					'100%': { opacity: 1, transform: 'translateY(0)' },
+				  },
+				showData: {
+					'0%': { transform: 'translateY(50%)', opacity: 0 },
+					'100%': { transform: 'translateY(-2rem)', opacity: 1 },
+				},
+				removeData: {
+					"0%": { transform: "translateY(-1.75rem)" },
+					"50%": { transform: "translateY(-2.5rem)" },
+					"100%": { transform: "translateY(0.5rem)" },
+				  },	
+				  showOverflow: {
+					'0%': { overflow: 'hidden', transform: 'translateY(100%)' },
+					'50%': { overflow: 'hidden', transform: 'translateY(0)' },
+					'100%': { overflow: 'visible', transform: 'translateY(0)' },
+				  },
+				  removeOverflow: {
+					"0%": { overflow: "hidden" },
+					"100%": { overflow: "initial" },
+				  },	
 			},
 			backgroundImage: {
         noise: "url('https://www.transparenttextures.com/patterns/noise.png')",
       },
+	  animation: {
+		"loop-scroll": 'loop-scroll 15s linear infinite',
+		"loop-reverse": 'loop-reverse 15s linear infinite',
+		'gradient-flow': 'gradient-flow 6s ease-in-out infinite',
+		'showData': "showData 1s forwards",
+		   'removeData': "removeData 1s forwards",
+		'showOverflow': "showOverflow 2s forwards",
+		'removeOverflow': "removeOverflow 2s forwards",
+		'slideIn': 'slideIn 0.7s ease-in-out forwards',
+
+	},
 
 
 		},

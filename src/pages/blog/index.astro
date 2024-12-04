@@ -5,17 +5,76 @@ import Footer from '../../components/Footer.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../../consts';
 import { getCollection } from 'astro:content';
 import FormattedDate from '../../components/FormattedDate.astro';
+import Doctype from '../../components/Doctype.astro';
 
 const posts = (await getCollection('blog')).sort(
-	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
 );
 ---
 
-<!doctype html>
-<html lang="en">
-	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-		<!-- <style>
+	<Doctype/>
+
+	<main class="flex-grow flex justify-center">
+		<div class="w-full">
+			<!-- Header -->
+			<div class="fixed flex w-full justify-center items-center pt-5 z-50">
+				<Header />
+			</div>
+
+			<!-- Title Section -->
+			<div class="flex w-full justify-center py-20">
+				<img src="/Projects.svg" alt="Projects illustration">
+			</div>
+
+			<!-- Blog Cards Section -->
+			<section class="flex justify-center px-6 py-20 relative z-10">
+				<ul class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+					{posts.map((post) => (
+					<li class="relative group overflow-hidden ">
+						<a href={`/blog/${post.slug}/`} class="block">
+
+							<div
+								class="relative flex justify-center items-center h-40 overflow-hidden rounded-xl group">
+								<img src={post.data.heroImage} alt=""
+									class="w-80 rounded-xl transition-transform duration-300 group-hover:scale-105" />
+								<div
+									class="absolute inset-0 bg-black opacity-0 transition-opacity duration-300 group-hover:opacity-50">
+								</div>
+							</div>
+
+							<div
+								class="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-full w-72 bg-white shadow-lg rounded-lg p-4 opacity-0 transition-all duration-700 group-hover:opacity-100 group-hover:translate-y-2 group-hover:z-10">
+								<h4 class="text-xl font-semibold text-gray-800 mb-2">
+									{post.data.title}
+								</h4>
+								<p class="text-sm text-gray-500 mb-4">
+									<FormattedDate date={post.data.pubDate} />
+								</p>
+								<span class="text-sm font-medium text-blue-500 hover:underline">
+									Read more
+								</span>
+							</div>
+						</a>
+					</li>
+					))}
+				</ul>
+			</section>
+		</div>
+	</main>
+
+	<!-- Footer -->
+	<Footer />
+</body>
+
+</html>
+
+
+
+
+
+
+
+<!-- <style>
 			main {
 				width: 960px;
 			}
@@ -84,27 +143,3 @@ const posts = (await getCollection('blog')).sort(
 				}
 			}
 		</style> -->
-	</head>
-	<body>
-		<main>
-			<section>
-				<ul>
-					{
-						posts.map((post) => (
-							<li>
-								<a href={`/blog/${post.slug}/`}>
-									<img width={720} height={360} src={post.data.heroImage} alt="" />
-									<h4 class="title">{post.data.title}</h4>
-									<p class="date">
-										<FormattedDate date={post.data.pubDate} />
-									</p>
-								</a>
-							</li>
-						))
-					}
-				</ul>
-			</section>
-		</main>
-		<Footer />
-	</body>
-</html>
