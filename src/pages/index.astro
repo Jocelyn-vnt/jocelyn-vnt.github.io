@@ -7,22 +7,22 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 
 <!DOCTYPE html>
 <html lang="en">
-	<head class="">
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-	</head>
-	<body class="overflow-hidden">
-		<div class="flex flex-col items-center justify-center min-h-screen bg-black text-white">
-			<div class="relative">
-				<h1 class="text-9xl font-bold font-anuphan pb-10">Portfolio 
-					<span class="absolute text-purple-500 font-alex text-7xl font-normal bottom-20 right-0">Design</span>
-				</h1>
-				<Header/>
-			</div>
-		</div>
 
+<head class="">
+	<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+</head>
+<div class="flex w-screen h-screen items-center justify-center fixed">
+	<div class="relative flex flex-col items-center justify-center">
+		<h1 class="text-[248px] font-bold font-anuphan relative text-white">Portfolio
+			<span
+				class="absolute text-purple-500 font-alex text-[144px] font-normal bottom-0 right-0 transform">Design</span>
+		</h1>
 		<div>
-			
+			<Header />
 		</div>
-		<Footer />
-	</body>
+	</div>
+</div>
+<Footer />
+</body>
+
 </html>
