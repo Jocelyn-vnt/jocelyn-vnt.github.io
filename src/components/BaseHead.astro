@@ -46,5 +46,7 @@ const { title, description, image = "/blog-placeholder-1.jpg" } = Astro.props;
 <meta property="twitter:title" content={title} />
 <meta property="twitter:description" content={description} />
 <meta property="twitter:image" content={new URL(image, Astro.url)} />
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 <script src="/src/scripts/parallax.js"></script>
+<script src="/src/scripts/form.js"></script>
 <body class="bg-black cursor-custom w-screen">
