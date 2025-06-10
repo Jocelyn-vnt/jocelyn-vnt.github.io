@@ -160,105 +160,148 @@ import ProjectCard from "../components/ProjectCard.astro";
         </div>
       </div>
 
-      <!-- Section avec les expériences, compétences, etc. -->
-      <div class="grid grid-rows-6 grid-cols-6 grid-flow-col gap-6">
-        <!-- EDUCATION -->
-        <div class="col-span-2 row-span-2 bg-white/10 backdrop-blur-lg border border-glass rounded-2xl p-6 h-full w-full shadow-glass hover:bg-white/15 hover:shadow-glass-hover transition-all duration-300">
-          <div class="flex justify-center pb-4">
-            <h1 class="text-2xl font-bold font-anuphan relative text-white">
-              Education
-            </h1>
-          </div>
-          <div class="flex flex-col h-full w-full space-y-4">
-            <div class="bg-white/5 rounded-xl p-4 border border-white/10">
-              <h3 class="font-bold text-lg text-purple-300">High School Diploma STI2D :</h3>
-              <p class="text-gray-200">Specialty Information and Digital Systems</p>
+     <div class="max-w-7xl mx-auto">
+        <!-- Grille principale améliorée -->
+        <div class="grid grid-cols-6 grid-rows-5 gap-6 h-[800px] mb-8">
+            
+            <!-- EDUCATION - Position optimisée -->
+            <div class="col-span-2 row-span-2 bg-white/10 backdrop-blur-lg border border-white/20 rounded-2xl p-6 shadow-glass hover:bg-white/15 hover:shadow-glass-hover transition-all duration-300 flex flex-col">
+                <div class="flex justify-center pb-4">
+                    <h1 class="text-2xl font-bold font-anuphan text-white">Education</h1>
+                </div>
+                <div class="flex flex-col flex-1 space-y-4">
+                    <div class="bg-white/5 rounded-xl p-4 border border-white/10 flex-1">
+                        <h3 class="font-bold text-lg text-purple-300 mb-2">High School Diploma STI2D</h3>
+                        <p class="text-gray-200 text-sm">Specialty Information and Digital Systems</p>
+                    </div>
+                    <div class="bg-white/5 rounded-xl p-4 border border-white/10 flex-1">
+                        <h3 class="font-bold text-lg text-purple-300 mb-2">BUT Multimedia</h3>
+                        <p class="text-gray-200 text-sm">Digital Creation Course</p>
+                    </div>
+                </div>
             </div>
-            <div class="bg-white/5 rounded-xl p-4 border border-white/10">
-              <h3 class="font-bold text-lg text-purple-300">BUT Multimedia and Internet Professions :</h3>
-              <p class="text-gray-200">Digital Creation Course</p>
+
+            <!-- EXPERIENCES - Position optimisée -->
+            <div class="col-span-2 row-span-2 col-start-1 row-start-3 bg-white/10 backdrop-blur-lg border border-white/20 rounded-2xl p-6 shadow-glass hover:bg-white/15 hover:shadow-glass-hover transition-all duration-300 flex flex-col">
+                <div class="flex justify-center pb-4">
+                    <h1 class="text-2xl font-bold font-anuphan text-white">Experiences</h1>
+                </div>
+                <div class="flex flex-col flex-1 space-y-4">
+                    <div class="bg-white/5 rounded-xl p-4 border border-white/10 flex-1">
+                        <h3 class="font-bold text-lg text-purple-300 mb-2">SAYTOUTCOM (87)</h3>
+                        <p class="text-gray-200 text-sm">Graphic Design - Motion design - Video editing</p>
+                    </div>
+                    <div class="bg-white/5 rounded-xl p-4 border border-white/10 flex-1">
+                        <h3 class="font-bold text-lg text-purple-300 mb-2">WENZEO (33)</h3>
+                        <p class="text-gray-200 text-sm">Video editing - Graphic Design - Photo editing</p>
+                    </div>
+                </div>
             </div>
-          </div>
-        </div>
 
-        <!-- EXPERIENCES -->
-        <div class="col-span-2 row-span-2 bg-white/10 backdrop-blur-lg border border-glass rounded-2xl p-6 shadow-glass hover:bg-white/15 hover:shadow-glass-hover transition-all duration-300">
-          <div class="flex justify-center pb-4">
-            <h1 class="text-2xl font-bold font-anuphan relative text-white">
-              Experiences
-            </h1>
-          </div>
-          <div class="space-y-4">
-            <div class="bg-white/5 rounded-xl p-4 border border-white/10">
-              <h3 class="font-bold text-lg text-purple-300">SAYTOUTCOM (87)</h3>
-              <p class="text-gray-200">Graphic Design - Motion design - Video editing</p>
+            <!-- CONTACTS - Section principale -->
+            <div class="col-span-4 row-span-3 col-start-3 row-start-1 bg-white/10 backdrop-blur-lg border border-white/20 rounded-2xl p-6 shadow-glass hover:bg-white/15 hover:shadow-glass-hover transition-all duration-300 flex flex-col">
+                <div class="flex justify-center pb-6">
+                    <h1 class="text-3xl font-bold font-anuphan text-white">Contacts</h1>
+                </div>
+                <div class="flex gap-6 justify-between flex-1">
+                    <!-- Formulaire -->
+                    <form class="flex flex-col gap-4 rounded-xl w-2/3 bg-white/5 p-6 border border-white/10 h-fit">
+                        <label class="text-white font-bold font-anuphan">Name</label>
+                        <input type="text" required class="p-3 rounded-xl text-black bg-white/90 border border-white/20 focus:bg-white focus:outline-none focus:ring-2 focus:ring-purple-400 transition-all">
+                        
+                        <label class="text-white font-bold font-anuphan">Email</label>
+                        <input type="email" required class="p-3 rounded-xl text-black bg-white/90 border border-white/20 focus:bg-white focus:outline-none focus:ring-2 focus:ring-purple-400 transition-all">
+                        
+                        <label class="text-white font-bold font-anuphan">Message</label>
+                        <textarea required class="p-3 rounded-xl text-black bg-white/90 border border-white/20 focus:bg-white focus:outline-none focus:ring-2 focus:ring-purple-400 transition-all min-h-[100px] resize-none"></textarea>
+                        
+                        <button type="submit" class="bg-purple-500/80 backdrop-blur-md hover:bg-purple-600/80 text-white p-3 rounded-xl transition-all duration-300 font-anuphan font-bold border border-purple-400/30 hover:border-purple-400/50 shadow-glass">
+                            Send Message
+                        </button>
+                    </form>
+                    
+                    <!-- CV Section -->
+                    <div class="flex w-1/3 flex-col justify-center items-center bg-white/5 p-6 rounded-xl border border-white/10 h-fit">
+                        <h3 class="text-white font-anuphan font-bold text-lg mb-4 text-center">Download my CV</h3>
+                        <div class="p-4 bg-white rounded-xl shadow-glass mb-4">
+                            <div class="w-32 h-32 bg-gray-200 flex items-center justify-center text-gray-500 text-xs">
+                                QR Code
+                            </div>
+                        </div>
+                        <button class="bg-purple-500/80 text-white px-4 py-2 rounded-lg hover:bg-purple-600/80 transition-all duration-300 text-sm font-medium">
+                            Download PDF
+                        </button>
+                    </div>
+                </div>
             </div>
-            <div class="bg-white/5 rounded-xl p-4 border border-white/10">
-              <h3 class="font-bold text-lg text-purple-300">WENZEO (33) :</h3>
-              <p class="text-gray-200">Video editing - Graphic Design - Photo editing</p>
+
+            <!-- LANGUAGES -->
+            <div class="col-span-2 row-span-1 col-start-3 row-start-4 bg-white/10 backdrop-blur-lg border border-white/20 rounded-2xl p-6 shadow-glass hover:bg-white/15 hover:shadow-glass-hover transition-all duration-300 flex flex-col justify-center">
+                <div class="pb-4">
+                    <h1 class="text-2xl font-bold font-anuphan text-white text-center">Languages</h1>
+                </div>
+                <div class="bg-white/5 rounded-xl p-4 border border-white/10 flex justify-center items-center">
+                    <div class="flex gap-4 text-gray-200">
+                        <span class="px-3 py-1 bg-purple-500/30 rounded-lg">English</span>
+                        <span class="px-3 py-1 bg-purple-500/30 rounded-lg">French</span>
+                        <span class="px-3 py-1 bg-purple-500/30 rounded-lg">Spanish</span>
+                    </div>
+                </div>
             </div>
-          </div>
-        </div>
 
-
-
-        <!-- CONTACTS -->
-        <div class="row-span-3 col-span-4 bg-white/10 backdrop-blur-lg border border-glass rounded-2xl p-6 shadow-glass hover:bg-white/15 hover:shadow-glass-hover transition-all duration-300">
-          <div class="flex justify-center pb-4">
-            <h1 class="text-2xl font-bold font-anuphan relative text-white">
-              Contacts
-            </h1>
-          </div>
-          <div class="flex gap-6 justify-between">
-            <form id="contact-form" class="flex flex-col gap-4 rounded-xl w-2/3 bg-white/5 p-6 border border-white/10">
-              <input type="hidden" name="contact_service" value="service_evnvtit">
-              <input type="hidden" name="contact_form" value="template_eiss8es">
-              <input type="hidden" name="contact_number" value="697483">
-              
-              <label for="user_name" class="text-white font-bold font-anuphan">Name</label>
-              <input type="text" name="user_name" required class="mb-2 p-3 rounded-xl text-black bg-white/90 border border-white/20 focus:bg-white focus:outline-none focus:ring-2 focus:ring-purple-400 transition-all">
-              
-              <label for="user_email" class="text-white font-bold font-anuphan">Email</label>
-              <input type="email" name="user_email" required class="mb-2 p-3 rounded-xl text-black bg-white/90 border border-white/20 focus:bg-white focus:outline-none focus:ring-2 focus:ring-purple-400 transition-all">
-              
-              <label for="message" class="text-white font-bold font-anuphan">Message</label>
-              <textarea name="message" required class="mb-2 p-3 rounded-xl text-black bg-white/90 border border-white/20 focus:bg-white focus:outline-none focus:ring-2 focus:ring-purple-400 transition-all min-h-[100px]"></textarea>
-              
-              <input type="submit" value="Send" class="bg-purple-500/80 backdrop-blur-md hover:bg-purple-600/80 text-white p-3 rounded-xl cursor-pointer transition-all duration-300 font-anuphan font-bold border border-purple-400/30 hover:border-purple-400/50 shadow-glass">
-           </form>
-           <div class="flex w-1/3 gap-6 flex-col justify-center items-center bg-white/5 p-6 rounded-xl border border-white/10">
-            <h3 class="text-white font-anuphan font-bold text-lg">Download my CV</h3>
-            <div class="p-4 bg-white rounded-xl shadow-glass">
-              <img src="/qrcode.png" alt="mon cv" class="w-full max-w-[150px]">
+            <!-- HOBBIES -->
+            <div class="col-span-2 row-span-1 col-start-5 row-start-4 bg-white/10 backdrop-blur-lg border border-white/20 rounded-2xl p-6 shadow-glass hover:bg-white/15 hover:shadow-glass-hover transition-all duration-300 flex flex-col justify-center">
+                <div class="flex justify-center pb-4">
+                    <h1 class="text-2xl font-bold font-anuphan text-white">Hobbies</h1>
+                </div>
+                <div class="bg-white/5 rounded-xl p-4 border border-white/10 flex justify-center items-center">
+                    <div class="flex gap-3 text-gray-200 flex-wrap justify-center">
+                        <span class="px-3 py-1 bg-blue-500/30 rounded-lg text-sm">Movies</span>
+                        <span class="px-3 py-1 bg-green-500/30 rounded-lg text-sm">Gaming</span>
+                        <span class="px-3 py-1 bg-yellow-500/30 rounded-lg text-sm">Cats</span>
+                    </div>
+                </div>
             </div>
-           </div>
-          </div>
-        </div>
 
-        <!-- LANGUAGES -->
-        <div class="row-span-1 col-span-2 bg-white/10 backdrop-blur-lg border border-glass rounded-2xl p-6 shadow-glass hover:bg-white/15 hover:shadow-glass-hover transition-all duration-300">
-          <div class="pb-4">
-            <h1 class="text-2xl font-bold font-anuphan relative text-white text-center">
-              Languages
-            </h1>
-          </div>
-          <div class="bg-white/5 rounded-xl p-4 border border-white/10">
-            <p class="w-full text-gray-200 text-center">English - French - Spanish</p>
-          </div>
-        </div>
+            <!-- SKILLS -->
+            <div class="col-span-3 row-span-1 row-start-5 bg-white/10 backdrop-blur-lg border border-white/20 rounded-2xl p-6 shadow-glass hover:bg-white/15 hover:shadow-glass-hover transition-all duration-300 flex flex-col justify-center">
+                <div class="flex justify-center pb-4">
+                    <h1 class="text-2xl font-bold font-anuphan text-white">Skills</h1>
+                </div>
+                <div class="bg-white/5 rounded-xl p-4 border border-white/10">
+                    <div class="flex gap-2 flex-wrap justify-center">
+                        <span class="px-3 py-1 bg-red-500/30 rounded-lg text-sm text-white">Photoshop</span>
+                        <span class="px-3 py-1 bg-blue-500/30 rounded-lg text-sm text-white">Figma</span>
+                        <span class="px-3 py-1 bg-green-500/30 rounded-lg text-sm text-white">HTML/CSS</span>
+                        <span class="px-3 py-1 bg-yellow-500/30 rounded-lg text-sm text-white">JavaScript</span>
+                        <span class="px-3 py-1 bg-purple-500/30 rounded-lg text-sm text-white">After Effects</span>
+                    </div>
+                </div>
+            </div>
 
-        <!-- HOBBIES -->
-        <div class="col-span-2 row-span-1 bg-white/10 backdrop-blur-lg border border-glass rounded-2xl p-6 shadow-glass hover:bg-white/15 hover:shadow-glass-hover transition-all duration-300">
-          <div class="flex justify-center pb-4">
-            <h1 class="text-2xl font-bold font-anuphan relative text-white">
-              Hobbies
-            </h1>
-          </div>
-          <div class="bg-white/5 rounded-xl p-4 border border-white/10">
-            <p class="w-full text-gray-200 text-center">Reading - Traveling - Photography</p>
-          </div>
+            <!-- SOCIAL LINKS -->
+            <div class="col-span-3 row-span-1 col-start-4 row-start-5 bg-white/10 backdrop-blur-lg border border-white/20 rounded-2xl p-6 shadow-glass hover:bg-white/15 hover:shadow-glass-hover transition-all duration-300 flex flex-col justify-center">
+                <div class="flex justify-center pb-4">
+                    <h1 class="text-2xl font-bold font-anuphan text-white">Follow Me</h1>
+                </div>
+                <div class="bg-white/5 rounded-xl p-4 border border-white/10">
+                    <div class="flex gap-4 justify-center">
+                        <a href="#" class="w-10 h-10 bg-blue-500/30 rounded-lg flex items-center justify-center hover:bg-blue-500/50 transition-all duration-300">
+                            <span class="text-white text-sm font-bold">Li</span>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-gray-800/30 rounded-lg flex items-center justify-center hover:bg-gray-800/50 transition-all duration-300">
+                            <span class="text-white text-sm font-bold">Gh</span>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-pink-500/30 rounded-lg flex items-center justify-center hover:bg-pink-500/50 transition-all duration-300">
+                            <span class="text-white text-sm font-bold">Ig</span>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-blue-400/30 rounded-lg flex items-center justify-center hover:bg-blue-400/50 transition-all duration-300">
+                            <span class="text-white text-sm font-bold">Tw</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
 
       <a
         href="/"
