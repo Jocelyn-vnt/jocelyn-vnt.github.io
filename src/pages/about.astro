@@ -205,17 +205,17 @@ import ProjectCard from "../components/ProjectCard.astro";
                 </div>
                 <div class="flex gap-6 justify-between flex-1">
                     <!-- Formulaire -->
-                    <form class="flex flex-col gap-4 rounded-xl w-2/3 bg-white/5 p-6 border border-white/10 h-fit">
-                        <label class="text-white font-bold font-anuphan">Name</label>
-                        <input type="text" required class="p-3 rounded-xl text-black bg-white/90 border border-white/20 focus:bg-white focus:outline-none focus:ring-2 focus:ring-purple-400 transition-all">
+                    <form class="flex flex-col gap-3 rounded-xl w-3/5 bg-white/5 p-4 border border-white/10 h-fit">
+                        <label class="text-white font-medium font-anuphan text-sm">Name</label>
+                        <input type="text" required class="p-2 rounded-lg text-black bg-white/90 border border-white/20 focus:bg-white focus:outline-none focus:ring-2 focus:ring-purple-400 transition-all text-sm">
                         
-                        <label class="text-white font-bold font-anuphan">Email</label>
-                        <input type="email" required class="p-3 rounded-xl text-black bg-white/90 border border-white/20 focus:bg-white focus:outline-none focus:ring-2 focus:ring-purple-400 transition-all">
+                        <label class="text-white font-medium font-anuphan text-sm">Email</label>
+                        <input type="email" required class="p-2 rounded-lg text-black bg-white/90 border border-white/20 focus:bg-white focus:outline-none focus:ring-2 focus:ring-purple-400 transition-all text-sm">
                         
-                        <label class="text-white font-bold font-anuphan">Message</label>
-                        <textarea required class="p-3 rounded-xl text-black bg-white/90 border border-white/20 focus:bg-white focus:outline-none focus:ring-2 focus:ring-purple-400 transition-all min-h-[100px] resize-none"></textarea>
+                        <label class="text-white font-medium font-anuphan text-sm">Message</label>
+                        <textarea required class="p-2 rounded-lg text-black bg-white/90 border border-white/20 focus:bg-white focus:outline-none focus:ring-2 focus:ring-purple-400 transition-all min-h-[80px] resize-none text-sm"></textarea>
                         
-                        <button type="submit" class="bg-purple-500/80 backdrop-blur-md hover:bg-purple-600/80 text-white p-3 rounded-xl transition-all duration-300 font-anuphan font-bold border border-purple-400/30 hover:border-purple-400/50 shadow-glass">
+                        <button type="submit" class="bg-purple-500/80 backdrop-blur-md hover:bg-purple-600/80 text-white p-2 rounded-lg transition-all duration-300 font-anuphan font-medium border border-purple-400/30 hover:border-purple-400/50 shadow-glass text-sm">
                             Send Message
                         </button>
                     </form>
@@ -263,21 +263,51 @@ import ProjectCard from "../components/ProjectCard.astro";
                 </div>
             </div>
 
-            <!-- SKILLS -->
-            <div class="col-span-3 row-span-1 row-start-5 bg-white/10 backdrop-blur-lg border border-white/20 rounded-2xl p-6 shadow-glass hover:bg-white/15 hover:shadow-glass-hover transition-all duration-300 flex flex-col justify-center">
-                <div class="flex justify-center pb-4">
-                    <h1 class="text-2xl font-bold font-anuphan text-white">Skills</h1>
-                </div>
-                <div class="bg-white/5 rounded-xl p-4 border border-white/10">
-                    <div class="flex gap-2 flex-wrap justify-center">
-                        <span class="px-3 py-1 bg-red-500/30 rounded-lg text-sm text-white">Photoshop</span>
-                        <span class="px-3 py-1 bg-blue-500/30 rounded-lg text-sm text-white">Figma</span>
-                        <span class="px-3 py-1 bg-green-500/30 rounded-lg text-sm text-white">HTML/CSS</span>
-                        <span class="px-3 py-1 bg-yellow-500/30 rounded-lg text-sm text-white">JavaScript</span>
-                        <span class="px-3 py-1 bg-purple-500/30 rounded-lg text-sm text-white">After Effects</span>
-                    </div>
-                </div>
+        <!-- SKILLS avec vos SVG personnalisés -->
+        <div class="col-span-3 row-span-1 row-start-5 bg-white/10 backdrop-blur-lg border border-white/20 rounded-2xl p-6 shadow-glass hover:bg-white/15 hover:shadow-glass-hover transition-all duration-300 flex flex-col justify-center">
+          <div class="flex justify-center pb-4">
+            <h1 class="text-2xl font-bold font-anuphan text-white">Skills</h1>
+          </div>
+          <div class="bg-white/5 rounded-xl p-4 border border-white/10">
+            <div class="flex gap-4 flex-wrap justify-center">
+              
+              <!-- Photoshop -->
+              <div class="flex items-center gap-2 px-3 py-2 bg-blue-500/30 rounded-lg hover:bg-blue-500/50 transition-all duration-300">
+                <img src="/ps.svg" alt="Photoshop" class="w-5 h-5">
+              </div>
+              
+              <!-- Figma -->
+              <div class="flex items-center gap-2 px-3 py-2 bg-purple-500/30 rounded-lg hover:bg-purple-500/50 transition-all duration-300">
+                <img src="/figma.svg" alt="Figma" class="w-5 h-5">
+              </div>
+              
+              <!-- HTML/CSS -->
+              <div class="flex items-center gap-2 px-3 py-2 bg-orange-500/30 rounded-lg hover:bg-orange-500/50 transition-all duration-300">
+                <img src="/html.svg" alt="HTML/CSS" class="w-5 h-5">
+              </div>
+              
+              <!-- JavaScript -->
+              <div class="flex items-center gap-2 px-3 py-2 bg-yellow-500/30 rounded-lg hover:bg-yellow-500/50 transition-all duration-300">
+                <img src="/js.svg" alt="JavaScript" class="w-5 h-5">
+              </div>
+              
+              <!-- After Effects -->
+              <div class="flex items-center gap-2 px-3 py-2 bg-indigo-500/30 rounded-lg hover:bg-indigo-500/50 transition-all duration-300">
+                <img src="/ae.svg" alt="After Effects" class="w-5 h-5">
+              </div>
+
+                <!-- IA -->
+              <div class="flex items-center gap-2 px-3 py-2 bg-indigo-500/30 rounded-lg hover:bg-indigo-500/50 transition-all duration-300">
+                <img src="/ai.svg" alt="After Effects" class="w-5 h-5">
+              </div>
+              
+              <!-- Premiere Pro -->
+              <div class="flex items-center gap-2 px-3 py-2 bg-pink-500/30 rounded-lg hover:bg-pink-500/50 transition-all duration-300">
+                <img src="/pr.svg" alt="Premiere Pro" class="w-5 h-5">
+              </div>
             </div>
+          </div>
+        </div>
 
             <!-- SOCIAL LINKS -->
             <div class="col-span-3 row-span-1 col-start-4 row-start-5 bg-white/10 backdrop-blur-lg border border-white/20 rounded-2xl p-6 shadow-glass hover:bg-white/15 hover:shadow-glass-hover transition-all duration-300 flex flex-col justify-center">
