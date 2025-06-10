@@ -4,25 +4,70 @@ import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 ---
+<!-- sources  -->
+<!-- https://tailwindcss.com/docs -->
+<!-- https://developer.mozilla.org/en-US/docs/Web/SVG/Element/filter -->
+<!-- https://developer.mozilla.org/en-US/docs/Web/SVG/Tutorial/Using_Filters -->
+<!-- https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Transitions -->
+<!-- https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Using_media_queries -->
+
 
 <!DOCTYPE html>
 <html lang="en">
 
-<head class="">
-	<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+<head>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+    <style>
+        .gooey {
+            filter: url(#gooey);
+        }
+        .parallax-container {
+            position: relative;
+            perspective: 1000px;
+        }
+        .parallax-item {
+            transition: transform 0.1s ease-out;
+        }
+    </style>
+
 </head>
-<div class="flex w-screen h-screen items-center justify-center fixed">
-	<div class="relative flex flex-col items-center justify-center">
-		<h1 class="text-[248px] font-bold font-anuphan relative text-white">Portfolio
-			<span
-				class="absolute text-purple-500 font-alex text-[144px] font-normal bottom-0 right-0 transform">Design</span>
-		</h1>
-		<div>
-			<Header />
-		</div>
-	</div>
-</div>
-<Footer />
+
+<body class="m-0 overflow-hidden">
+    <div class="fixed inset-0 bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center">
+        <div class="gooey w-full h-full absolute">
+            <div class="absolute w-48 h-48 bg-white/20 rounded-full blur-lg hover:scale-125 transition-transform duration-300" style="top: 20%; left: 30%;"></div>
+            <div class="absolute w-48 h-48 bg-white/20 rounded-full blur-lg hover:scale-125 transition-transform duration-300" style="top: 50%; left: 50%;"></div>
+            <div class="absolute w-48 h-48 bg-white/20 rounded-full blur-lg hover:scale-125 transition-transform duration-300" style="top: 70%; left: 70%;"></div>
+        </div>
+    </div>
+    <div class="flex items-center justify-center w-screen h-screen fixed parallax-container">
+        <div class="relative flex flex-col items-center">
+            <div class="relative flex flex-col items-center justify-center">
+                <h1 class="text-[248px] font-bold font-anuphan relative text-white" id="portx-text">
+                  Jocelyn
+                  <span
+                    class="absolute text-purple-500 font-alex text-[144px] font-normal bottom-0 right-0 transform"
+                    id="vinatie-text">Vinatié</span>
+                </h1>
+              </div>
+            <div>
+                <Header />
+            </div>
+        </div>
+    </div>
+    <Footer />
+    <svg width="0" height="0">
+        <filter id="gooey">
+            <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
+            <feColorMatrix in="blur" mode="matrix" values="
+                1 0 0 0 0
+                0 1 0 1 0
+                0 0 1 0 0
+                1 0 0 20 -10" result="gooey" />
+            <feComposite in="SourceGraphic" in2="gooey" operator="atop" />
+        </filter>
+    </svg>
 </body>
 
 </html>
+Je veux que tu fasses en sorte que ce soit uniquement du tailwind

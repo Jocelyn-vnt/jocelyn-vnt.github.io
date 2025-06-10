@@ -4,16 +4,26 @@ import { SITE_TITLE } from "../consts";
 ---
 
 <header>
-	<!-- <h2><a href="/">{SITE_TITLE}</a></h2> -->
 	<nav class="w-[520px] z-50">
-		<div class="flex bg-white text-black px-6 py-2 rounded-full shadow-lg">
-			<div class="flex w-full justify-between">
-				<HeaderLink class="flex items-center hover:text-black transition text-2xl font-light" href="/"><img class="w-8" src="/ph_arrow-up-thin.svg" alt=""/>Home</HeaderLink>
-				<HeaderLink class="flex items-center hover:text-black transition text-2xl font-light" href="/blog"><img class="w-8" src="/ph_arrow-up-thin.svg" alt=""/>Blog</HeaderLink>
-				<HeaderLink class="flex items-center hover:text-black transition text-2xl font-light" href="/about"><img class="w-8" src="/ph_arrow-up-thin.svg" alt=""/>About</HeaderLink>
-				
+		<div class="flex bg-white/10 backdrop-blur-lg border border-glass text-white px-6 py-3 rounded-full shadow-glass relative overflow-hidden group">
+			<!-- Effet de reflet animé -->
+			<div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-out"></div>
+			
+			<!-- Contenu du nav -->
+			<div class="flex w-full justify-between relative z-10">
+				<HeaderLink class="flex items-center hover:text-purple-300 transition-all duration-300 text-lg font-light group/link" href="/">
+					<img class="w-6 mr-2 transition-transform duration-300 group-hover/link:rotate-12" src="/ph_arrow-up-thin.svg" alt=""/>
+					Home
+				</HeaderLink>
+				<HeaderLink class="flex items-center hover:text-purple-300 transition-all duration-300 text-lg font-light group/link" href="/blog">
+					<img class="w-6 mr-2 transition-transform duration-300 group-hover/link:rotate-12" src="/ph_arrow-up-thin.svg" alt=""/>
+					Blog
+				</HeaderLink>
+				<HeaderLink class="flex items-center hover:text-purple-300 transition-all duration-300 text-lg font-light group/link" href="/about">
+					<img class="w-6 mr-2 transition-transform duration-300 group-hover/link:rotate-12" src="/ph_arrow-up-thin.svg" alt=""/>
+					About
+				</HeaderLink>
 			</div>
 		</div>
 	</nav>
-
 </header>
