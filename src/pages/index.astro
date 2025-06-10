@@ -28,17 +28,18 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
         .parallax-item {
             transition: transform 0.1s ease-out;
         }
+        html, body {
+            overflow: hidden !important;
+            height: 100%;
+            position: fixed;
+            width: 100vw;
+        }
     </style>
 
 </head>
 
-<body class="m-0 overflow-hidden">
+<body class="m-0 overflow-hidden scroll-snap-none">
     <div class="fixed inset-0 bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center">
-        <div class="gooey w-full h-full absolute">
-            <div class="absolute w-48 h-48 bg-white/20 rounded-full blur-lg hover:scale-125 transition-transform duration-300" style="top: 20%; left: 30%;"></div>
-            <div class="absolute w-48 h-48 bg-white/20 rounded-full blur-lg hover:scale-125 transition-transform duration-300" style="top: 50%; left: 50%;"></div>
-            <div class="absolute w-48 h-48 bg-white/20 rounded-full blur-lg hover:scale-125 transition-transform duration-300" style="top: 70%; left: 70%;"></div>
-        </div>
     </div>
     <div class="flex items-center justify-center w-screen h-screen fixed parallax-container">
         <div class="relative flex flex-col items-center">
@@ -70,4 +71,3 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 </body>
 
 </html>
-Je veux que tu fasses en sorte que ce soit uniquement du tailwind
