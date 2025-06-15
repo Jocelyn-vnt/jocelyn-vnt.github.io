@@ -10,6 +10,189 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 <html lang="en">
   <head>
     <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+    <style>
+      /* S'assurer que la page peut scroller */
+      body {
+        min-height: 300vh;
+        overflow-x: hidden;
+      }
+      
+      /* Optimiser les éléments parallax */
+      .parallax {
+        will-change: transform;
+        backface-visibility: hidden;
+        perspective: 1000px;
+        transition: transform 0.1s ease-out;
+      }
+      
+      /* Animation d'apparition améliorée */
+      @keyframes slideInFromBottom {
+        from {
+          opacity: 0;
+          transform: translateY(50px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      
+      .parallax-appear {
+        animation: slideInFromBottom 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+      }
+
+      /* Effet de hover amélioré */
+      .parallax:hover {
+        z-index: 100;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 10px 20px rgba(0, 0, 0, 0.3);
+      }
+
+      /* Effet de trail pour le mouvement rapide */
+      .parallax.moving-fast {
+        filter: blur(1px) brightness(1.1);
+        transition: filter 0.1s ease;
+      }
+    </style>
+    
+    <!-- Script pour le parallax inversé -->
+    <script>
+      // Script pour hover parallax inversé (bas vers haut)
+      document.addEventListener("DOMContentLoaded", () => {
+          // Configuration des vitesses pour chaque élément parallax
+          const parallaxConfig = {
+              'slow': { speed: -2.5, trigger: 100 },      // Lent mais plus rapide que le scroll
+              'medium': { speed: -3.8, trigger: 150 },    // Moyen
+              'fast': { speed: -5.2, trigger: 200 },      // Rapide
+              'ultra': { speed: -4.0, trigger: 250 },     // Ultra
+              'turbo': { speed: -6.5, trigger: 300 }      // Turbo (le plus rapide)
+          };
+
+          // Sélectionner tous les éléments parallax
+          const parallaxElements = document.querySelectorAll('.parallax');
+          
+          // Variables pour optimiser les performances
+          let ticking = false;
+          let currentScrollY = 0;
+          let targetScrollY = 0;
+          
+          console.log(`🚀 Parallax inversé initialisé avec ${parallaxElements.length} éléments`);
+
+          // Fonction pour détecter le type d'élément par son contenu
+          function getElementType(element) {
+              const text = element.textContent || '';
+              if (text.includes('Slow')) return 'slow';
+              if (text.includes('Medium')) return 'medium';
+              if (text.includes('Fast')) return 'fast';
+              if (text.includes('Ultra')) return 'ultra';
+              if (text.includes('Turbo')) return 'turbo';
+              return 'medium'; // par défaut
+          }
+
+          // Fonction pour appliquer le parallax inversé
+          function applyInverseParallax() {
+              // Interpolation douce pour un mouvement fluide
+              currentScrollY += (targetScrollY - currentScrollY) * 0.08;
+              
+              parallaxElements.forEach((element) => {
+                  const elementType = getElementType(element);
+                  const config = parallaxConfig[elementType];
+                  
+                  // Calcul de la position inversée (plus le scroll est vers le bas, plus l'élément monte)
+                  const yPos = currentScrollY * config.speed;
+                  
+                  // Appliquer la transformation avec GPU acceleration
+                  element.style.transform = `translate3d(0, ${yPos}px, 0)`;
+                  
+                  // Effet de déclenchement basé sur la position de scroll
+                  const triggerPoint = window.innerHeight * (config.trigger / 100);
+                  if (window.scrollY > triggerPoint && element.style.opacity === '0') {
+                      element.style.opacity = '1';
+                      element.classList.add('parallax-appear');
+                  }
+              });
+              
+              // Animation continue
+              requestAnimationFrame(applyInverseParallax);
+          }
+
+          // Event listener pour capturer le scroll
+          function onScroll() {
+              targetScrollY = window.scrollY;
+              
+              if (!ticking) {
+                  ticking = true;
+                  requestAnimationFrame(() => {
+                      ticking = false;
+                  });
+              }
+          }
+
+          // Fonction d'initialisation des éléments
+          function initializeElements() {
+              parallaxElements.forEach((element, index) => {
+                  // Optimisations pour les performances GPU
+                  element.style.willChange = 'transform';
+                  element.style.backfaceVisibility = 'hidden';
+                  element.style.perspective = '1000px';
+                  
+                  // État initial (caché)
+                  element.style.opacity = '0';
+                  element.style.transition = 'opacity 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
+                  
+                  // Ajouter les classes pour l'animation d'apparition
+                  setTimeout(() => {
+                      element.classList.add('parallax-initialized');
+                  }, index * 100);
+              });
+          }
+
+          // Effet de survol amélioré avec accélération
+          function enhanceHoverEffects() {
+              parallaxElements.forEach((element) => {
+                  element.addEventListener('mouseenter', () => {
+                      const elementType = getElementType(element);
+                      const config = parallaxConfig[elementType];
+                      
+                      // Accélération temporaire lors du hover
+                      const currentY = currentScrollY * config.speed;
+                      const acceleratedY = currentY - 50; // Boost vers le haut
+                      
+                      element.style.transition = 'transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1)';
+                      element.style.transform = `translate3d(0, ${acceleratedY}px, 0) scale(1.05)`;
+                      
+                      // Effet de brillance
+                      element.style.filter = 'brightness(1.1) contrast(1.05)';
+                  });
+                  
+                  element.addEventListener('mouseleave', () => {
+                      // Retour à la position normale
+                      element.style.transition = 'transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), filter 0.3s ease';
+                      const elementType = getElementType(element);
+                      const config = parallaxConfig[elementType];
+                      const normalY = currentScrollY * config.speed;
+                      
+                      element.style.transform = `translate3d(0, ${normalY}px, 0) scale(1)`;
+                      element.style.filter = 'brightness(1) contrast(1)';
+                      
+                      // Supprimer la transition après l'animation
+                      setTimeout(() => {
+                          element.style.transition = '';
+                      }, 400);
+                  });
+              });
+          }
+
+          // Event listeners
+          window.addEventListener('scroll', onScroll, { passive: true });
+
+          // Initialisation
+          initializeElements();
+          enhanceHoverEffects();
+          applyInverseParallax(); // Démarrer l'animation continue
+
+          console.log("✨ Système de parallax inversé avec hover activé!");
+      });
+    </script>
   </head>
   
   <body class="bg-purple-300 cursor-custom w-screen">
@@ -20,403 +203,208 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
     <div class="fixed flex w-full justify-center items-center pt-5 z-50">
       <Header />
     </div>
-
-    <!-- Éléments parallax positionnés absolument -->
-    
-    <!-- Élément parallax 1 - Position spécifique top 100% -->
-    <div class="hover:scale-105 transition-transform duration-300">
-      <div
-        class="parallax group bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl shadow-glass p-8 absolute top-[100%] left-[10%] z-10 hover:bg-white/15 hover:shadow-glass-hover transition-all duration-300 animate-glass-float opacity-0"
-        data-speed="-0.2"
-        data-trigger="100"
-      >
-        <div class="flex gap-3 p-0 items-center">
-          <h2 class="text-white font-bold hidden sm:block font-anuphan text-lg">
-            Hover me (Slow)
-          </h2>
-          <h2 class="text-white font-bold sm:hidden font-anuphan text-lg">Slow</h2>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke-width="1.5"
-            stroke="currentColor"
-            class="size-6 text-purple-300 group-hover:rotate-12 transition-transform duration-300"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              d="M15.042 21.672 13.684 16.6m0 0-2.51 2.225.569-9.47 5.227 7.917-3.286-.672Zm-7.518-.267A8.25 8.25 0 1 1 20.25 10.5M8.288 14.212A5.25 5.25 0 1 1 17.25 10.5"
-            ></path>
-          </svg>
-        </div>
-        
-        <!-- Projet Kusmi Tea au hover -->
-        <figure class="absolute -top-[70px] right-0 opacity-0 group-hover:opacity-100 transition-all duration-500 transform group-hover:scale-105">
-          <div class="relative">
-            <img
-              src="/Kusmi-Tea.jpg"
-              alt="Image Logo KusmiTea"
-              class="w-40 h-auto rounded-xl shadow-glass border border-white/20"
-            />
-            <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent rounded-xl"></div>
-          </div>
-          <figcaption class="absolute top-full mt-3 flex text-sm w-full">
-            <a href="/blog" class="flex bg-white/10 backdrop-blur-md border border-white/20 text-white hover:bg-white/20 hover:text-purple-300 font-anuphan font-medium p-3 w-full rounded-lg transition-all duration-300 justify-center shadow-glass">
-              See project
-            </a>
-          </figcaption>
-        </figure>
-      </div>
-    </div>
-
-    <!-- Élément parallax 2 - Position spécifique top 150% -->
-    <div
-      class="parallax bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl shadow-glass px-6 py-4 absolute top-[150%] right-[10%] z-50 hover:bg-white/15 hover:shadow-glass-hover transition-all duration-300 opacity-0"
-      data-speed="-0.5"
-      data-trigger="150"
-    >
-      <div class="flex gap-3 items-center">
-        <h2 class="text-white font-bold hidden sm:block font-anuphan text-lg">
-          Hover me (Medium)
-        </h2>
-        <h2 class="text-white font-bold sm:hidden font-anuphan text-lg">Medium</h2>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke-width="1.5"
-          stroke="currentColor"
-          class="size-6 text-purple-300 group-hover:rotate-12 transition-transform duration-300"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            d="M15.042 21.672 13.684 16.6m0 0-2.51 2.225.569-9.47 5.227 7.917-3.286-.672Zm-7.518-.267A8.25 8.25 0 1 1 20.25 10.5M8.288 14.212A5.25 5.25 0 1 1 17.25 10.5"
-          ></path>
-        </svg>
-      </div>
-    </div>
-
-    <!-- Élément parallax 3 - Position spécifique top 200% -->
-    <div
-      class="parallax bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl shadow-glass p-8 absolute top-[200%] left-[15%] z-10 hover:bg-white/15 hover:shadow-glass-hover transition-all duration-300 animate-glass-float opacity-0"
-      data-speed="-0.8"
-      data-trigger="200"
-    >
-      <div class="flex gap-3 items-center">
-        <h2 class="text-white font-bold hidden sm:block font-anuphan text-lg">Hover me (Fast)</h2>
-        <h2 class="text-white font-bold sm:hidden font-anuphan text-lg">Fast</h2>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke-width="1.5"
-          stroke="currentColor"
-          class="size-6 text-purple-300 group-hover:rotate-12 transition-transform duration-300"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            d="M15.042 21.672 13.684 16.6m0 0-2.51 2.225.569-9.47 5.227 7.917-3.286-.672Zm-7.518-.267A8.25 8.25 0 1 1 20.25 10.5M8.288 14.212A5.25 5.25 0 1 1 17.25 10.5"
-          ></path>
-        </svg>
-      </div>
-      
-      <!-- Skills preview au hover -->
-      <div class="absolute -top-[100px] right-0 opacity-0 group-hover:opacity-100 transition-all duration-500 transform group-hover:scale-105">
-        <div class="bg-white/10 backdrop-blur-md border border-white/20 rounded-xl p-4 shadow-glass w-52">
-          <h3 class="text-white font-bold text-sm mb-3">Skills Preview</h3>
-          <div class="grid grid-cols-4 gap-2">
-            <div class="w-8 h-8 bg-blue-500/50 rounded border border-white/20 flex items-center justify-center">
-              <span class="text-white text-xs font-bold">Ps</span>
-            </div>
-            <div class="w-8 h-8 bg-purple-500/50 rounded border border-white/20 flex items-center justify-center">
-              <span class="text-white text-xs font-bold">Fg</span>
-            </div>
-            <div class="w-8 h-8 bg-orange-500/50 rounded border border-white/20 flex items-center justify-center">
-              <span class="text-white text-xs font-bold">Ht</span>
-            </div>
-            <div class="w-8 h-8 bg-yellow-500/50 rounded border border-white/20 flex items-center justify-center">
-              <span class="text-white text-xs font-bold">Js</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Élément parallax 4 - Position spécifique top 250% -->
-    <div
-      class="parallax bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl shadow-glass p-6 absolute top-[250%] right-[8%] z-50 hover:bg-white/15 hover:shadow-glass-hover transition-all duration-300 opacity-0"
-      data-speed="-0.3"
-      data-trigger="250"
-    >
-      <div class="flex gap-3 items-center">
-        <h2 class="text-white font-bold hidden sm:block font-anuphan text-lg">Hover me (Ultra)</h2>
-        <h2 class="text-white font-bold sm:hidden font-anuphan text-lg">Ultra</h2>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke-width="1.5"
-          stroke="currentColor"
-          class="size-6 text-purple-300 group-hover:rotate-12 transition-transform duration-300"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            d="M15.042 21.672 13.684 16.6m0 0-2.51 2.225.569-9.47 5.227 7.917-3.286-.672Zm-7.518-.267A8.25 8.25 0 1 1 20.25 10.5M8.288 14.212A5.25 5.25 0 1 1 17.25 10.5"
-          ></path>
-        </svg>
-      </div>
-      
-      <!-- Contact rapide au hover -->
-      <div class="absolute -top-[120px] left-0 opacity-0 group-hover:opacity-100 transition-all duration-500 transform group-hover:scale-105">
-        <div class="bg-white/10 backdrop-blur-md border border-white/20 rounded-xl p-4 shadow-glass w-56">
-          <h3 class="text-white font-bold text-sm mb-3">Quick Contact</h3>
-          <div class="space-y-2 text-xs text-gray-200">
-            <div class="flex items-center gap-2">
-              <span>📧</span>
-              <span>jocelyn.vinatie@etu.unilim.fr</span>
-            </div>
-            <div class="flex items-center gap-2">
-              <span>📱</span>
-              <span>06.08.88.18.93</span>
-            </div>
-            <div class="flex items-center gap-2">
-              <span>📍</span>
-              <span>Limoges, France</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Élément parallax 5 - Position spécifique top 300% -->
-    <div
-      class="parallax bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl shadow-glass p-6 absolute top-[300%] left-[20%] z-10 hover:bg-white/15 hover:shadow-glass-hover transition-all duration-300 opacity-0"
-      data-speed="-1.0"
-      data-trigger="300"
-    >
-      <div class="flex gap-3 items-center">
-        <h2 class="text-white font-bold hidden sm:block font-anuphan text-lg">Hover me (Turbo)</h2>
-        <h2 class="text-white font-bold sm:hidden font-anuphan text-lg">Turbo</h2>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke-width="1.5"
-          stroke="currentColor"
-          class="size-6 text-purple-300 group-hover:rotate-12 transition-transform duration-300"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            d="M15.042 21.672 13.684 16.6m0 0-2.51 2.225.569-9.47 5.227 7.917-3.286-.672Zm-7.518-.267A8.25 8.25 0 1 1 20.25 10.5M8.288 14.212A5.25 5.25 0 1 1 17.25 10.5"
-          ></path>
-        </svg>
-      </div>
-    </div>
-
-    <!-- Contenu principal -->
-    <main class="relative z-10">
-      <!-- Section Content avec glassmorphisme -->
-      <section class="flex flex-col text-white py-20 gap-8 justify-center items-center z-30 relative">
-        <section class="flex flex-col px-5 md:px-40 gap-8 md:gap-12 justify-center items-center">
+  <!-- Contenu principal -->
+  <main class="relative z-10">
+    <!-- Section Content avec glassmorphisme -->
+    <section class="flex flex-col text-white py-20 gap-8 justify-center items-center z-30 relative">
+      <section class="flex flex-col px-5 md:px-40 gap-8 md:gap-12 justify-center items-center">
+        <div class="w-full">
           <div class="w-full">
-            <div class="w-full">
-              <div class="relative flex flex-col items-center justify-center mb-12">
-                <h1 class="text-[248px] font-bold font-anuphan relative text-white drop-shadow-2xl">
-                  Jocelyn
-                  <span class="absolute text-purple-400 font-alex text-[144px] font-normal bottom-0 right-0 transform drop-shadow-lg">Vinatié</span>
-                </h1>
+            <div class="relative flex flex-col items-center justify-center mb-12">
+              <h1 class="text-[248px] font-bold font-anuphan relative text-white drop-shadow-2xl">
+                Jocelyn
+                <span class="absolute text-purple-400 font-alex text-[144px] font-normal bottom-0 right-0 transform drop-shadow-lg">Vinatié</span>
+              </h1>
+            </div>
+            
+            <div class="flex flex-col md:flex-row w-full justify-center items-center gap-8">
+              <div class="flex flex-col items-center gap-6">
+                <div class="bg-white/10 backdrop-blur-lg border border-glass rounded-2xl p-8 shadow-glass hover:bg-white/15 transition-all duration-300">
+                  <p class="text-lg font-anuphan w-full text-center font-alex leading-relaxed">
+                    Creative and passionate about digital design, I specialize in
+                    graphic design, UI/UX design and animation. I have worked on
+                    several projects, combining aesthetics and utility.
+                  </p>
+                </div>
               </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="max-w-7xl mx-auto">
+          <!-- Grille principale -->
+          <div class="grid grid-cols-6 grid-rows-5 gap-6 h-[800px] mb-8">
               
-              <div class="flex flex-col md:flex-row w-full justify-center items-center gap-8">
-                <div class="flex flex-col items-center gap-6">
-                  <div class="bg-white/10 backdrop-blur-lg border border-glass rounded-2xl p-8 shadow-glass hover:bg-white/15 transition-all duration-300">
-                    <p class="text-lg font-anuphan w-full text-center font-alex leading-relaxed">
-                      Creative and passionate about digital design, I specialize in
-                      graphic design, UI/UX design and animation. I have worked on
-                      several projects, combining aesthetics and utility.
-                    </p>
+              <!-- EDUCATION -->
+              <div class="col-span-2 row-span-2 bg-white/10 backdrop-blur-lg border border-white/20 rounded-2xl p-6 shadow-glass hover:bg-white/15 hover:shadow-glass-hover transition-all duration-300 flex flex-col">
+                  <div class="flex justify-center pb-4">
+                      <h1 class="text-2xl font-bold font-anuphan text-white">Education</h1>
+                  </div>
+                  <div class="flex flex-col flex-1 space-y-4">
+                      <div class="bg-white/5 rounded-xl p-4 border border-white/10 flex-1">
+                          <h3 class="font-bold text-lg text-purple-300 mb-2">High School Diploma STI2D</h3>
+                          <p class="text-gray-200 text-sm">Specialty Information and Digital Systems</p>
+                      </div>
+                      <div class="bg-white/5 rounded-xl p-4 border border-white/10 flex-1">
+                          <h3 class="font-bold text-lg text-purple-300 mb-2">BUT Multimedia</h3>
+                          <p class="text-gray-200 text-sm">Digital Creation Course</p>
+                      </div>
+                  </div>
+              </div>
+
+              <!-- EXPERIENCES -->
+              <div class="col-span-2 row-span-2 col-start-1 row-start-3 bg-white/10 backdrop-blur-lg border border-white/20 rounded-2xl p-6 shadow-glass hover:bg-white/15 hover:shadow-glass-hover transition-all duration-300 flex flex-col">
+                  <div class="flex justify-center pb-4">
+                      <h1 class="text-2xl font-bold font-anuphan text-white">Experiences</h1>
+                  </div>
+                  <div class="flex flex-col flex-1 space-y-4">
+                      <div class="bg-white/5 rounded-xl p-4 border border-white/10 flex-1">
+                          <h3 class="font-bold text-lg text-purple-300 mb-2">SAYTOUTCOM (87)</h3>
+                          <p class="text-gray-200 text-sm">Graphic Design - Motion design - Video editing</p>
+                      </div>
+                      <div class="bg-white/5 rounded-xl p-4 border border-white/10 flex-1">
+                          <h3 class="font-bold text-lg text-purple-300 mb-2">WENZEO (33)</h3>
+                          <p class="text-gray-200 text-sm">Video editing - Graphic Design - Photo editing</p>
+                      </div>
+                  </div>
+              </div>
+
+              <!-- CONTACTS -->
+              <div class="col-span-4 row-span-3 col-start-3 row-start-1 bg-white/10 backdrop-blur-lg border border-white/20 rounded-2xl p-6 shadow-glass hover:bg-white/15 hover:shadow-glass-hover transition-all duration-300 flex flex-col">
+                  <div class="flex justify-center pb-6">
+                      <h1 class="text-3xl font-bold font-anuphan text-white">Contacts</h1>
+                  </div>
+                  <div class="flex gap-6 justify-between flex-1">
+                      <!-- Formulaire -->
+                      <form class="flex flex-col gap-3 rounded-xl w-3/5 bg-white/5 p-4 border border-white/10 h-fit">
+                          <label class="text-white font-medium font-anuphan text-sm">Name</label>
+                          <input type="text" required class="p-2 rounded-lg text-black bg-white/90 border border-white/20 focus:bg-white focus:outline-none focus:ring-2 focus:ring-purple-400 transition-all text-sm">
+                          
+                          <label class="text-white font-medium font-anuphan text-sm">Email</label>
+                          <input type="email" required class="p-2 rounded-lg text-black bg-white/90 border border-white/20 focus:bg-white focus:outline-none focus:ring-2 focus:ring-purple-400 transition-all text-sm">
+                          
+                          <label class="text-white font-medium font-anuphan text-sm">Message</label>
+                          <textarea required class="p-2 rounded-lg text-black bg-white/90 border border-white/20 focus:bg-white focus:outline-none focus:ring-2 focus:ring-purple-400 transition-all min-h-[80px] resize-none text-sm"></textarea>
+                          
+                          <button type="submit" class="bg-purple-500/80 backdrop-blur-md hover:bg-purple-600/80 text-white p-2 rounded-lg transition-all duration-300 font-anuphan font-medium border border-purple-400/30 hover:border-purple-400/50 shadow-glass text-sm">
+                              Send Message
+                          </button>
+                      </form>
+                      
+                      <!-- CV Section -->
+                      <div class="flex w-1/3 flex-col justify-center items-center bg-white/5 p-6 rounded-xl border border-white/10 h-fit">
+                          <h3 class="text-white font-anuphan font-bold text-lg mb-4 text-center">Download my CV</h3>
+                          <div class="p-4 bg-white rounded-xl shadow-glass mb-4">
+                              <div class="w-32 h-32 bg-gray-200 flex items-center justify-center text-gray-500 text-xs">
+                                  QR Code
+                              </div>
+                          </div>
+                          <button class="bg-purple-500/80 text-white px-4 py-2 rounded-lg hover:bg-purple-600/80 transition-all duration-300 text-sm font-medium">
+                              Download PDF
+                          </button>
+                      </div>
+                  </div>
+              </div>
+
+              <!-- LANGUAGES -->
+              <div class="col-span-2 row-span-1 col-start-3 row-start-4 bg-white/10 backdrop-blur-lg border border-white/20 rounded-2xl p-6 shadow-glass hover:bg-white/15 hover:shadow-glass-hover transition-all duration-300 flex flex-col justify-center">
+                  <div class="pb-4">
+                      <h1 class="text-2xl font-bold font-anuphan text-white text-center">Languages</h1>
+                  </div>
+                  <div class="bg-white/5 rounded-xl p-4 border border-white/10 flex justify-center items-center">
+                      <div class="flex gap-4 text-gray-200">
+                          <span class="px-3 py-1 bg-purple-500/30 rounded-lg">English</span>
+                          <span class="px-3 py-1 bg-purple-500/30 rounded-lg">French</span>
+                          <span class="px-3 py-1 bg-purple-500/30 rounded-lg">Spanish</span>
+                      </div>
+                  </div>
+              </div>
+
+              <!-- HOBBIES -->
+              <div class="col-span-2 row-span-1 col-start-5 row-start-4 bg-white/10 backdrop-blur-lg border border-white/20 rounded-2xl p-6 shadow-glass hover:bg-white/15 hover:shadow-glass-hover transition-all duration-300 flex flex-col justify-center">
+                  <div class="flex justify-center pb-4">
+                      <h1 class="text-2xl font-bold font-anuphan text-white">Hobbies</h1>
+                  </div>
+                  <div class="bg-white/5 rounded-xl p-4 border border-white/10 flex justify-center items-center">
+                      <div class="flex gap-3 text-gray-200 flex-wrap justify-center">
+                          <span class="px-3 py-1 bg-blue-500/30 rounded-lg text-sm">Movies</span>
+                          <span class="px-3 py-1 bg-green-500/30 rounded-lg text-sm">Gaming</span>
+                          <span class="px-3 py-1 bg-yellow-500/30 rounded-lg text-sm">Cats</span>
+                      </div>
+                  </div>
+              </div>
+
+              <!-- SKILLS -->
+              <div class="col-span-3 row-span-1 row-start-5 bg-white/10 backdrop-blur-lg border border-white/20 rounded-2xl p-6 shadow-glass hover:bg-white/15 hover:shadow-glass-hover transition-all duration-300 flex flex-col justify-center">
+                <div class="flex justify-center pb-4">
+                  <h1 class="text-2xl font-bold font-anuphan text-white">Skills</h1>
+                </div>
+                <div class="bg-white/5 rounded-xl p-4 border border-white/10">
+                  <div class="flex gap-4 flex-wrap justify-center">
+                    
+                    <div class="flex items-center gap-2 px-3 py-2 bg-blue-500/30 rounded-lg hover:bg-blue-500/50 transition-all duration-300">
+                      <img src="/ps.svg" alt="Photoshop" class="w-5 h-5">
+                    </div>
+                    
+                    <div class="flex items-center gap-2 px-3 py-2 bg-purple-500/30 rounded-lg hover:bg-purple-500/50 transition-all duration-300">
+                      <img src="/figma.svg" alt="Figma" class="w-5 h-5">
+                    </div>
+                    
+                    <div class="flex items-center gap-2 px-3 py-2 bg-orange-500/30 rounded-lg hover:bg-orange-500/50 transition-all duration-300">
+                      <img src="/html.svg" alt="HTML/CSS" class="w-5 h-5">
+                    </div>
+                    
+                    <div class="flex items-center gap-2 px-3 py-2 bg-yellow-500/30 rounded-lg hover:bg-yellow-500/50 transition-all duration-300">
+                      <img src="/js.svg" alt="JavaScript" class="w-5 h-5">
+                    </div>
+                    
+                    <div class="flex items-center gap-2 px-3 py-2 bg-indigo-500/30 rounded-lg hover:bg-indigo-500/50 transition-all duration-300">
+                      <img src="/ae.svg" alt="After Effects" class="w-5 h-5">
+                    </div>
+
+                    <div class="flex items-center gap-2 px-3 py-2 bg-red-500/30 rounded-lg hover:bg-red-500/50 transition-all duration-300">
+                      <img src="/ai.svg" alt="Illustrator" class="w-5 h-5">
+                    </div>
+                    
+                    <div class="flex items-center gap-2 px-3 py-2 bg-pink-500/30 rounded-lg hover:bg-pink-500/50 transition-all duration-300">
+                      <img src="/pr.svg" alt="Premiere Pro" class="w-5 h-5">
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-          </div>
 
-          <div class="max-w-7xl mx-auto">
-            <!-- Grille principale -->
-            <div class="grid grid-cols-6 grid-rows-5 gap-6 h-[800px] mb-8">
-                
-                <!-- EDUCATION -->
-                <div class="col-span-2 row-span-2 bg-white/10 backdrop-blur-lg border border-white/20 rounded-2xl p-6 shadow-glass hover:bg-white/15 hover:shadow-glass-hover transition-all duration-300 flex flex-col">
-                    <div class="flex justify-center pb-4">
-                        <h1 class="text-2xl font-bold font-anuphan text-white">Education</h1>
-                    </div>
-                    <div class="flex flex-col flex-1 space-y-4">
-                        <div class="bg-white/5 rounded-xl p-4 border border-white/10 flex-1">
-                            <h3 class="font-bold text-lg text-purple-300 mb-2">High School Diploma STI2D</h3>
-                            <p class="text-gray-200 text-sm">Specialty Information and Digital Systems</p>
-                        </div>
-                        <div class="bg-white/5 rounded-xl p-4 border border-white/10 flex-1">
-                            <h3 class="font-bold text-lg text-purple-300 mb-2">BUT Multimedia</h3>
-                            <p class="text-gray-200 text-sm">Digital Creation Course</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- EXPERIENCES -->
-                <div class="col-span-2 row-span-2 col-start-1 row-start-3 bg-white/10 backdrop-blur-lg border border-white/20 rounded-2xl p-6 shadow-glass hover:bg-white/15 hover:shadow-glass-hover transition-all duration-300 flex flex-col">
-                    <div class="flex justify-center pb-4">
-                        <h1 class="text-2xl font-bold font-anuphan text-white">Experiences</h1>
-                    </div>
-                    <div class="flex flex-col flex-1 space-y-4">
-                        <div class="bg-white/5 rounded-xl p-4 border border-white/10 flex-1">
-                            <h3 class="font-bold text-lg text-purple-300 mb-2">SAYTOUTCOM (87)</h3>
-                            <p class="text-gray-200 text-sm">Graphic Design - Motion design - Video editing</p>
-                        </div>
-                        <div class="bg-white/5 rounded-xl p-4 border border-white/10 flex-1">
-                            <h3 class="font-bold text-lg text-purple-300 mb-2">WENZEO (33)</h3>
-                            <p class="text-gray-200 text-sm">Video editing - Graphic Design - Photo editing</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- CONTACTS -->
-                <div class="col-span-4 row-span-3 col-start-3 row-start-1 bg-white/10 backdrop-blur-lg border border-white/20 rounded-2xl p-6 shadow-glass hover:bg-white/15 hover:shadow-glass-hover transition-all duration-300 flex flex-col">
-                    <div class="flex justify-center pb-6">
-                        <h1 class="text-3xl font-bold font-anuphan text-white">Contacts</h1>
-                    </div>
-                    <div class="flex gap-6 justify-between flex-1">
-                        <!-- Formulaire -->
-                        <form class="flex flex-col gap-3 rounded-xl w-3/5 bg-white/5 p-4 border border-white/10 h-fit">
-                            <label class="text-white font-medium font-anuphan text-sm">Name</label>
-                            <input type="text" required class="p-2 rounded-lg text-black bg-white/90 border border-white/20 focus:bg-white focus:outline-none focus:ring-2 focus:ring-purple-400 transition-all text-sm">
-                            
-                            <label class="text-white font-medium font-anuphan text-sm">Email</label>
-                            <input type="email" required class="p-2 rounded-lg text-black bg-white/90 border border-white/20 focus:bg-white focus:outline-none focus:ring-2 focus:ring-purple-400 transition-all text-sm">
-                            
-                            <label class="text-white font-medium font-anuphan text-sm">Message</label>
-                            <textarea required class="p-2 rounded-lg text-black bg-white/90 border border-white/20 focus:bg-white focus:outline-none focus:ring-2 focus:ring-purple-400 transition-all min-h-[80px] resize-none text-sm"></textarea>
-                            
-                            <button type="submit" class="bg-purple-500/80 backdrop-blur-md hover:bg-purple-600/80 text-white p-2 rounded-lg transition-all duration-300 font-anuphan font-medium border border-purple-400/30 hover:border-purple-400/50 shadow-glass text-sm">
-                                Send Message
-                            </button>
-                        </form>
-                        
-                        <!-- CV Section -->
-                        <div class="flex w-1/3 flex-col justify-center items-center bg-white/5 p-6 rounded-xl border border-white/10 h-fit">
-                            <h3 class="text-white font-anuphan font-bold text-lg mb-4 text-center">Download my CV</h3>
-                            <div class="p-4 bg-white rounded-xl shadow-glass mb-4">
-                                <div class="w-32 h-32 bg-gray-200 flex items-center justify-center text-gray-500 text-xs">
-                                    QR Code
-                                </div>
-                            </div>
-                            <button class="bg-purple-500/80 text-white px-4 py-2 rounded-lg hover:bg-purple-600/80 transition-all duration-300 text-sm font-medium">
-                                Download PDF
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- LANGUAGES -->
-                <div class="col-span-2 row-span-1 col-start-3 row-start-4 bg-white/10 backdrop-blur-lg border border-white/20 rounded-2xl p-6 shadow-glass hover:bg-white/15 hover:shadow-glass-hover transition-all duration-300 flex flex-col justify-center">
-                    <div class="pb-4">
-                        <h1 class="text-2xl font-bold font-anuphan text-white text-center">Languages</h1>
-                    </div>
-                    <div class="bg-white/5 rounded-xl p-4 border border-white/10 flex justify-center items-center">
-                        <div class="flex gap-4 text-gray-200">
-                            <span class="px-3 py-1 bg-purple-500/30 rounded-lg">English</span>
-                            <span class="px-3 py-1 bg-purple-500/30 rounded-lg">French</span>
-                            <span class="px-3 py-1 bg-purple-500/30 rounded-lg">Spanish</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- HOBBIES -->
-                <div class="col-span-2 row-span-1 col-start-5 row-start-4 bg-white/10 backdrop-blur-lg border border-white/20 rounded-2xl p-6 shadow-glass hover:bg-white/15 hover:shadow-glass-hover transition-all duration-300 flex flex-col justify-center">
-                    <div class="flex justify-center pb-4">
-                        <h1 class="text-2xl font-bold font-anuphan text-white">Hobbies</h1>
-                    </div>
-                    <div class="bg-white/5 rounded-xl p-4 border border-white/10 flex justify-center items-center">
-                        <div class="flex gap-3 text-gray-200 flex-wrap justify-center">
-                            <span class="px-3 py-1 bg-blue-500/30 rounded-lg text-sm">Movies</span>
-                            <span class="px-3 py-1 bg-green-500/30 rounded-lg text-sm">Gaming</span>
-                            <span class="px-3 py-1 bg-yellow-500/30 rounded-lg text-sm">Cats</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- SKILLS -->
-                <div class="col-span-3 row-span-1 row-start-5 bg-white/10 backdrop-blur-lg border border-white/20 rounded-2xl p-6 shadow-glass hover:bg-white/15 hover:shadow-glass-hover transition-all duration-300 flex flex-col justify-center">
+              <!-- SOCIAL LINKS -->
+              <div class="col-span-3 row-span-1 col-start-4 row-start-5 bg-white/10 backdrop-blur-lg border border-white/20 rounded-2xl p-6 shadow-glass hover:bg-white/15 hover:shadow-glass-hover transition-all duration-300 flex flex-col justify-center">
                   <div class="flex justify-center pb-4">
-                    <h1 class="text-2xl font-bold font-anuphan text-white">Skills</h1>
+                      <h1 class="text-2xl font-bold font-anuphan text-white">Follow Me</h1>
                   </div>
                   <div class="bg-white/5 rounded-xl p-4 border border-white/10">
-                    <div class="flex gap-4 flex-wrap justify-center">
-                      
-                      <div class="flex items-center gap-2 px-3 py-2 bg-blue-500/30 rounded-lg hover:bg-blue-500/50 transition-all duration-300">
-                        <img src="/ps.svg" alt="Photoshop" class="w-5 h-5">
+                      <div class="flex gap-4 justify-center">
+                          <a href="#" class="w-10 h-10 bg-blue-500/30 rounded-lg flex items-center justify-center hover:bg-blue-500/50 transition-all duration-300">
+                              <span class="text-white text-sm font-bold">Li</span>
+                          </a>
+                          <a href="#" class="w-10 h-10 bg-gray-800/30 rounded-lg flex items-center justify-center hover:bg-gray-800/50 transition-all duration-300">
+                              <span class="text-white text-sm font-bold">Gh</span>
+                          </a>
+                          <a href="#" class="w-10 h-10 bg-pink-500/30 rounded-lg flex items-center justify-center hover:bg-pink-500/50 transition-all duration-300">
+                              <span class="text-white text-sm font-bold">Ig</span>
+                          </a>
+                          <a href="#" class="w-10 h-10 bg-blue-400/30 rounded-lg flex items-center justify-center hover:bg-blue-400/50 transition-all duration-300">
+                              <span class="text-white text-sm font-bold">Tw</span>
+                          </a>
                       </div>
-                      
-                      <div class="flex items-center gap-2 px-3 py-2 bg-purple-500/30 rounded-lg hover:bg-purple-500/50 transition-all duration-300">
-                        <img src="/figma.svg" alt="Figma" class="w-5 h-5">
-                      </div>
-                      
-                      <div class="flex items-center gap-2 px-3 py-2 bg-orange-500/30 rounded-lg hover:bg-orange-500/50 transition-all duration-300">
-                        <img src="/html.svg" alt="HTML/CSS" class="w-5 h-5">
-                      </div>
-                      
-                      <div class="flex items-center gap-2 px-3 py-2 bg-yellow-500/30 rounded-lg hover:bg-yellow-500/50 transition-all duration-300">
-                        <img src="/js.svg" alt="JavaScript" class="w-5 h-5">
-                      </div>
-                      
-                      <div class="flex items-center gap-2 px-3 py-2 bg-indigo-500/30 rounded-lg hover:bg-indigo-500/50 transition-all duration-300">
-                        <img src="/ae.svg" alt="After Effects" class="w-5 h-5">
-                      </div>
-
-                      <div class="flex items-center gap-2 px-3 py-2 bg-red-500/30 rounded-lg hover:bg-red-500/50 transition-all duration-300">
-                        <img src="/ai.svg" alt="Illustrator" class="w-5 h-5">
-                      </div>
-                      
-                      <div class="flex items-center gap-2 px-3 py-2 bg-pink-500/30 rounded-lg hover:bg-pink-500/50 transition-all duration-300">
-                        <img src="/pr.svg" alt="Premiere Pro" class="w-5 h-5">
-                      </div>
-                    </div>
                   </div>
-                </div>
-
-                <!-- SOCIAL LINKS -->
-                <div class="col-span-3 row-span-1 col-start-4 row-start-5 bg-white/10 backdrop-blur-lg border border-white/20 rounded-2xl p-6 shadow-glass hover:bg-white/15 hover:shadow-glass-hover transition-all duration-300 flex flex-col justify-center">
-                    <div class="flex justify-center pb-4">
-                        <h1 class="text-2xl font-bold font-anuphan text-white">Follow Me</h1>
-                    </div>
-                    <div class="bg-white/5 rounded-xl p-4 border border-white/10">
-                        <div class="flex gap-4 justify-center">
-                            <a href="#" class="w-10 h-10 bg-blue-500/30 rounded-lg flex items-center justify-center hover:bg-blue-500/50 transition-all duration-300">
-                                <span class="text-white text-sm font-bold">Li</span>
-                            </a>
-                            <a href="#" class="w-10 h-10 bg-gray-800/30 rounded-lg flex items-center justify-center hover:bg-gray-800/50 transition-all duration-300">
-                                <span class="text-white text-sm font-bold">Gh</span>
-                            </a>
-                            <a href="#" class="w-10 h-10 bg-pink-500/30 rounded-lg flex items-center justify-center hover:bg-pink-500/50 transition-all duration-300">
-                                <span class="text-white text-sm font-bold">Ig</span>
-                            </a>
-                            <a href="#" class="w-10 h-10 bg-blue-400/30 rounded-lg flex items-center justify-center hover:bg-blue-400/50 transition-all duration-300">
-                                <span class="text-white text-sm font-bold">Tw</span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <a
-              href="/"
-              class="px-8 py-4 bg-white/10 backdrop-blur-lg border border-glass rounded-full font-anuphan font-bold hover:bg-white/20 hover:border-purple-400/50 hover:text-purple-300 transition-all duration-300 shadow-glass hover:shadow-glass-hover"
-              >Projects</a>
+              </div>
           </div>
+
+          <a
+            href="/"
+            class="px-8 py-4 bg-white/10 backdrop-blur-lg border border-glass rounded-full font-anuphan font-bold hover:bg-white/20 hover:border-purple-400/50 hover:text-purple-300 transition-all duration-300 shadow-glass hover:shadow-glass-hover"
+            >Projects</a>
+        </div>
       </section>
-  </body>
-</html>
+    </section>
+  </main>
+        
+    
+  

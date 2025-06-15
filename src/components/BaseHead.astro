@@ -46,10 +46,21 @@ const { title, description, image = "/blog-placeholder-1.jpg" } = Astro.props;
 <meta property="twitter:title" content={title} />
 <meta property="twitter:description" content={description} />
 <meta property="twitter:image" content={new URL(image, Astro.url)} />
+
+<!-- EmailJS Script -->
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-<script src="/src/scripts/parallax.js"></script>
+
+<!-- Scripts spécifiques selon la page -->
 <script src="/src/scripts/form.js"></script>
 <script src="/src/scripts/followMouse.js"></script>
 <script src="/src/scripts/followMouse2.js"></script>
 <script src="/src/scripts/followMouse3.js"></script>
-<body class="bg-purple-300 cursor-custom w-screen">
+
+<!-- Style global pour le curseur et body -->
+<style>
+  body {
+    background-color: rgb(196 181 253);
+    cursor: custom;
+    width: 100vw;
+  }
+</style>
