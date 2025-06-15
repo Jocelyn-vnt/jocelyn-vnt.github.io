@@ -1,16 +1,11 @@
 ---
+// src/pages/index.astro
 import BaseHead from "../components/BaseHead.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
+import MeshGradientBackground from "../components/MeshGradientBackground.astro"; // AJOUT
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 ---
-<!-- sources  -->
-<!-- https://tailwindcss.com/docs -->
-<!-- https://developer.mozilla.org/en-US/docs/Web/SVG/Element/filter -->
-<!-- https://developer.mozilla.org/en-US/docs/Web/SVG/Tutorial/Using_Filters -->
-<!-- https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Transitions -->
-<!-- https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Using_media_queries -->
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -39,8 +34,10 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 </head>
 
 <body class="m-0 overflow-hidden scroll-snap-none">
-    <div class="fixed inset-0 bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center">
-    </div>
+    <!-- AJOUT : Mesh Gradient Background -->
+    <MeshGradientBackground />
+    
+    <!-- MODIFIÉ : Suppression de l'ancien background fixe -->
     <div class="flex items-center justify-center w-screen h-screen fixed parallax-container">
         <div class="relative flex flex-col items-center">
             <div class="relative flex flex-col items-center justify-center">

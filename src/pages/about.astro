@@ -1,9 +1,11 @@
 ---
+// src/pages/about.astro
 import Layout from "../layouts/BlogPost.astro";
 import BaseHead from "../components/BaseHead.astro";
 import Header from "../components/Header.astro";
 import HeaderLink from "../components/HeaderLink.astro";
 import CardLoader from "../components/CardLoader.astro";
+import MeshGradientBackground from "../components/MeshGradientBackground.astro"; // AJOUT
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 import ProjectCard from "../components/ProjectCard.astro";
 ---
@@ -14,12 +16,11 @@ import ProjectCard from "../components/ProjectCard.astro";
     <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
   </head>
   
-  <!-- Background avec effet glassmorphisme -->
-  <div class="fixed inset-0 bg-gradient-to-br from-indigo-900 via-purple-900 to-pink-800">
-    <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/noise.png')] opacity-20"></div>
-    <div class="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent"></div>
-  </div>
+  <!-- AJOUT : Mesh Gradient Background -->
+  <MeshGradientBackground />
 
+  <!-- SUPPRIMÉ : Ancien background avec effet glassmorphisme -->
+  
   <div class="fixed flex w-full justify-center items-center pt-5 z-50">
     <Header />
   </div>
@@ -263,7 +264,7 @@ import ProjectCard from "../components/ProjectCard.astro";
                 </div>
             </div>
 
-        <!-- SKILLS avec vos SVG personnalisés -->
+        <!-- SKILLS avec SVG personnalisés -->
         <div class="col-span-3 row-span-1 row-start-5 bg-white/10 backdrop-blur-lg border border-white/20 rounded-2xl p-6 shadow-glass hover:bg-white/15 hover:shadow-glass-hover transition-all duration-300 flex flex-col justify-center">
           <div class="flex justify-center pb-4">
             <h1 class="text-2xl font-bold font-anuphan text-white">Skills</h1>
@@ -340,4 +341,3 @@ import ProjectCard from "../components/ProjectCard.astro";
       >
     </section>
   </section>
-</html>
