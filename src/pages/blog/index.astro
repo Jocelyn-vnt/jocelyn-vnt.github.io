@@ -11,6 +11,42 @@ import Doctype from '../../components/Doctype.astro';
 const posts = (await getCollection('blog')).sort(
     (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
 );
+
+// Fonction pour déterminer la catégorie d'un post
+function getPostCategory(post) {
+    const title = post.data.title.toLowerCase();
+    const description = post.data.description.toLowerCase();
+    
+    if (title.includes('dragon ball') || title.includes('3d') || description.includes('3d')) {
+        return '3d';
+    } else if (title.includes('motion') || description.includes('motion') || title.includes('animation') || title.includes('video')) {
+        return 'motion-design';
+    } else if (title.includes('web') || title.includes('site') || title.includes('stratégie') || description.includes('web')) {
+        return 'web-design';
+    } else {
+        return 'graphic-design';
+    }
+}
+
+// Fonction pour générer des tailles variées pour la grille
+// Limitation : max 3 colonnes (moitié de 6) et max 2 rangées
+function getGridSize(index, title) {
+    const sizes = [
+        'col-span-3 row-span-2', // Large (moitié max)
+        'col-span-2 row-span-2', // Carré moyen
+        'col-span-3 row-span-1', // Rectangle horizontal
+        'col-span-2 row-span-1', // Rectangle horizontal moyen
+        'col-span-1 row-span-2', // Rectangle vertical
+        'col-span-1 row-span-1', // Petit carré
+        'col-span-2 row-span-2', // Carré moyen (répété pour équilibrer)
+        'col-span-3 row-span-1', // Rectangle horizontal (répété)
+        'col-span-1 row-span-2', // Rectangle vertical (répété)
+        'col-span-1 row-span-1', // Petit carré (répété)
+    ];
+    
+    const seed = (index * 7 + title.charCodeAt(0) * 3) % sizes.length;
+    return sizes[seed];
+}
 ---
 
 <Doctype/>
@@ -59,70 +95,37 @@ const posts = (await getCollection('blog')).sort(
                 >
                     Web Design
                 </button>
+                <button 
+                    class="filter-btn px-6 py-3 bg-white/10 backdrop-blur-lg border border-glass rounded-full text-white font-anuphan font-medium hover:bg-white/20 hover:border-purple-400/50 transition-all duration-300 shadow-glass"
+                    data-filter="3d"
+                >
+                    3D
+                </button>
             </div>
         </section>
 
-        <!-- Projects Grid Section - Bento Box Style -->
+        <!-- Projects Grid Section -->
         <section class="flex justify-center px-6 py-8 relative z-10">
             <div class="w-full max-w-7xl">
+                <!-- Message quand aucun projet trouvé -->
+                <div id="no-projects" class="hidden text-center py-20">
+                    <div class="bg-white/10 backdrop-blur-lg border border-glass rounded-2xl p-8 shadow-glass max-w-md mx-auto">
+                        <h3 class="text-white font-anuphan font-bold text-xl mb-4">Aucun projet trouvé</h3>
+                        <p class="text-white/70">Aucun projet ne correspond à cette catégorie pour le moment.</p>
+                    </div>
+                </div>
+
                 <!-- Grille Bento Box 6 colonnes -->
                 <div id="projects-grid" class="grid grid-cols-6 gap-4 auto-rows-auto">
                     {posts.map((post, index) => {
-                        // Grille avec beaucoup plus de diversité - patterns optimisés
-                        const generateSmartRandomSize = () => {
-                            const advancedSizes = [
-                                // Grandes pièces marquantes
-                                'col-span-4 row-span-3', // Mega format horizontal
-                                'col-span-3 row-span-3', // Grande carré
-                                'col-span-5 row-span-2', // Super large
-                                'col-span-2 row-span-3', // Tour verticale
-                                
-                                // Formats moyens variés
-                                'col-span-3 row-span-2', // Grande horizontale
-                                'col-span-2 row-span-2', // Carré moyen
-                                'col-span-4 row-span-1', // Bandeau large
-                                'col-span-1 row-span-3', // Colonne fine
-                                
-                                // Petits formats créatifs
-                                'col-span-2 row-span-1', // Rectangle moyen
-                                'col-span-1 row-span-2', // Verticale courte
-                                'col-span-1 row-span-1', // Petit carré
-                                'col-span-3 row-span-1', // Bandeau moyen
-                                
-                                // Formats asymétriques uniques
-                                'col-span-5 row-span-1', // Très large fin
-                                'col-span-6 row-span-1', // Pleine largeur
-                                'col-span-4 row-span-2', // Large rectangle
-                                'col-span-5 row-span-3', // Géant horizontal
-                            ];
-                            
-                            // Algorithme de distribution intelligente
-                            const seed = (index * 7 + post.data.title.charCodeAt(0) * 3) % advancedSizes.length;
-                            return advancedSizes[seed];
-                        };
-                        
-                        const sizeClass = generateSmartRandomSize();
-                        
-                        // Détecter la catégorie basée sur le titre et le contenu
-                        let category = 'graphic-design'; // Catégorie par défaut
-                        
-                        // Détection pour les projets spécifiques
-                        if (post.data.title.toLowerCase().includes('dragon ball') || 
-                            post.data.title.toLowerCase().includes('3d')) {
-                            category = '3d';
-                        } else if (post.data.title.toLowerCase().includes('limoges habitat')) {
-                            category = 'motion-design'; // Projet complet avec motion design
-                        } else if (post.data.title.toLowerCase().includes('limousin informatique') || 
-                                   post.data.title.toLowerCase().includes('web') || 
-                                   post.data.title.toLowerCase().includes('stratégie')) {
-                            category = 'web-design';
-                        } else if (post.data.title.toLowerCase().includes('motion') || 
-                                   post.data.title.toLowerCase().includes('animation')) {
-                            category = 'motion-design';
-                        }
+                        const category = getPostCategory(post);
+                        const sizeClass = getGridSize(index, post.data.title);
                         
                         return (
-                            <div class={`project-card ${sizeClass} relative group overflow-hidden rounded-2xl`} data-category={category}>
+                            <div 
+                                class={`project-card ${sizeClass} relative group overflow-hidden rounded-2xl transition-all duration-500 ease-in-out`} 
+                                data-category={category}
+                            >
                                 <a href={`/blog/${post.slug}/`} class="block h-full">
                                     <div class="relative w-full h-full min-h-[180px] overflow-hidden rounded-2xl">
                                         <img 
@@ -175,15 +178,26 @@ const posts = (await getCollection('blog')).sort(
 </main>
 
 <style>
-    /* Animation pour les cartes */
+    /* Transitions pour les cartes */
     .project-card {
-        transition: transform 0.3s ease, opacity 0.3s ease;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    /* États de filtrage */
+    .project-card.filtering-out {
+        opacity: 0;
+        transform: scale(0.8) translateY(20px);
+        pointer-events: none;
+    }
+    
+    .project-card.filtering-in {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+        pointer-events: auto;
     }
     
     .project-card.hidden {
-        opacity: 0;
-        transform: scale(0.8);
-        pointer-events: none;
+        display: none;
     }
     
     /* Style pour les boutons de filtre actifs */
@@ -192,56 +206,62 @@ const posts = (await getCollection('blog')).sort(
         border-color: rgba(168, 85, 247, 0.5);
         color: #e879f9;
         box-shadow: 0 0 20px rgba(168, 85, 247, 0.3);
+        transform: translateY(-2px);
     }
     
-    /* Responsive amélioré pour les nouvelles tailles */
+    .filter-btn {
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    .filter-btn:hover {
+        transform: translateY(-1px);
+    }
+    
+    /* Animation de la grille lors du filtrage */
+    #projects-grid {
+        transition: height 0.4s ease;
+    }
+    
+    /* Responsive amélioré - tailles limitées */
     @media (max-width: 1200px) {
         #projects-grid {
             grid-template-columns: repeat(5, 1fr);
         }
-        .col-span-6 { grid-column: span 5; }
-        .col-span-5 { grid-column: span 4; }
-        .col-span-4 { grid-column: span 3; }
-        .col-span-3 { grid-column: span 2; }
+        .col-span-3 { grid-column: span 3; } /* Max 3/5 = 60% */
         .col-span-2 { grid-column: span 2; }
         .col-span-1 { grid-column: span 1; }
+        .row-span-2 { grid-row: span 2; }
+        .row-span-1 { grid-row: span 1; }
     }
     
     @media (max-width: 1024px) {
         #projects-grid {
             grid-template-columns: repeat(4, 1fr);
         }
-        .col-span-6, .col-span-5 { grid-column: span 4; }
-        .col-span-4 { grid-column: span 3; }
-        .col-span-3 { grid-column: span 2; }
+        .col-span-3 { grid-column: span 2; } /* Limité à 50% max */
         .col-span-2 { grid-column: span 2; }
         .col-span-1 { grid-column: span 1; }
-        /* Limiter la hauteur sur tablet */
-        .row-span-3 { grid-row: span 2; }
+        .row-span-2 { grid-row: span 2; }
+        .row-span-1 { grid-row: span 1; }
     }
     
     @media (max-width: 768px) {
         #projects-grid {
             grid-template-columns: repeat(3, 1fr);
         }
-        .col-span-6, .col-span-5, .col-span-4 { grid-column: span 3; }
-        .col-span-3, .col-span-2 { grid-column: span 2; }
+        .col-span-3, .col-span-2 { grid-column: span 2; } /* Max 2/3 = 66% */
         .col-span-1 { grid-column: span 1; }
-        /* Réduire les hauteurs sur mobile */
-        .row-span-3 { grid-row: span 2; }
-        .row-span-2 { grid-row: span 1; }
+        .row-span-2 { grid-row: span 1; } /* Réduire hauteur sur mobile */
+        .row-span-1 { grid-row: span 1; }
     }
     
     @media (max-width: 580px) {
         #projects-grid {
             grid-template-columns: repeat(2, 1fr);
         }
-        .col-span-6, .col-span-5, .col-span-4, .col-span-3, .col-span-2 { 
-            grid-column: span 2; 
-        }
+        .col-span-3, .col-span-2 { grid-column: span 1; } /* Une colonne max sur très petit écran */
         .col-span-1 { grid-column: span 1; }
-        /* Tout en hauteur 1 sur très petit écran */
-        .row-span-3, .row-span-2 { 
+        .row-span-2, .row-span-1 { 
             grid-row: span 1; 
         }
     }
@@ -252,6 +272,22 @@ const posts = (await getCollection('blog')).sort(
         -webkit-line-clamp: 2;
         -webkit-box-orient: vertical;
         overflow: hidden;
+    }
+    
+    /* Animation d'entrée en cascade */
+    .project-card.cascade-enter {
+        animation: cascadeIn 0.6s ease-out forwards;
+    }
+    
+    @keyframes cascadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(30px) scale(0.9);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+        }
     }
 </style>
 
