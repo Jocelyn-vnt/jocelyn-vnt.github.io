@@ -1,674 +1,562 @@
 ---
-title: "Limoges Habitat - Refonte complète de l'identité visuelle"
-description: "Projet de refonte complète pour Limoges Habitat : création d'une identité visuelle moderne, développement web responsive et production de contenus motion design pour valoriser l'habitat social en Haute-Vienne."
+title: "Limoges Habitat - Campagne de Communication sur les Charges Locatives"
+description: "Projet universitaire en équipe : création d'une campagne de communication claire et pédagogique pour Limoges Habitat autour des charges locatives. Gestion de projet agile, design graphique et motion design."
 pubDate: 'Dec 15 2024'
 heroImage: '/Kusmi-Tea.jpg'
 ---
 
 <div class="prose prose-invert max-w-none">
 
-🏢 **Limoges Habitat - Transformation Digitale Complète**
+🏢 **Limoges Habitat - Campagne Communication Charges Locatives**
 
 <div class="bg-gradient-to-r from-purple-900/30 to-blue-900/30 backdrop-blur-sm border border-white/20 rounded-2xl p-8 mb-12 shadow-glass">
 
-📋 **Vue d'ensemble du projet**
+<h2 class="text-3xl font-bold text-white mb-6">📋 Vue d'ensemble du projet</h2>
 
-**Client :** Limoges Habitat - Office Public de l'Habitat de Limoges  
-**Durée :** 4 mois intensifs  
-**Équipe :** Designer principal + développeur web  
-**Mission :** Moderniser l'image de marque et créer une présence digitale forte  
-**Technologies :** Figma, Adobe Creative Suite, WordPress, CSS/JS
+**Client :** Limoges Habitat - Office Public de l'Habitat  
+**Durée :** Projet universitaire (durée académique)  
+**Équipe :** Agence fictive de création numérique - équipe étudiante  
+**Mission :** Produire une campagne de communication claire et pédagogique autour des charges locatives  
+**Rôle personnel :** Chef de projet, coordination équipe, identité visuelle, stratégie communication
 
 </div>
 
-## 🎯 Contexte et enjeux
+<div class="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-8 mb-12">
 
-<div class="grid md:grid-cols-2 gap-8 mb-12">
+<h2 class="text-3xl font-bold text-white mb-6">🎯 Contexte et Mission</h2>
+
+<div class="grid md:grid-cols-2 gap-8">
 <div class="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6">
 
-🏛️ **Le demandeur**
+<h3 class="text-2xl font-bold text-white mb-4">🏛️ Le projet universitaire</h3>
 
-Office Public de l'Habitat de Limoges  
-Limoges Habitat souhaitait moderniser son image pour :
+Dans le cadre d'un projet académique, nous avons cofondé une agence fictive de création numérique pour répondre à un appel à projet émis par Limoges Habitat.
 
-- Attirer de nouveaux locataires
-- Améliorer sa communication institutionnelle  
-- Valoriser ses programmes de rénovation urbaine
-- Renforcer sa présence digitale
+**L'enjeu :** Clarifier et vulgariser le sujet complexe des charges locatives pour tous les publics, notamment ceux éloignés du numérique ou peu familiers des termes administratifs.
 
 </div>
 <div class="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6">
 
-🎯 **Mission principale**
+<h3 class="text-2xl font-bold text-white mb-4">🎯 Mes responsabilités</h3>
 
-Créer une identité visuelle moderne et une présence web forte respectant les codes institutionnels tout en apportant une approche contemporaine.
+En tant que chef de projet, j'ai pris en charge :
+
+- **Gestion de projet** et coordination de l'équipe
+- **Définition de l'identité visuelle**
+- **Élaboration de la stratégie de communication**
+- **Contrôle qualité** des livrables
+- **Présentation client** et défense du projet
 
 </div>
 </div>
 
-## 📅 Planning du projet
+</div>
 
 <div class="bg-gradient-to-r from-indigo-900/20 to-purple-900/20 backdrop-blur-sm border border-white/20 rounded-2xl p-8 mb-12">
 
-🗓️ **Phase 1 : Analyse & Conception (4 semaines)**
+<h2 class="text-3xl font-bold text-white mb-6">📅 Déroulé du Projet</h2>
 
-<div class="grid md:grid-cols-3 gap-6 mt-6">
-<div class="bg-white/10 rounded-lg p-4 border border-white/10">
-<h4 class="text-purple-300 font-bold mb-2">📊 Analyse</h4>
-<ul class="text-sm space-y-1">
-<li>• Audit de l'existant</li>
-<li>• Benchmarking concurrentiel</li>
-<li>• Interviews utilisateurs</li>
-</ul>
-</div>
-<div class="bg-white/10 rounded-lg p-4 border border-white/10">
-<h4 class="text-blue-300 font-bold mb-2">🎨 Design</h4>
-<ul class="text-sm space-y-1">
-<li>• Moodboards et inspirations</li>
-<li>• Charte graphique complète</li>
-<li>• Déclinaisons supports</li>
-</ul>
-</div>
-<div class="bg-white/10 rounded-lg p-4 border border-white/10">
-<h4 class="text-green-300 font-bold mb-2">🖥️ Web Design</h4>
-<ul class="text-sm space-y-1">
-<li>• Wireframes UX</li>
-<li>• Maquettes UI détaillées</li>
-<li>• Prototypage interactif</li>
-</ul>
-</div>
-</div>
+<div class="bg-white/10 rounded-lg p-6 border border-white/10 mb-8">
 
-🗓️ **Phase 2 : Production & Développement (8 semaines)**
+<h3 class="text-2xl font-bold text-white mb-4">🎬 Attribution des Rôles & Début du Projet</h3>
 
-<div class="bg-white/10 rounded-lg p-4 border border-white/10 mt-6">
-<h4 class="text-yellow-300 font-bold mb-2">🔧 Réalisation</h4>
-<p class="text-sm">Développement du site web, création des supports de communication et production des contenus motion design selon les itérations planifiées.</p>
-</div>
+Dès le démarrage, nous avons organisé un **sondage interne** pour évaluer les compétences et appétences de chacun, permettant d'attribuer des rôles pertinents et équilibrés.
+
+**Ma méthodologie de gestion :**
+- **Méthode agile** structurée autour de sprints
+- **Réunions daily scrum** régulières
+- **Tableau Kanban** pour le suivi des tâches
+- **Rétroplanning détaillé** avec jalons clés
+- **Devis précis** estimant coût et temps par livrable
 
 </div>
 
-## 👥 Organisation de l'équipe
-
-<div class="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 mb-12">
-
-Pour maximiser l'efficacité sur ce projet institutionnel, les rôles ont été répartis ainsi :
-
-<div class="grid md:grid-cols-2 gap-4 mt-4">
-<div class="text-center p-4 bg-purple-500/20 rounded-lg">
-<h4 class="font-bold text-purple-300">🎨 Lead Designer</h4>
-<p class="text-sm">Identité visuelle, charte graphique et direction artistique</p>
-</div>
-<div class="text-center p-4 bg-blue-500/20 rounded-lg">
-<h4 class="font-bold text-blue-300">💻 Développeur Web</h4>
-<p class="text-sm">Intégration, développement et optimisations</p>
-</div>
+<!-- Emplacement image large - Déroulé du projet -->
+<div class="w-full bg-gradient-to-r from-gray-800/50 to-gray-900/50 rounded-xl border border-white/10 flex items-center justify-center mb-8">
+<img src="/public/deroulement-projet.png" alt="Méthodologie et organisation projet - Kanban, rétroplanning, équipe" class="w-full object-cover rounded-xl">
 </div>
 
-**Principe de collaboration :** Méthode agile avec points réguliers et validation client à chaque étape clé.
+<div class="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6">
 
-</div>
+<h3 class="text-2xl font-bold text-white mb-4">🤝 Collaboration Client</h3>
 
-## 🎨 Graphic Design - Nouvelle Identité Visuelle
+Notre équipe a collaboré directement avec des **agents de Limoges Habitat**, rencontrés à **deux reprises** pour :
 
-<div class="space-y-8 mb-12">
+- **Présenter nos avancées** et intentions créatives
+- **Recueillir leurs retours** et ajustements
+- **Valider nos propositions** au plus près des attentes terrain
 
-### 📐 Logo et Charte Graphique
+Ce dialogue client nous a permis d'ajuster nos propositions pour répondre aux besoins réels des locataires et de l'organisme.
 
-<div class="bg-gradient-to-r from-gray-900/30 to-slate-900/30 backdrop-blur-sm border border-white/20 rounded-xl p-6">
-
-**Concept créatif :** Logo modernisé intégrant les toits caractéristiques de Limoges  
-Cette approche nous a permis de :
-
-- Conserver l'ADN patrimonial de la ville
-- Apporter une modernité assumée  
-- Créer une identité reconnaissable
-- Faciliter les déclinaisons
-
-<div class="mt-4 p-4 bg-white/10 rounded-lg border border-white/10">
-<p class="text-sm"><strong>💡 Innovation :</strong> Système modulaire permettant des variations selon les contextes d'usage.</p>
 </div>
 
 </div>
 
-### 🎨 Palette et Typographie
+<div class="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-8 mb-12">
+
+<h2 class="text-3xl font-bold text-white mb-6">🔍 Phase de Recherche et Analyse</h2>
+
+<div class="space-y-8">
 
 <div class="bg-white/5 border border-white/10 rounded-lg p-6">
 
-**Palette couleurs :**
-- **Bleu institutionnel** : Confiance et professionnalisme
-- **Vert nature** : Développement durable et qualité de vie  
-- **Orange chaleureux** : Proximité et accessibilité
+<h3 class="text-2xl font-bold text-white mb-4">📚 Recherches Approfondies</h3>
 
-**Applications créées :**
-- Papeterie complète (cartes, en-têtes, enveloppes)
-- Signalétique des résidences 
-- Documents institutionnels et rapports
-- Supports de communication événementielle
+**Méthodologie de recherche :**
 
-</div>
+Nous avons effectué des recherches approfondies sur les charges locatives pour comprendre :
+- **Enjeux légaux** et réglementations en vigueur
+- **Implications pratiques** pour les locataires
+- **Perception par les différents publics**
 
-</div>
-
-## 💻 Web Design - Site Internet Moderne
-
-<div class="bg-gradient-to-r from-emerald-900/20 to-teal-900/20 backdrop-blur-sm border border-white/20 rounded-2xl p-8 mb-12">
-
-🔧 **Fonctionnalités développées**
-
-<div class="grid md:grid-cols-2 gap-6 mt-6">
-<div class="space-y-4">
-<h4 class="text-emerald-300 font-bold text-lg">🏠 Interface locataire</h4>
-<ul class="space-y-2">
-<li class="flex items-center gap-2">
-  <span class="w-2 h-2 bg-blue-400 rounded-full"></span>
-  Page d'accueil dynamique avec slider
-</li>
-<li class="flex items-center gap-2">
-  <span class="w-2 h-2 bg-purple-400 rounded-full"></span>
-  Catalogue logements avec filtres avancés
-</li>
-<li class="flex items-center gap-2">
-  <span class="w-2 h-2 bg-green-400 rounded-full"></span>
-  Espace locataire sécurisé et personnalisé
-</li>
-</ul>
-</div>
-<div class="space-y-4">
-<h4 class="text-teal-300 font-bold text-lg">📱 Expérience utilisateur</h4>
-<ul class="space-y-2">
-<li class="flex items-center gap-2">
-  <span class="w-2 h-2 bg-orange-400 rounded-full"></span>
-  Design responsive mobile-first
-</li>
-<li class="flex items-center gap-2">
-  <span class="w-2 h-2 bg-yellow-400 rounded-full"></span>
-  Navigation intuitive et accessible
-</li>
-<li class="flex items-center gap-2">
-  <span class="w-2 h-2 bg-pink-400 rounded-full"></span>
-  Section actualités et projets
-</li>
-</ul>
-</div>
-</div>
-
-🎯 **Approche UX/UI**
-
-Architecture de l'information pensée pour 3 profils utilisateurs principaux :
-- **Demandeurs de logement** : Recherche et candidature simplifiées
-- **Locataires actuels** : Services et démarches en ligne
-- **Partenaires institutionnels** : Informations projets et contact
+**Sources analysées :**
+- Informations officielles (Service Public, textes de loi)
+- Documentation Limoges Habitat existante
+- Identification des zones de flou dans la communication actuelle
 
 </div>
-
-## 🎬 Motion Design - Contenus Vidéo
-
-<div class="space-y-8 mb-12">
-
-### 📹 Productions réalisées
 
 <div class="bg-white/5 border border-white/10 rounded-lg p-6">
 
-**Présentation institutionnelle :** Vidéo 2 minutes avec animations 2D  
-**Objectif :** Présenter la mission et les valeurs de Limoges Habitat
+<h3 class="text-2xl font-bold text-white mb-4">🔍 Audit de l'Existant</h3>
 
-**Techniques utilisées :**
-- Animation typographique kinetic
-- Transition fluides entre séquences  
-- Illustrations vectorielles animées
-- Sound design adapté au ton institutionnel
+**Analyse de la communication actuelle** de Limoges Habitat sur les charges locatives :
+
+- **Forces identifiées :** Légitimité institutionnelle, informations complètes
+- **Faiblesses détectées :** Complexité du langage, supports peu attractifs
+- **Opportunités :** Modernisation du ton, vulgarisation des contenus
 
 </div>
-
-### 🏠 Motion graphics résidences
 
 <div class="bg-white/5 border border-white/10 rounded-lg p-6">
 
-**Concept :** Animations avec plans 3D des nouvelles résidences  
-**Production :** 5 vidéos de 30 secondes chacune
+<h3 class="text-2xl font-bold text-white mb-4">👥 Personas et Ciblage</h3>
 
-- Survol architectural des bâtiments
-- Mise en valeur des espaces verts
-- Animations d'aménagement intérieur
-- Intégration dans l'environnement urbain
+**Construction de profils types** d'usagers pour adapter notre discours :
+
+- **Jeunes locataires** : Premier logement, besoin de pédagogie
+- **Familles établies** : Recherche d'efficacité et de clarté
+- **Publics en précarité** : Accompagnement bienveillant nécessaire
+- **Personnes éloignées du numérique** : Supports traditionnels privilégiés
+
+**Ton défini :** Clair, pédagogique, accessible et bienveillant pour tous les locataires.
+
+</div>
+
+<div class="bg-white/5 border border-white/10 rounded-lg p-6">
+
+<h3 class="text-2xl font-bold text-white mb-4">🎨 Veille Graphique Stratégique</h3>
+
+**Benchmarking sur 6 bailleurs sociaux** pour identifier :
+
+- **Formats** de communication les plus efficaces
+- **Styles visuels** adaptés au secteur
+- **Messages** qui fonctionnent auprès des locataires
+- **Codes graphiques** rassurants tout en gardant notre originalité
+
+Cette veille a directement guidé la création de nos supports (flyers, motion design, cartes d'agent).
 
 </div>
 
 </div>
 
-## 📊 Résultats et Impact
+</div>
+
+<div class="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-8 mb-12">
+
+<h2 class="text-3xl font-bold text-white mb-6">🎨 Créations Graphiques</h2>
+
+<div class="bg-gradient-to-r from-gray-900/30 to-slate-900/30 backdrop-blur-sm border border-white/20 rounded-xl p-6 mb-8">
+
+<h3 class="text-2xl font-bold text-white mb-4">📄 Flyers Pédagogiques</h3>
+
+**Concept créatif :** Simplicité visuelle, équilibre texte/image et accessibilité du langage
+
+Nous avons conçu plusieurs **flyers pédagogiques** en misant sur :
+- **Simplicité visuelle** pour une lecture facilitée
+- **Équilibre texte/image** optimisé
+- **Accessibilité du langage** administratif
+- **Ciblage précis** selon nos personas établis
+
+**Inspiration :** Codes visuels issus de notre veille sur d'autres bailleurs sociaux, adaptés avec notre touche d'originalité.
+
+</div>
+
+<!-- 5 emplacements pour images de flyers - Layout CSS Grid personnalisé -->
+<div class="mb-8">
+<div class="parent" style="
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: 240px 240px;
+    gap: 8px;
+    height: 488px;
+">
+    <div class="div1 bg-gradient-to-br from-blue-500/20 to-purple-500/20 rounded-xl border border-white/10 flex items-center justify-center overflow-hidden cursor-pointer group" style="
+        grid-column: 1 / 3;
+        grid-row: 1 / 2;
+    " onclick="openImageOverlay('/public/flyer 1.png', 'Flyer 1 Format Trifold')">
+        <img src="/public/flyer 1.png" alt="Flyer 1 Format Trifold" class="w-full h-full object-contain transition-transform duration-300 group-hover:scale-110">
+    </div>
+    <div class="div2 bg-gradient-to-br from-purple-500/20 to-pink-500/20 rounded-xl border border-white/10 flex items-center justify-center overflow-hidden cursor-pointer group" style="
+        grid-column: 1 / 3;
+        grid-row: 2 / 3;
+    " onclick="openImageOverlay('/public/flyer 2.png', 'Flyer 2 Format Trifold')">
+        <img src="/public/flyer 2.png" alt="Flyer 2 Format Trifold" class="w-full h-full object-contain transition-transform duration-300 group-hover:scale-110">
+    </div>
+    <div class="div3 bg-gradient-to-br from-pink-500/20 to-red-500/20 rounded-xl border border-white/10 flex items-center justify-center overflow-hidden cursor-pointer group" style="
+        grid-column: 3 / 5;
+        grid-row: 1 / 2;
+    " onclick="openImageOverlay('/public/flyer 3.png', 'Flyer 3 Format Trifold')">
+        <img src="/public/flyer 3.png" alt="Flyer 3 Format Trifold" class="w-full h-full object-contain transition-transform duration-300 group-hover:scale-110">
+    </div>
+    <div class="div4 bg-gradient-to-br from-green-500/20 to-teal-500/20 rounded-xl border border-white/10 flex items-center justify-center overflow-hidden cursor-pointer group" style="
+        grid-column: 3 / 5;
+        grid-row: 2 / 3;
+    " onclick="openImageOverlay('/public/flyer 4.png', 'Flyer 4 Format Trifold')">
+        <img src="/public/flyer 4.png" alt="Flyer 4 Format Trifold" class="w-full h-full object-contain transition-transform duration-300 group-hover:scale-110">
+    </div>
+    <div class="div5 bg-gradient-to-br from-yellow-500/20 to-orange-500/20 rounded-xl border border-white/10 flex items-center justify-center overflow-hidden cursor-pointer group" style="
+        grid-column: 5 / 7;
+        grid-row: 1 / 3;
+    " onclick="openImageOverlay('/public/flyer 5.png', 'Flyer 5 Format Trifold')">
+        <img src="/public/flyer 5.png" alt="Flyer 5 Format Trifold" class="w-full h-full object-contain transition-transform duration-300 group-hover:scale-110">
+    </div>
+</div>
+</div>
+
+<!-- Overlay pour affichage des images en grand -->
+<div id="imageOverlay" class="fixed inset-0 bg-black/90 backdrop-blur-sm z-50 flex items-center justify-center opacity-0 pointer-events-none transition-opacity duration-300" onclick="closeImageOverlay()">
+    <div class="relative w-full h-full flex items-center justify-center p-8" onclick="event.stopPropagation()">
+        <img id="overlayImage" src="" alt="" class="max-w-full max-h-full object-contain rounded-xl shadow-2xl">
+        <button onclick="closeImageOverlay()" class="absolute top-8 right-8 w-12 h-12 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center text-white hover:bg-white/30 transition-colors text-xl font-bold">
+            ×
+        </button>
+    </div>
+</div>
+
+<script>
+function openImageOverlay(imageSrc, imageAlt) {
+    const overlay = document.getElementById('imageOverlay');
+    const overlayImage = document.getElementById('overlayImage');
+    
+    overlayImage.src = imageSrc;
+    overlayImage.alt = imageAlt;
+    
+    overlay.classList.remove('opacity-0', 'pointer-events-none');
+    overlay.classList.add('opacity-100');
+    
+    // Bloquer le scroll du body
+    document.body.style.overflow = 'hidden';
+}
+
+function openPlaquetteOverlay(imageSrc, imageAlt) {
+    openImageOverlay(imageSrc, imageAlt);
+}
+
+function closeImageOverlay() {
+    const overlay = document.getElementById('imageOverlay');
+    
+    overlay.classList.remove('opacity-100');
+    overlay.classList.add('opacity-0', 'pointer-events-none');
+    
+    // Rétablir le scroll du body
+    document.body.style.overflow = 'auto';
+}
+
+// Fermer avec la touche Escape
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+        closeImageOverlay();
+    }
+});
+</script>
+
+<div class="bg-white/5 border border-white/10 rounded-lg p-6 mb-8">
+
+<h3 class="text-2xl font-bold text-white mb-4">📋 Plaquette Explicative</h3>
+
+**Support principal :** Plaquette A4 synthétique destinée aux **nouveaux locataires**
+
+**Contenu structuré :**
+- **Infographies claires** pour visualiser les informations
+- **Définitions simples** des termes techniques
+- **Structure de lecture progressive** : de l'essentiel vers le détail
+- **Format imprimable** et partageable
+- **Équilibre** entre institutionnel et accessible
+
+**Objectif :** Fournir un support de référence complet mais digestible pour accompagner les nouveaux arrivants.
+
+</div>
+
+<!-- 4 emplacements pour images de plaquettes -->
+<div class="mb-8">
+<div class="flex flex-col gap-4" style="height: 600px;">
+    <!-- Première ligne : 1fr - 2fr -->
+    <div class="flex gap-4 h-1/2">
+        <div class="flex-none w-1/4 bg-gradient-to-br from-indigo-500/20 to-blue-500/20 rounded-xl border border-white/10 flex items-center justify-center overflow-hidden cursor-pointer group" onclick="openPlaquetteOverlay('/public/plaquette-1.png', 'Plaquette A4 Page 1 - Vue d\'ensemble')">
+            <img src="/public/plaquette-1.png" alt="Plaquette A4 Page 1 - Vue d'ensemble" class="w-full h-full object-contain transition-transform duration-300 group-hover:scale-110">
+        </div>
+        <div class="flex-1 bg-gradient-to-br from-cyan-500/20 to-teal-500/20 rounded-xl border border-white/10 flex items-center justify-center overflow-hidden cursor-pointer group" onclick="openPlaquetteOverlay('/public/plaquette-3.png', 'Plaquette A4 Page 3 - Infographies')">
+            <img src="/public/plaquette-3.png" alt="Plaquette A4 Page 3 - Infographies" class="w-full h-full object-contain transition-transform duration-300 group-hover:scale-110">
+        </div>
+    </div>
+    
+    <!-- Deuxième ligne : 2fr - 1fr -->
+    <div class="flex gap-4 h-1/2">
+        <div class="flex-1 bg-gradient-to-br from-blue-500/20 to-cyan-500/20 rounded-xl border border-white/10 flex items-center justify-center overflow-hidden cursor-pointer group" onclick="openPlaquetteOverlay('/public/plaquette-2.png', 'Plaquette A4 Page 2 - Détails charges')">
+            <img src="/public/plaquette-2.png" alt="Plaquette A4 Page 2 - Détails charges" class="w-full h-full object-contain transition-transform duration-300 group-hover:scale-110">
+        </div>
+        <div class="flex-none w-1/4 bg-gradient-to-br from-teal-500/20 to-green-500/20 rounded-xl border border-white/10 flex items-center justify-center overflow-hidden cursor-pointer group" onclick="openPlaquetteOverlay('/public/plaquette-4.png', 'Plaquette A4 Page 4 - Contact & FAQ')">
+            <img src="/public/plaquette-4.png" alt="Plaquette A4 Page 4 - Contact & FAQ" class="w-full h-full object-contain transition-transform duration-300 group-hover:scale-110">
+        </div>
+    </div>
+</div>
+</div>
+
+</div>
+
+
+<div class="flex">
+<div class="bg-gradient-to-r from-emerald-900/20 to-teal-900/20 backdrop-blur-sm border border-white/20 rounded-2xl p-8 mb-12 flex-1">
+
+<h2 class="text-3xl font-bold text-white mb-6">🎬 Motion Design</h2>
+
+div
+<div class="bg-white/10 rounded-lg p-6 border border-white/10 mb-8">
+
+<h3 class="text-2xl font-bold text-white mb-4">📹 Vidéo Pédagogique Animée</h3>
+
+**Format :** Vidéo motion design d'environ **1 minute 30**
+
+**Concept créatif :**
+- **Reprise des points clés** des charges locatives
+- **Forme animée, dynamique et engageante**
+- **Vulgarisation** d'un sujet complexe
+- **Métaphores visuelles** pour faciliter la compréhension
+- **Narration fluide** avec voice-off adaptée
+
+**Objectifs :**
+- Capter l'attention d'un public peu habitué au contenu administratif
+- Rendre accessible un sujet technique
+- Créer un support partageable et mémorable
+
+**Style graphique :** Cohérent avec l'identité développée pour les supports print, rythme adapté au ton de la voix off.
+
+</div>
+
+<!-- Emplacement vidéo avec texte à côté -->
+<div class="flex flex-col lg:flex-row gap-8 items-center lg:items-start mb-8 flex-1">
+    <!-- Section vidéo -->
+    <div class="flex-shrink-0">
+        <div class="relative w-80 h-[500px] bg-gradient-to-b from-purple-600/20 to-pink-600/20 rounded-2xl border border-white/10 overflow-hidden">
+            <!-- Vidéo ou placeholder -->
+            <video 
+                id="motionDesignVideo" 
+                controls 
+                class="w-full h-full object-cover rounded-2xl hidden"
+                preload="metadata"
+            >
+                <source src="/public/motion-design-video.mp4" type="video/mp4">
+                <source src="/public/motion-design-video.webm" type="video/webm">
+                Votre navigateur ne supporte pas la lecture de vidéos.
+            </video>
+            
+<div id="videoPlaceholder" class="w-full h-full flex items-center justify-center">
+                <div class="text-center text-white/70">
+                    <div class="text-4xl mb-4">▶</div>
+                    <p>Vidéo Motion Design<br/>Format Vertical<br/>1min30</p>
+                    <p class="text-xs mt-4 opacity-50">Ajoutez votre fichier :<br/>/public/motion-design-video.mp4</p>
+                </div>
+            </div>
+            </div>
+            
+<!-- Bouton play custom si vidéo disponible -->
+<div id="customPlayButton" class="absolute inset-0 flex items-center justify-center bg-black/30 opacity-0 hover:opacity-100 transition-opacity cursor-pointer hidden">
+                <div class="w-16 h-16 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center">
+                    <div class="w-0 h-0 border-l-[20px] border-l-white border-t-[12px] border-t-transparent border-b-[12px] border-b-transparent ml-1"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+<div class="flex-1 space-y-6">
+        <div class="bg-white/5 border border-white/10 rounded-lg p-6">
+            <h4 class="text-xl font-bold text-white mb-4">🎯 Objectifs de la vidéo</h4>
+            <ul class="text-white/80 space-y-2">
+                <li>• Capter l'attention d'un public peu habitué au contenu administratif</li>
+                <li>• Rendre accessible un sujet technique</li>
+                <li>• Créer un support partageable et mémorable</li>
+            </ul>
+        </div>
+        
+<div class="bg-white/5 border border-white/10 rounded-lg p-6">
+            <h4 class="text-xl font-bold text-white mb-4">🎨 Style graphique</h4>
+            <p class="text-white/80">
+                Cohérent avec l'identité développée pour les supports print, rythme adapté au ton de la voix off et métaphores visuelles pour faciliter la compréhension.
+            </p>
+        </div>
+        
+<div class="bg-white/5 border border-white/10 rounded-lg p-6">
+            <h4 class="text-xl font-bold text-white mb-4">🎬 Techniques utilisées</h4>
+            <ul class="text-white/80 space-y-2">
+                <li>• <strong>Animation 2D</strong> - Personnages et éléments graphiques</li>
+                <li>• <strong>Motion typography</strong> - Textes animés et dynamiques</li>
+                <li>• <strong>Transitions fluides</strong> - Entre les différentes séquences</li>
+                <li>• <strong>Sound design</strong> - Adaptation voice-off institutionnelle</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<script>
+// Vérifier si la vidéo existe et l'afficher si c'est le cas
+document.addEventListener('DOMContentLoaded', function() {
+    const video = document.getElementById('motionDesignVideo');
+    const placeholder = document.getElementById('videoPlaceholder');
+    const playButton = document.getElementById('customPlayButton');
+    
+    video.addEventListener('loadedmetadata', function() {
+        // La vidéo s'est chargée, on cache le placeholder
+        placeholder.classList.add('hidden');
+        video.classList.remove('hidden');
+        playButton.classList.remove('hidden');
+    });
+    
+    video.addEventListener('error', function() {
+        // Erreur de chargement, on garde le placeholder
+        console.log('Vidéo non trouvée, affichage du placeholder');
+    });
+    
+    // Gestion du bouton play custom
+    playButton.addEventListener('click', function() {
+        video.play();
+        playButton.style.opacity = '0';
+    });
+    
+    video.addEventListener('play', function() {
+        playButton.style.opacity = '0';
+    });
+    
+    video.addEventListener('pause', function() {
+        playButton.style.opacity = '1';
+    });
+});
+</script>
+
+</div>
+
+<div class="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-8 mb-12">
+
+<h2 class="text-3xl font-bold text-white mb-6">📱 Contenus Digitaux</h2>
+
+<div class="bg-white/5 border border-white/10 rounded-lg p-6 mb-8">
+
+<h3 class="text-2xl font-bold text-white mb-4">📸 Posts Instagram</h3>
+
+**Production :** Série de visuels informatifs adaptés aux **formats mobiles**
+
+**Ciblage :** Mêmes personas (personnes en précarité, jeunes, publics en reconversion)
+
+**Caractéristiques créatives :**
+- **Ton simple, bienveillant et direct**
+- **Design volontairement sobre** pour renforcer la lisibilité
+- **Éviter la surcharge cognitive**
+- **Adaptation aux codes Instagram** tout en gardant le sérieux institutionnel
+
+</div>
+
+<div class="bg-white/5 border border-white/10 rounded-lg p-6">
+
+<h3 class="text-2xl font-bold text-white mb-4">🌐 Site Internet Prototype</h3>
+
+**Outil :** Prototype interactif réalisé sur **Figma**
+
+**Architecture :** 4 pages principales
+- **Page d'accueil** (prototypée avec interactions)
+- **Page contact** avec formulaires
+- **Page d'achat de véhicules** (si applicable)
+- **Page candidatures bénévoles**
+
+**Cohérence :** Application des principes graphiques établis pour assurer une cohérence de marque
+
+**UX Design :** Parcours utilisateur pensé pour répondre aux différents profils identifiés lors de la phase de recherche
+
+</div>
+
+</div>
 
 <div class="bg-gradient-to-r from-violet-900/30 to-purple-900/30 backdrop-blur-sm border border-white/20 rounded-2xl p-8 mb-12">
 
-💪 **Performances digitales**
+<h2 class="text-3xl font-bold text-white mb-6">🎯 Présentation et Validation</h2>
 
-<div class="grid md:grid-cols-3 gap-4 mt-6">
-<div class="bg-white/10 rounded-lg p-4 border border-white/10 text-center">
-<h4 class="text-green-300 font-bold mb-2 text-2xl">+65%</h4>
-<p class="text-sm">Trafic web en 6 mois</p>
-</div>
-<div class="bg-white/10 rounded-lg p-4 border border-white/10 text-center">
-<h4 class="text-blue-300 font-bold mb-2 text-2xl">+40%</h4>
-<p class="text-sm">Demandes de logement</p>
-</div>
-<div class="bg-white/10 rounded-lg p-4 border border-white/10 text-center">
-<h4 class="text-purple-300 font-bold mb-2 text-2xl">+120%</h4>
-<p class="text-sm">Engagement réseaux sociaux</p>
-</div>
-</div>
+<div class="bg-white/10 rounded-lg p-6 border border-white/10 mb-8">
 
-📖 **Apprentissages clés**
+<h3 class="text-2xl font-bold text-white mb-4">🎤 Présentation Finale Client</h3>
 
-- Importance de l'écoute client dans le secteur public
-- Équilibre entre modernité et codes institutionnels  
-- Valeur ajoutée du motion design pour l'engagement
-- Nécessité d'une formation utilisateur approfondie
+**Contexte :** Présentation auprès des interlocuteurs de Limoges Habitat
+
+**Contenu de la soutenance :**
+- **Justification des choix stratégiques** : pourquoi ces orientations
+- **Explication des choix narratifs** : ton, structure, messages
+- **Défense des choix visuels** : style, couleurs, typographie
+- **Démonstration des livrables** en situation d'usage
+
+**Résultat :** Validation de l'ensemble des supports par le client
 
 </div>
 
-## 📞 Contact
+<div class="bg-white/10 rounded-lg p-6 border border-white/10">
+
+<h3 class="text-2xl font-bold text-white mb-4">📊 Compétences Développées</h3>
+
+**Gestion de projet :**
+- Pilotage d'équipe et coordination
+- Maîtrise qualité en projet multimédia
+- Méthodes agiles appliquées
+
+**Communication :**
+- Défense de projet de manière convaincante
+- Collaboration avec parties prenantes
+- Production de discours adapté aux cibles
+
+**Création :**
+- Démarche originale et personnelle
+- Design system cohérent
+- Expérience utilisateur sophistiquée
+
+</div>
+
+</div>
+
+<div class="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-8 mb-12">
+
+<h2 class="text-3xl font-bold text-white mb-6">📚 Apprentissages et Méthodologie</h2>
+
+<div class="bg-white/10 rounded-lg p-6 border border-white/10">
+
+<h3 class="text-2xl font-bold text-white mb-4">💡 Points Clés du Projet</h3>
+
+**Importance de la recherche :** La phase d'analyse approfondie (légale, concurrentielle, utilisateur) s'est révélée cruciale pour la pertinence des créations.
+
+**Collaboration client :** Les deux points de validation avec Limoges Habitat ont permis d'ajuster le tir et de livrer des supports vraiment adaptés aux besoins.
+
+**Accessibilité universelle :** Adapter le discours à tous les publics, notamment ceux éloignés du numérique, représente un défi créatif enrichissant.
+
+**Cohérence de marque :** Décliner une identité sur supports print, digital et motion tout en gardant la cohérence.
+
+</div>
+
+</div>
 
 <div class="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 text-center">
+
+<h2 class="text-3xl font-bold text-white mb-4">📞 Contact</h2>
+
 **Jocelyn Vinatié**  
 📧 jocelyn.vinatie@etu.unilim.fr  
 📍 7 rue Gondinet, Limoges  
 📱 06.08.88.18.93
-</div>
-
-</div>
-
----
-
-# third-post.md (Dragon Ball Z)
-
----
-title: 'Dragon Ball Z - Projet 3D Fan Art'
-description: 'Création d\'un projet 3D immersif Dragon Ball Z : modélisation des personnages iconiques, environnements de combat et animations spectaculaires en hommage à l\'univers de Toriyama.'
-pubDate: 'Jan 10 2025'
-heroImage: '/Teaser.png'
----
-
-<div class="prose prose-invert max-w-none">
-
-🐉 **Dragon Ball Z - Univers 3D Immersif**
-
-<div class="bg-gradient-to-r from-orange-900/30 to-red-900/30 backdrop-blur-sm border border-white/20 rounded-2xl p-8 mb-12 shadow-glass">
-
-📋 **Vue d'ensemble du projet**
-
-**Type :** Projet personnel - Fan Art 3D  
-**Durée :** 6 mois intensifs  
-**Équipe :** Solo project + communauté 3D  
-**Objectif :** Recréer l'univers Dragon Ball Z en 3D avec une qualité cinématographique  
-**Technologies :** Blender, Substance Painter, After Effects, Unreal Engine
-
-</div>
-
-## 🎯 Vision Artistique
-
-<div class="grid md:grid-cols-2 gap-8 mb-12">
-<div class="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6">
-
-🎨 **Direction créative**
-
-Transformer l'esthétique 2D iconique de Dragon Ball Z en un univers 3D moderne tout en conservant :
-
-- Le style artistique d'Akira Toriyama
-- L'énergie dynamique des combats
-- L'essence émotionnelle des personnages
-- La magie de l'univers original
-
-</div>
-<div class="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6">
-
-🎯 **Défi technique**
-
-Créer un rendu "toon" réaliste qui respecte l'esthétique anime tout en apportant une profondeur 3D immersive.
-
-</div>
-</div>
-
-## 📅 Planning de production
-
-<div class="bg-gradient-to-r from-indigo-900/20 to-purple-900/20 backdrop-blur-sm border border-white/20 rounded-2xl p-8 mb-12">
-
-🗓️ **Phase 1 : Pré-production (4 semaines)**
-
-<div class="grid md:grid-cols-3 gap-6 mt-6">
-<div class="bg-white/10 rounded-lg p-4 border border-white/10">
-<h4 class="text-orange-300 font-bold mb-2">📚 Recherche</h4>
-<ul class="text-sm space-y-1">
-<li>• Analyse des designs Toriyama</li>
-<li>• Références anatomiques</li>
-<li>• Études de mouvement</li>
-</ul>
-</div>
-<div class="bg-white/10 rounded-lg p-4 border border-white/10">
-<h4 class="text-red-300 font-bold mb-2">✏️ Concept Art</h4>
-<ul class="text-sm space-y-1">
-<li>• Sketches préparatoires</li>
-<li>• Mood boards couleurs</li>
-<li>• Tests de style 3D</li>
-</ul>
-</div>
-<div class="bg-white/10 rounded-lg p-4 border border-white/10">
-<h4 class="text-yellow-300 font-bold mb-2">🗂️ Pipeline</h4>
-<ul class="text-sm space-y-1">
-<li>• Architecture fichiers</li>
-<li>• Workflow optimisé</li>
-<li>• Tests techniques</li>
-</ul>
-</div>
-</div>
-
-🗓️ **Phase 2 : Production 3D (16 semaines)**
-
-<div class="bg-white/10 rounded-lg p-4 border border-white/10 mt-6">
-<h4 class="text-blue-300 font-bold mb-2">🎭 Modélisation & Animation</h4>
-<p class="text-sm">Création des personnages, environnements et systèmes d'animation avec focus sur la qualité et l'optimisation.</p>
-</div>
-
-</div>
-
-## 🎭 Modélisation 3D des Personnages
-
-<div class="space-y-8 mb-12">
-
-### 👤 Personnages créés
-
-<div class="bg-gradient-to-r from-gray-900/30 to-slate-900/30 backdrop-blur-sm border border-white/20 rounded-xl p-6">
-
-**Goku Super Saiyan :** Le héros iconique  
-Spécifications techniques :
-
-- **Polycount :** 50,000 polygones haute résolution
-- **Cheveux animés :** Système de particules custom  
-- **Aura énergétique :** Shaders procéduraux dynamiques
-- **Expressions :** 25 blend shapes pour l'animation faciale
-
-<div class="mt-4 p-4 bg-white/10 rounded-lg border border-white/10">
-<p class="text-sm"><strong>💡 Innovation :</strong> Développement d'un système d'aura réactive à l'intensité émotionnelle.</p>
-</div>
-
-</div>
-
-### 👑 Détails techniques avancés
-
-<div class="grid md:grid-cols-2 gap-6">
-<div class="bg-white/5 border border-white/10 rounded-lg p-6">
-
-**Vegeta Prince des Saiyans**
-- Armure Saiyan détaillée avec battle damage
-- Textures PBR haute résolution 4K
-- Système de cape avec cloth simulation
-- 15 variations d'expressions
-
-</div>
-<div class="bg-white/5 border border-white/10 rounded-lg p-6">
-
-**Cell Perfect Form**  
-- Surface bio-mécanique complexe
-- Shaders métalliques organiques
-- Réflexions iridescentes dynamiques
-- Morphing entre formes
-
-</div>
-</div>
-
-### ⚙️ Pipeline de création
-
-<div class="bg-white/5 border border-white/10 rounded-lg p-6">
-
-**Méthodologie professionnelle :**
-
-1. **Sculpture haute résolution** dans Blender (2M+ polygones)
-2. **Retopologie optimisée** pour l'animation temps réel  
-3. **Texturing PBR** dans Substance Painter avec 8 maps par matériau
-4. **Shaders personnalisés** pour l'effet toon avec Cycles/Eevee
-5. **Rigging avancé** avec contraintes IK/FK et facial rig
 
 </div>
 
 </div>
-
-## 🌍 Environnements Iconiques
-
-<div class="bg-gradient-to-r from-emerald-900/20 to-teal-900/20 backdrop-blur-sm border border-white/20 rounded-2xl p-8 mb-12">
-
-🏝️ **Îles du Tournoi**
-
-<div class="grid md:grid-cols-2 gap-6 mt-6">
-<div class="space-y-4">
-<h4 class="text-emerald-300 font-bold text-lg">🌊 Océan infini</h4>
-<ul class="space-y-2">
-<li class="flex items-center gap-2">
-  <span class="w-2 h-2 bg-blue-400 rounded-full"></span>
-  Simulation water shader complexe
-</li>
-<li class="flex items-center gap-2">
-  <span class="w-2 h-2 bg-cyan-400 rounded-full"></span>
-  Effets atmosphériques volumétriques
-</li>
-<li class="flex items-center gap-2">
-  <span class="w-2 h-2 bg-teal-400 rounded-full"></span>
-  Système de particules embruns
-</li>
-</ul>
-</div>
-<div class="space-y-4">
-<h4 class="text-teal-300 font-bold text-lg">🏟️ Arène centrale</h4>
-<ul class="space-y-2">
-<li class="flex items-center gap-2">
-  <span class="w-2 h-2 bg-orange-400 rounded-full"></span>
-  Géométrie modulaire destructible
-</li>
-<li class="flex items-center gap-2">
-  <span class="w-2 h-2 bg-yellow-400 rounded-full"></span>
-  Textures dégradées procédurales
-</li>
-<li class="flex items-center gap-2">
-  <span class="w-2 h-2 bg-red-400 rounded-full"></span>
-  Système de dommages dynamiques
-</li>
-</ul>
-</div>
-</div>
-
-🪐 **Planète Namek & Chambre du Temps**
-
-- **Namek :** Paysages aliens avec ciels violets et formations cristallines
-- **Chambre du Temps :** Dimension blanche avec distorsions spatiales et effets de réalité altérée
-
-</div>
-
-## ⚡ Animations et Effets Spéciaux
-
-<div class="space-y-8 mb-12">
-
-### 🔥 Techniques développées
-
-<div class="bg-white/5 border border-white/10 rounded-lg p-6">
-
-**Kamehameha :** L'attaque signature  
-**Défi technique :** Recréer l'iconique rayon d'énergie
-
-**Solution développée :**
-- Particules d'énergie avec trail effects
-- Rayon destructeur avec collision detection  
-- Heat distortion et bloom effects
-- Son design réactif à l'intensité visuelle
-
-</div>
-
-### ✨ Système de transformations
-
-<div class="bg-white/5 border border-white/10 rounded-lg p-6">
-
-**Transformations Super Saiyan :**
-- Aura explosive avec expansion radiale
-- Morphing progressif des features  
-- Changement couleur cheveux/yeux fluide
-- Effets de foudre énergétique procedural
-
-</div>
-
-</div>
-
-## 📊 Impact Communauté
-
-<div class="bg-gradient-to-r from-violet-900/30 to-purple-900/30 backdrop-blur-sm border border-white/20 rounded-2xl p-8 mb-12">
-
-💪 **Performances et reconnaissance**
-
-<div class="grid md:grid-cols-4 gap-4 mt-6">
-<div class="bg-white/10 rounded-lg p-4 border border-white/10 text-center">
-<h4 class="text-orange-300 font-bold mb-2 text-2xl">150K+</h4>
-<p class="text-sm">Vues ArtStation</p>
-</div>
-<div class="bg-white/10 rounded-lg p-4 border border-white/10 text-center">
-<h4 class="text-red-300 font-bold mb-2 text-2xl">2.5K</h4>
-<p class="text-sm">Likes et partages</p>
-</div>
-<div class="bg-white/10 rounded-lg p-4 border border-white/10 text-center">
-<h4 class="text-yellow-300 font-bold mb-2 text-xl">Featured</h4>
-<p class="text-sm">Projet ArtStation</p>
-</div>
-<div class="bg-white/10 rounded-lg p-4 border border-white/10 text-center">
-<h4 class="text-purple-300 font-bold mb-2 text-2xl">4.8/5</h4>
-<p class="text-sm">Note communauté</p>
-</div>
-</div>
-
-📖 **Apprentissages techniques**
-
-- Maîtrise approfondie de Blender et son écosystème
-- Développement de shaders customs complexes
-- Optimisation pour rendu temps réel
-- Création d'un pipeline de production efficace
-
-</div>
-
-## 📞 Contact
-
-<div class="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 text-center">
-**Jocelyn Vinatié**  
-📧 jocelyn.vinatie@etu.unilim.fr  
-📍 7 rue Gondinet, Limoges  
-📱 06.08.88.18.93
-</div>
-
-</div>
-
----
-
-# fourth-post.md (Limousin Informatique)
-
----
-title: 'Limousin Informatique - Stratégie Digitale & Refonte Web'
-description: 'Accompagnement complet de Limousin Informatique : refonte de site web, stratégie de communication digitale et positionnement sur le marché des services informatiques en Nouvelle-Aquitaine.'
-pubDate: 'Nov 28 2024'
-heroImage: '/Logo-SAE401.png'
----
-
-<div class="prose prose-invert max-w-none">
-
-💻 **Limousin Informatique - Transformation Digitale Complète**
-
-<div class="bg-gradient-to-r from-blue-900/30 to-cyan-900/30 backdrop-blur-sm border border-white/20 rounded-2xl p-8 mb-12 shadow-glass">
-
-📋 **Vue d'ensemble du projet**
-
-**Client :** Limousin Informatique - Services IT & Solutions Numériques  
-**Durée :** 3 mois intensifs  
-**Équipe :** Expert digital + développeur web  
-**Mission :** Moderniser la présence digitale et développer une stratégie de communication efficace  
-**Technologies :** WordPress, Elementor Pro, Google Analytics, Hootsuite
-
-</div>
-
-## 🎯 Contexte et Enjeux
-
-<div class="grid md:grid-cols-2 gap-8 mb-12">
-<div class="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6">
-
-🏢 **L'entreprise**
-
-Société de services informatiques en Nouvelle-Aquitaine spécialisée dans :
-
-- Maintenance informatique professionnelle
-- Sécurité réseau et cybersécurité
-- Formation utilisateurs et accompagnement
-- Solutions cloud et sauvegarde
-
-</div>
-<div class="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6">
-
-⚠️ **Les défis identifiés**
-
-- Concurrence accrue sur le marché IT local
-- Site web obsolète peu attractif
-- Visibilité digitale limitée
-- Communication client à moderniser
-
-</div>
-</div>
-
-## 📅 Planning stratégique
-
-<div class="bg-gradient-to-r from-indigo-900/20 to-purple-900/20 backdrop-blur-sm border border-white/20 rounded-2xl p-8 mb-12">
-
-🗓️ **Phase 1 : Audit & Stratégie (3 semaines)**
-
-<div class="grid md:grid-cols-3 gap-6 mt-6">
-<div class="bg-white/10 rounded-lg p-4 border border-white/10">
-<h4 class="text-blue-300 font-bold mb-2">🔍 Audit Digital</h4>
-<ul class="text-sm space-y-1">
-<li>• Analyse site existant</li>
-<li>• Audit SEO complet</li>
-<li>• Benchmarking concurrentiel</li>
-</ul>
-</div>
-<div class="bg-white/10 rounded-lg p-4 border border-white/10">
-<h4 class="text-cyan-300 font-bold mb-2">📊 Stratégie</h4>
-<ul class="text-sm space-y-1">
-<li>• Positionnement marché</li>
-<li>• Persona clients</li>
-<li>• Plan communication 360°</li>
-</ul>
-</div>
-<div class="bg-white/10 rounded-lg p-4 border border-white/10">
-<h4 class="text-green-300 font-bold mb-2">🎨 Design</h4>
-<ul class="text-sm space-y-1">
-<li>• Nouvelle identité web</li>
-<li>• Maquettes responsive</li>
-<li>• UX optimisée</li>
-</ul>
-</div>
-</div>
-
-🗓️ **Phase 2 : Développement & Lancement (6 semaines)**
-
-<div class="bg-white/10 rounded-lg p-4 border border-white/10 mt-6">
-<h4 class="text-yellow-300 font-bold mb-2">🚀 Mise en œuvre</h4>
-<p class="text-sm">Développement du nouveau site, mise en place de la stratégie SEO et lancement des campagnes de communication digitale.</p>
-</div>
-
-</div>
-
-## 👥 Méthodologie projet
-
-<div class="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 mb-12">
-
-Pour assurer le succès de cette transformation digitale, l'organisation était structurée ainsi :
-
-<div class="grid md:grid-cols-3 gap-4 mt-4">
-<div class="text-center p-4 bg-blue-500/20 rounded-lg">
-<h4 class="font-bold text-blue-300">📈 Stratégie Digital</h4>
-<p class="text-sm">SEO, communication et positionnement marché</p>
-</div>
-<div class="text-center p-4 bg-cyan-500/20 rounded-lg">
-<h4 class="font-bold text-cyan-300">💻 Développement</h4>
-<p class="text-sm">Site web, fonctionnalités et optimisations</p>
-</div>
-<div class="text-center p-4 bg-green-500/20 rounde
