@@ -1,12 +1,10 @@
 ---
-import BaseHead from '../../components/BaseHead.astro';
 import Header from '../../components/Header.astro';
-import Footer from '../../components/Footer.astro';
 import MeshGradientBackground from '../../components/MeshGradientBackground.astro';
-import { SITE_TITLE, SITE_DESCRIPTION } from '../../consts';
 import { getCollection } from 'astro:content';
 import FormattedDate from '../../components/FormattedDate.astro';
 import Doctype from '../../components/Doctype.astro';
+import type { CollectionEntry } from 'astro:content';
 
 // Récupération de tous les posts
 const allPosts = await getCollection('blog');
@@ -21,7 +19,7 @@ const customOrder = [
 ];
 
 // Réorganisation selon l'ordre personnalisé
-const orderedPosts = [];
+const orderedPosts: CollectionEntry<'blog'>[] = [];
 const remainingPosts = [...allPosts];
 
 // Ajouter les posts dans l'ordre personnalisé
@@ -37,7 +35,7 @@ remainingPosts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(
 const posts = [...orderedPosts, ...remainingPosts];
 
 // Fonction pour déterminer la catégorie d'un post
-function getPostCategory(post) {
+function getPostCategory(post: CollectionEntry<'blog'>) {
     const title = post.data.title.toLowerCase();
     const description = post.data.description.toLowerCase();
     
@@ -483,7 +481,6 @@ const gridPositions = [
         }
     }
 </style>
-
 <svg width="0" height="0">
     <filter id="gooey">
         <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
