@@ -8,9 +8,33 @@ import { getCollection } from 'astro:content';
 import FormattedDate from '../../components/FormattedDate.astro';
 import Doctype from '../../components/Doctype.astro';
 
-const posts = (await getCollection('blog')).sort(
-    (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
-);
+// Récupération de tous les posts
+const allPosts = await getCollection('blog');
+
+// Ordre personnalisé des projets pour la grille
+const customOrder = [
+    'second-post',    // Limoges Habitat (position 1)
+    'fifth-post',     // Coachella (position 2) 
+    'third-post',     // Dragon Ball Z (position 3)
+    'fourth-post',    // Limousin Informatique (position 4)
+    'first-post',     // Carlton Story/SAE301 (position 5)
+];
+
+// Réorganisation selon l'ordre personnalisé
+const orderedPosts = [];
+const remainingPosts = [...allPosts];
+
+// Ajouter les posts dans l'ordre personnalisé
+customOrder.forEach(slug => {
+    const postIndex = remainingPosts.findIndex(post => post.slug === slug);
+    if (postIndex !== -1) {
+        orderedPosts.push(remainingPosts.splice(postIndex, 1)[0]);
+    }
+});
+
+// Ajouter les posts restants triés par date
+remainingPosts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+const posts = [...orderedPosts, ...remainingPosts];
 
 // Fonction pour déterminer la catégorie d'un post
 function getPostCategory(post) {
@@ -28,25 +52,15 @@ function getPostCategory(post) {
     }
 }
 
-// Fonction pour générer des tailles variées pour la grille
-// Limitation : max 3 colonnes (moitié de 6) et max 2 rangées
-function getGridSize(index, title) {
-    const sizes = [
-        'col-span-3 row-span-2', // Large (moitié max)
-        'col-span-2 row-span-2', // Carré moyen
-        'col-span-3 row-span-1', // Rectangle horizontal
-        'col-span-2 row-span-1', // Rectangle horizontal moyen
-        'col-span-1 row-span-2', // Rectangle vertical
-        'col-span-1 row-span-1', // Petit carré
-        'col-span-2 row-span-2', // Carré moyen (répété pour équilibrer)
-        'col-span-3 row-span-1', // Rectangle horizontal (répété)
-        'col-span-1 row-span-2', // Rectangle vertical (répété)
-        'col-span-1 row-span-1', // Petit carré (répété)
-    ];
-    
-    const seed = (index * 7 + title.charCodeAt(0) * 3) % sizes.length;
-    return sizes[seed];
-}
+// Assignation des positions de grid pour chaque post
+const gridPositions = [
+    'grid-pos-1', // Premier post : div1 (2 colonnes, 3 rangées)
+    'grid-pos-2', // Deuxième post : div2 (1 colonne, 3 rangées)
+    'grid-pos-5', // Troisième post : div5 (2 colonnes, 2 rangées)
+    'grid-pos-6', // Quatrième post : div6 (2 colonnes, 2 rangées)
+    'grid-pos-7', // Cinquième post : div7 (3 colonnes, 2 rangées)
+    'grid-pos-8', // Sixième post : div8 (2 colonnes, 1 rangée)
+];
 ---
 
 <Doctype/>
@@ -115,19 +129,19 @@ function getGridSize(index, title) {
                     </div>
                 </div>
 
-                <!-- Grille Bento Box 6 colonnes -->
-                <div id="projects-grid" class="grid grid-cols-6 gap-4 auto-rows-auto">
-                    {posts.map((post, index) => {
+                <!-- Grille personnalisée -->
+                <div id="projects-grid" class="projects-grid">
+                    {posts.slice(0, 6).map((post, index) => {
                         const category = getPostCategory(post);
-                        const sizeClass = getGridSize(index, post.data.title);
+                        const gridClass = gridPositions[index] || 'grid-pos-extra';
                         
                         return (
                             <div 
-                                class={`project-card ${sizeClass} relative group overflow-hidden rounded-2xl transition-all duration-500 ease-in-out`} 
+                                class={`project-card ${gridClass} relative group overflow-hidden rounded-2xl transition-all duration-500 ease-in-out`} 
                                 data-category={category}
                             >
                                 <a href={`/blog/${post.slug}/`} class="block h-full">
-                                    <div class="relative w-full h-full min-h-[180px] overflow-hidden rounded-2xl">
+                                    <div class="relative w-full h-full min-h-[150px] overflow-hidden rounded-2xl">
                                         <img 
                                             src={post.data.heroImage} 
                                             alt={post.data.title}
@@ -171,6 +185,65 @@ function getGridSize(index, title) {
                             </div>
                         );
                     })}
+                    
+                    <!-- S'il y a plus de 6 posts, les afficher dans une grille simple en dessous -->
+                    {posts.length > 6 && (
+                        <div class="additional-projects mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                            {posts.slice(6).map((post) => {
+                                const category = getPostCategory(post);
+                                
+                                return (
+                                    <div 
+                                        class="project-card relative group overflow-hidden rounded-2xl transition-all duration-500 ease-in-out" 
+                                        data-category={category}
+                                    >
+                                        <a href={`/blog/${post.slug}/`} class="block h-full">
+                                            <div class="relative w-full h-64 overflow-hidden rounded-2xl">
+                                                <img 
+                                                    src={post.data.heroImage} 
+                                                    alt={post.data.title}
+                                                    class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                                                />
+                                                
+                                                <!-- Overlay graduel -->
+                                                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-300"></div>
+                                                
+                                                <!-- Contenu de la carte -->
+                                                <div class="absolute inset-0 p-6 flex flex-col justify-end">
+                                                    <div class="transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                                                        <h3 class="text-white font-anuphan font-bold text-lg mb-2 line-clamp-2">
+                                                            {post.data.title}
+                                                        </h3>
+                                                        <p class="text-white/80 text-sm mb-3 line-clamp-2">
+                                                            {post.data.description}
+                                                        </p>
+                                                        <div class="flex items-center justify-between">
+                                                            <span class="text-white/70 text-xs font-medium">
+                                                                <FormattedDate date={post.data.pubDate} />
+                                                            </span>
+                                                            <span class="text-purple-300 text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                                                Voir le projet →
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                
+                                                <!-- Badge catégorie -->
+                                                <div class="absolute top-4 left-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                                    <span class="px-3 py-1 bg-white/20 backdrop-blur-md rounded-full text-white text-xs font-medium border border-white/30">
+                                                        {category === 'motion-design' ? 'Motion Design' : 
+                                                         category === 'graphic-design' ? 'Graphic Design' : 
+                                                         category === '3d' ? '3D' :
+                                                         'Web Design'}
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                );
+                            })}
+                        </div>
+                    )}
                 </div>
             </div>
         </section>
@@ -178,6 +251,52 @@ function getGridSize(index, title) {
 </main>
 
 <style>
+    /* Grille personnalisée basée sur votre CSS */
+    .projects-grid {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        grid-template-rows: repeat(5, 200px);
+        gap: 8px;
+        width: 100%;
+        height: auto;
+    }
+    
+    /* Positions de grille correspondant à votre CSS */
+    .grid-pos-1 {
+        grid-column: span 2 / span 2;
+        grid-row: span 3 / span 3;
+    }
+    
+    .grid-pos-2 {
+        grid-row: span 3 / span 3;
+        grid-column-start: 3;
+    }
+    
+    .grid-pos-5 {
+        grid-column: span 2 / span 2;
+        grid-row: span 2 / span 2;
+        grid-column-start: 4;
+    }
+    
+    .grid-pos-6 {
+        grid-column: span 2 / span 2;
+        grid-row: span 2 / span 2;
+        grid-column-start: 4;
+        grid-row-start: 3;
+    }
+    
+    .grid-pos-7 {
+        grid-column: span 3 / span 3;
+        grid-row: span 2 / span 2;
+        grid-row-start: 4;
+    }
+    
+    .grid-pos-8 {
+        grid-column: span 2 / span 2;
+        grid-column-start: 4;
+        grid-row-start: 5;
+    }
+    
     /* Transitions pour les cartes */
     .project-card {
         transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
@@ -222,47 +341,138 @@ function getGridSize(index, title) {
         transition: height 0.4s ease;
     }
     
-    /* Responsive amélioré - tailles limitées */
+    /* Responsive pour la grille personnalisée */
     @media (max-width: 1200px) {
-        #projects-grid {
-            grid-template-columns: repeat(5, 1fr);
-        }
-        .col-span-3 { grid-column: span 3; } /* Max 3/5 = 60% */
-        .col-span-2 { grid-column: span 2; }
-        .col-span-1 { grid-column: span 1; }
-        .row-span-2 { grid-row: span 2; }
-        .row-span-1 { grid-row: span 1; }
-    }
-    
-    @media (max-width: 1024px) {
-        #projects-grid {
+        .projects-grid {
             grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(4, 200px);
         }
-        .col-span-3 { grid-column: span 2; } /* Limité à 50% max */
-        .col-span-2 { grid-column: span 2; }
-        .col-span-1 { grid-column: span 1; }
-        .row-span-2 { grid-row: span 2; }
-        .row-span-1 { grid-row: span 1; }
+        
+        .grid-pos-1 {
+            grid-column: span 2;
+            grid-row: span 2;
+            grid-column-start: 1;
+            grid-row-start: 1;
+        }
+        
+        .grid-pos-2 {
+            grid-column: span 2;
+            grid-row: span 2;
+            grid-column-start: 3;
+            grid-row-start: 1;
+        }
+        
+        .grid-pos-5 {
+            grid-column: span 2;
+            grid-row: span 2;
+            grid-column-start: 1;
+            grid-row-start: 3;
+        }
+        
+        .grid-pos-6 {
+            grid-column: span 2;
+            grid-row: span 2;
+            grid-column-start: 3;
+            grid-row-start: 3;
+        }
+        
+        .grid-pos-7 {
+            grid-column: span 4;
+            grid-row: span 1;
+            grid-column-start: 1;
+            grid-row-start: 5;
+        }
+        
+        .grid-pos-8 {
+            display: none; /* Cache le 6ème élément sur tablette */
+        }
     }
     
     @media (max-width: 768px) {
-        #projects-grid {
-            grid-template-columns: repeat(3, 1fr);
+        .projects-grid {
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(3, 200px);
         }
-        .col-span-3, .col-span-2 { grid-column: span 2; } /* Max 2/3 = 66% */
-        .col-span-1 { grid-column: span 1; }
-        .row-span-2 { grid-row: span 1; } /* Réduire hauteur sur mobile */
-        .row-span-1 { grid-row: span 1; }
+        
+        .grid-pos-1 {
+            grid-column: span 1;
+            grid-row: span 1;
+            grid-column-start: 1;
+            grid-row-start: 1;
+        }
+        
+        .grid-pos-2 {
+            grid-column: span 1;
+            grid-row: span 1;
+            grid-column-start: 2;
+            grid-row-start: 1;
+        }
+        
+        .grid-pos-5 {
+            grid-column: span 1;
+            grid-row: span 1;
+            grid-column-start: 1;
+            grid-row-start: 2;
+        }
+        
+        .grid-pos-6 {
+            grid-column: span 1;
+            grid-row: span 1;
+            grid-column-start: 2;
+            grid-row-start: 2;
+        }
+        
+        .grid-pos-7 {
+            grid-column: span 1;
+            grid-row: span 1;
+            grid-column-start: 1;
+            grid-row-start: 3;
+        }
+        
+        .grid-pos-8 {
+            display: block;
+            grid-column: span 1;
+            grid-row: span 1;
+            grid-column-start: 2;
+            grid-row-start: 3;
+        }
     }
     
     @media (max-width: 580px) {
-        #projects-grid {
-            grid-template-columns: repeat(2, 1fr);
+        .projects-grid {
+            grid-template-columns: 1fr;
+            grid-template-rows: repeat(6, 200px);
         }
-        .col-span-3, .col-span-2 { grid-column: span 1; } /* Une colonne max sur très petit écran */
-        .col-span-1 { grid-column: span 1; }
-        .row-span-2, .row-span-1 { 
-            grid-row: span 1; 
+        
+        .grid-pos-1 {
+            grid-column: 1;
+            grid-row-start: 1;
+        }
+        
+        .grid-pos-2 {
+            grid-column: 1;
+            grid-row-start: 2;
+        }
+        
+        .grid-pos-5 {
+            grid-column: 1;
+            grid-row-start: 3;
+        }
+        
+        .grid-pos-6 {
+            grid-column: 1;
+            grid-row-start: 4;
+        }
+        
+        .grid-pos-7 {
+            grid-column: 1;
+            grid-row-start: 5;
+        }
+        
+        .grid-pos-8 {
+            display: block;
+            grid-column: 1;
+            grid-row-start: 6;
         }
     }
     
