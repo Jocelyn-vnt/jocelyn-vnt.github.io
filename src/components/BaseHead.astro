@@ -1,255 +1,64 @@
 ---
-// BaseHead.astro - Composant optimisé pour les métadonnées et performances
+// Import the global.css file here so that it is included on
+// all pages through the use of the <BaseHead /> component.
 
 interface Props {
 	title: string;
 	description: string;
 	image?: string;
-	type?: 'website' | 'article' | 'profile';
-	noindex?: boolean;
 }
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
-const { title, description, image = "/blog-placeholder-1.jpg", type = "website", noindex = false } = Astro.props;
 
-// Optimisation des meta tags
-const fullTitle = title.includes('Jocelyn Vinatié') ? title : `${title} | Jocelyn Vinatié`;
-const optimizedDescription = description.length > 160 ? description.substring(0, 157) + '...' : description;
-const imageURL = new URL(image, Astro.url);
+const { title, description, image = "/blog-placeholder-1.jpg" } = Astro.props;
 ---
 
-<!-- Meta essentiels -->
+<!-- Global Metadata -->
 <meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 <meta name="generator" content={Astro.generator} />
 
-<!-- Favicon et icônes -->
-<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-<link rel="manifest" href="/site.webmanifest" />
-
-<!-- Optimisation des polices -->
+<!-- Font preloads -->
+ 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link 
-  href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Anuphan:wght@100..700&family=Lexend:wght@100..900&family=Paprika&display=swap" 
-  rel="stylesheet"
-  media="print" 
-  onload="this.media='all'"
-/>
-<noscript>
-  <link 
-    href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Anuphan:wght@100..700&family=Lexend:wght@100..900&family=Paprika&display=swap" 
-    rel="stylesheet"
-  />
-</noscript>
+<link	href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Anuphan:wght@100..700&family=Lexend:wght@100..900&family=Paprika&display=swap"	rel="stylesheet"/>
 
-<!-- URL canonique -->
+<!-- Canonical URL -->
 <link rel="canonical" href={canonicalURL} />
 
-<!-- Meta SEO -->
-<title>{fullTitle}</title>
-<meta name="title" content={fullTitle} />
-<meta name="description" content={optimizedDescription} />
-<meta name="author" content="Jocelyn Vinatié" />
-<meta name="keywords" content="design graphique, web design, motion design, 3D, Limoges, portfolio, créatif" />
-
-<!-- Contrôle d'indexation -->
-{noindex && <meta name="robots" content="noindex, nofollow" />}
+<!-- Primary Meta Tags -->
+<title>{title}</title>
+<meta name="title" content={title} />
+<meta name="description" content={description} />
 
 <!-- Open Graph / Facebook -->
-<meta property="og:type" content={type} />
-<meta property="og:site_name" content="Jocelyn Vinatié - Portfolio" />
+<meta property="og:type" content="website" />
 <meta property="og:url" content={Astro.url} />
-<meta property="og:title" content={fullTitle} />
-<meta property="og:description" content={optimizedDescription} />
-<meta property="og:image" content={imageURL} />
-<meta property="og:image:alt" content={`Aperçu de ${title}`} />
-<meta property="og:locale" content="fr_FR" />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:image" content={new URL(image, Astro.url)} />
 
-<!-- Twitter Card -->
-<meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:site" content="@jocelynvinatie" />
-<meta name="twitter:creator" content="@jocelynvinatie" />
-<meta name="twitter:url" content={Astro.url} />
-<meta name="twitter:title" content={fullTitle} />
-<meta name="twitter:description" content={optimizedDescription} />
-<meta name="twitter:image" content={imageURL} />
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:url" content={Astro.url} />
+<meta property="twitter:title" content={title} />
+<meta property="twitter:description" content={description} />
+<meta property="twitter:image" content={new URL(image, Astro.url)} />
 
-<!-- Meta supplémentaires pour le SEO -->
-<meta name="theme-color" content="#8b5cf6" />
-<meta name="msapplication-TileColor" content="#8b5cf6" />
-<meta name="format-detection" content="telephone=no" />
+<!-- EmailJS Script -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 
-<!-- Structured Data - JSON-LD -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Person",
-  "name": "Jocelyn Vinatié",
-  "jobTitle": "Designer Graphique & Développeur Web",
-  "description": "Créatif passionné spécialisé en design graphique, UI/UX et motion design",
-  "url": "https://jocelyn-vnt.github.io",
-  "sameAs": [
-    "https://linkedin.com/in/jocelynvinatie",
-    "https://github.com/jocelyn-vnt"
-  ],
-  "address": {
-    "@type": "PostalAddress",
-    "addressLocality": "Limoges",
-    "addressRegion": "Nouvelle-Aquitaine",
-    "addressCountry": "FR"
-  },
-  "knowsAbout": [
-    "Design Graphique",
-    "Web Design", 
-    "Motion Design",
-    "Modélisation 3D",
-    "UI/UX Design"
-  ]
-}
-</script>
+<!-- Scripts spécifiques selon la page -->
+<script src="/src/scripts/form.js"></script>
 
-<!-- Preload des ressources critiques -->
-<link rel="preload" href="/fonts/anuphan-variable.woff2" as="font" type="font/woff2" crossorigin />
-<link rel="preload" href="/scripts/main.js" as="script" />
 
-<!-- EmailJS - Chargement asynchrone -->
-<script>
-  // Chargement différé d'EmailJS
-  window.addEventListener('load', function() {
-    const script = document.createElement('script');
-    script.src = 'https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js';
-    script.async = true;
-    script.onload = function() {
-      emailjs.init({ publicKey: "mwzYyC1caxA9ihagP" });
-    };
-    document.head.appendChild(script);
-  });
-</script>
-
-<!-- Scripts optimisés - Chargement différé -->
-<script src="/src/scripts/followMouse.js" defer></script>
-<script src="/src/scripts/followMouse2.js" defer></script>
-<script src="/src/scripts/followMouse3.js" defer></script>
-
-<!-- Service Worker pour la mise en cache -->
-<script>
-  if ('serviceWorker' in navigator) {
-    window.addEventListener('load', function() {
-      navigator.serviceWorker.register('/sw.js')
-        .then(function(registration) {
-          console.log('SW registered: ', registration);
-        })
-        .catch(function(registrationError) {
-          console.log('SW registration failed: ', registrationError);
-        });
-    });
-  }
-</script>
-
-<!-- Styles critiques inline -->
+<!-- Style global pour le curseur et body -->
 <style>
-  /* Styles critiques pour éviter le FOUC */
-  html {
-    scroll-behavior: smooth;
-  }
-  
   body {
     background-color: rgb(196 181 253);
-    margin: 0;
-    padding: 0;
+    cursor: custom;
     width: 100vw;
-    min-height: 100vh;
-    font-family: 'Anuphan', system-ui, -apple-system, sans-serif;
-    overflow-x: hidden;
-    cursor: default;
-  }
-  
-  /* Préchargement des polices avec fallback */
-  .font-anuphan {
-    font-family: 'Anuphan', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  }
-  
-  .font-alex {
-    font-family: 'Alex Brush', cursive, 'Brush Script MT', sans-serif;
-  }
-  
-  /* Loading state pour les images */
-  img {
-    max-width: 100%;
-    height: auto;
-  }
-  
-  img[loading="lazy"] {
-    opacity: 0;
-    transition: opacity 0.3s;
-  }
-  
-  img[loading="lazy"].loaded {
-    opacity: 1;
-  }
-  
-  /* Optimisations performances */
-  * {
-    box-sizing: border-box;
-  }
-  
-  /* Curseur personnalisé optimisé */
-  .cursor-custom {
-    cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"><circle cx="10" cy="10" r="8" fill="%23ffffff" opacity="0.8"/></svg>') 10 10, auto;
-  }
-  
-  /* Animation de chargement */
-  @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-  
-  .fade-in {
-    animation: fadeIn 0.6s ease-out;
-  }
-  
-  /* Amélioration des contrastes pour l'accessibilité */
-  :focus-visible {
-    outline: 2px solid #8b5cf6;
-    outline-offset: 2px;
-  }
-  
-  /* Optimisation pour les appareils à mouvement réduit */
-  @media (prefers-reduced-motion: reduce) {
-    *,
-    *::before,
-    *::after {
-      animation-duration: 0.01ms !important;
-      animation-iteration-count: 1 !important;
-      transition-duration: 0.01ms !important;
-    }
-    
-    html {
-      scroll-behavior: auto;
-    }
-  }
-  
-  /* Dark mode support */
-  @media (prefers-color-scheme: dark) {
-    body {
-      background-color: rgb(30 27 75);
-    }
-  }
-</style>
-
-<!-- CSS critique pour le glassmorphisme -->
-<style>
-  .glass-effect {
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.18);
-  }
-  
-  .shadow-glass {
-    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
   }
 </style>
