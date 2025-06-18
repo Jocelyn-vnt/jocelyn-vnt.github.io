@@ -319,8 +319,8 @@ document.addEventListener('keydown', function(e) {
 
 <h2 class="text-3xl font-bold text-white mb-6">🎬 Motion Design</h2>
 
-<div class="flex">
-<div class="bg-white/10 rounded-lg p-6 border border-white/10 mb-8 flex-1">
+<div class="flex gap-8">
+<div class="bg-white/10 rounded-lg p-6 border border-white/10 mb-8 ">
 
 <h3 class="text-2xl font-bold text-white mb-4">📹 Vidéo Pédagogique Animée</h3>
 
