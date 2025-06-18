@@ -73,7 +73,7 @@ Dès le démarrage, nous avons organisé un **sondage interne** pour évaluer le
 
 <!-- Emplacement image large - Déroulé du projet -->
 <div class="w-full bg-gradient-to-r from-gray-800/50 to-gray-900/50 rounded-xl border border-white/10 flex items-center justify-center mb-8">
-<img src="/public/deroulement-projet.png" alt="Méthodologie et organisation projet - Kanban, rétroplanning, équipe" class="w-full object-cover rounded-xl">
+<img src="/deroulement-projet.png" alt="Méthodologie et organisation projet - Kanban, rétroplanning, équipe" class="w-full object-cover rounded-xl">
 </div>
 
 <div class="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6">
@@ -194,32 +194,32 @@ Nous avons conçu plusieurs **flyers pédagogiques** en misant sur :
     <div class="div1 bg-gradient-to-br from-blue-500/20 to-purple-500/20 rounded-xl border border-white/10 flex items-center justify-center overflow-hidden cursor-pointer group" style="
         grid-column: 1 / 3;
         grid-row: 1 / 2;
-    " onclick="openImageOverlay('/public/flyer 1.png', 'Flyer 1 Format Trifold')">
-        <img src="/public/flyer 1.png" alt="Flyer 1 Format Trifold" class="w-full h-full object-contain transition-transform duration-300 group-hover:scale-110">
+    " onclick="openImageOverlay('/flyer 1.png', 'Flyer 1 Format Trifold')">
+        <img src="/flyer 1.png" alt="Flyer 1 Format Trifold" class="w-full h-full object-contain transition-transform duration-300 group-hover:scale-110">
     </div>
     <div class="div2 bg-gradient-to-br from-purple-500/20 to-pink-500/20 rounded-xl border border-white/10 flex items-center justify-center overflow-hidden cursor-pointer group" style="
         grid-column: 1 / 3;
         grid-row: 2 / 3;
-    " onclick="openImageOverlay('/public/flyer 2.png', 'Flyer 2 Format Trifold')">
-        <img src="/public/flyer 2.png" alt="Flyer 2 Format Trifold" class="w-full h-full object-contain transition-transform duration-300 group-hover:scale-110">
+    " onclick="openImageOverlay('/flyer 2.png', 'Flyer 2 Format Trifold')">
+        <img src="/flyer 2.png" alt="Flyer 2 Format Trifold" class="w-full h-full object-contain transition-transform duration-300 group-hover:scale-110">
     </div>
     <div class="div3 bg-gradient-to-br from-pink-500/20 to-red-500/20 rounded-xl border border-white/10 flex items-center justify-center overflow-hidden cursor-pointer group" style="
         grid-column: 3 / 5;
         grid-row: 1 / 2;
-    " onclick="openImageOverlay('/public/flyer 3.png', 'Flyer 3 Format Trifold')">
-        <img src="/public/flyer 3.png" alt="Flyer 3 Format Trifold" class="w-full h-full object-contain transition-transform duration-300 group-hover:scale-110">
+    " onclick="openImageOverlay('/flyer 3.png', 'Flyer 3 Format Trifold')">
+        <img src="/flyer 3.png" alt="Flyer 3 Format Trifold" class="w-full h-full object-contain transition-transform duration-300 group-hover:scale-110">
     </div>
     <div class="div4 bg-gradient-to-br from-green-500/20 to-teal-500/20 rounded-xl border border-white/10 flex items-center justify-center overflow-hidden cursor-pointer group" style="
         grid-column: 3 / 5;
         grid-row: 2 / 3;
-    " onclick="openImageOverlay('/public/flyer 4.png', 'Flyer 4 Format Trifold')">
-        <img src="/public/flyer 4.png" alt="Flyer 4 Format Trifold" class="w-full h-full object-contain transition-transform duration-300 group-hover:scale-110">
+    " onclick="openImageOverlay('/flyer 4.png', 'Flyer 4 Format Trifold')">
+        <img src="/flyer 4.png" alt="Flyer 4 Format Trifold" class="w-full h-full object-contain transition-transform duration-300 group-hover:scale-110">
     </div>
     <div class="div5 bg-gradient-to-br from-yellow-500/20 to-orange-500/20 rounded-xl border border-white/10 flex items-center justify-center overflow-hidden cursor-pointer group" style="
         grid-column: 5 / 7;
         grid-row: 1 / 3;
-    " onclick="openImageOverlay('/public/flyer 5.png', 'Flyer 5 Format Trifold')">
-        <img src="/public/flyer 5.png" alt="Flyer 5 Format Trifold" class="w-full h-full object-contain transition-transform duration-300 group-hover:scale-110">
+    " onclick="openImageOverlay('/flyer 5.png', 'Flyer 5 Format Trifold')">
+        <img src="/flyer 5.png" alt="Flyer 5 Format Trifold" class="w-full h-full object-contain transition-transform duration-300 group-hover:scale-110">
     </div>
 </div>
 </div>
@@ -293,21 +293,21 @@ document.addEventListener('keydown', function(e) {
 <div class="flex flex-col gap-4" style="height: 600px;">
     <!-- Première ligne : 1fr - 2fr -->
     <div class="flex gap-4 h-1/2">
-        <div class="flex-none w-1/4 bg-gradient-to-br from-indigo-500/20 to-blue-500/20 rounded-xl border border-white/10 flex items-center justify-center overflow-hidden cursor-pointer group" onclick="openPlaquetteOverlay('/public/plaquette-1.png', 'Plaquette A4 Page 1 - Vue d\'ensemble')">
-            <img src="/public/plaquette-1.png" alt="Plaquette A4 Page 1 - Vue d'ensemble" class="w-full h-full object-contain transition-transform duration-300 group-hover:scale-110">
+        <div class="flex-none w-1/4 bg-gradient-to-br from-indigo-500/20 to-blue-500/20 rounded-xl border border-white/10 flex items-center justify-center overflow-hidden cursor-pointer group" onclick="openPlaquetteOverlay('/plaquette-1.png', 'Plaquette A4 Page 1 - Vue d\'ensemble')">
+            <img src="/plaquette-1.png" alt="Plaquette A4 Page 1 - Vue d'ensemble" class="w-full h-full object-contain transition-transform duration-300 group-hover:scale-110">
         </div>
-        <div class="flex-1 bg-gradient-to-br from-cyan-500/20 to-teal-500/20 rounded-xl border border-white/10 flex items-center justify-center overflow-hidden cursor-pointer group" onclick="openPlaquetteOverlay('/public/plaquette-3.png', 'Plaquette A4 Page 3 - Infographies')">
-            <img src="/public/plaquette-3.png" alt="Plaquette A4 Page 3 - Infographies" class="w-full h-full object-contain transition-transform duration-300 group-hover:scale-110">
+        <div class="flex-1 bg-gradient-to-br from-cyan-500/20 to-teal-500/20 rounded-xl border border-white/10 flex items-center justify-center overflow-hidden cursor-pointer group" onclick="openPlaquetteOverlay('/plaquette-3.png', 'Plaquette A4 Page 3 - Infographies')">
+            <img src="/plaquette-3.png" alt="Plaquette A4 Page 3 - Infographies" class="w-full h-full object-contain transition-transform duration-300 group-hover:scale-110">
         </div>
     </div>
     
     <!-- Deuxième ligne : 2fr - 1fr -->
 <div class="flex gap-4 h-1/2">
-        <div class="flex-1 bg-gradient-to-br from-blue-500/20 to-cyan-500/20 rounded-xl border border-white/10 flex items-center justify-center overflow-hidden cursor-pointer group" onclick="openPlaquetteOverlay('/public/plaquette-2.png', 'Plaquette A4 Page 2 - Détails charges')">
-            <img src="/public/plaquette-2.png" alt="Plaquette A4 Page 2 - Détails charges" class="w-full h-full object-contain transition-transform duration-300 group-hover:scale-110">
+        <div class="flex-1 bg-gradient-to-br from-blue-500/20 to-cyan-500/20 rounded-xl border border-white/10 flex items-center justify-center overflow-hidden cursor-pointer group" onclick="openPlaquetteOverlay('/plaquette-2.png', 'Plaquette A4 Page 2 - Détails charges')">
+            <img src="/plaquette-2.png" alt="Plaquette A4 Page 2 - Détails charges" class="w-full h-full object-contain transition-transform duration-300 group-hover:scale-110">
         </div>
-        <div class="flex-none w-1/4 bg-gradient-to-br from-teal-500/20 to-green-500/20 rounded-xl border border-white/10 flex items-center justify-center overflow-hidden cursor-pointer group" onclick="openPlaquetteOverlay('/public/plaquette-4.png', 'Plaquette A4 Page 4 - Contact & FAQ')">
-            <img src="/public/plaquette-4.png" alt="Plaquette A4 Page 4 - Contact & FAQ" class="w-full h-full object-contain transition-transform duration-300 group-hover:scale-110">
+        <div class="flex-none w-1/4 bg-gradient-to-br from-teal-500/20 to-green-500/20 rounded-xl border border-white/10 flex items-center justify-center overflow-hidden cursor-pointer group" onclick="openPlaquetteOverlay('/plaquette-4.png', 'Plaquette A4 Page 4 - Contact & FAQ')">
+            <img src="/plaquette-4.png" alt="Plaquette A4 Page 4 - Contact & FAQ" class="w-full h-full object-contain transition-transform duration-300 group-hover:scale-110">
         </div>
     </div>
 </div>
@@ -355,8 +355,8 @@ document.addEventListener('keydown', function(e) {
                 class="w-full h-full object-cover rounded-2xl hidden"
                 preload="metadata"
             >
-                <source src="/public/motion-design-video.mp4" type="video/mp4">
-                <source src="/public/motion-design-video.webm" type="video/webm">
+                <source src="/motion-design-video.mp4" type="video/mp4">
+                <source src="/motion-design-video.webm" type="video/webm">
                 Votre navigateur ne supporte pas la lecture de vidéos.
             </video>
             
@@ -364,7 +364,7 @@ document.addEventListener('keydown', function(e) {
                 <div class="text-center text-white/70">
                     <div class="text-4xl mb-4">▶</div>
                     <p>Vidéo Motion Design<br/>Format Vertical<br/>1min30</p>
-                    <p class="text-xs mt-4 opacity-50">Ajoutez votre fichier :<br/>/public/motion-design-video.mp4</p>
+                    <p class="text-xs mt-4 opacity-50">Ajoutez votre fichier :<br/>/motion-design-video.mp4</p>
                 </div>
             </div>
         </div>
