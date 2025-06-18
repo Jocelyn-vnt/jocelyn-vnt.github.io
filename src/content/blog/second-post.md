@@ -302,7 +302,7 @@ document.addEventListener('keydown', function(e) {
     </div>
     
     <!-- Deuxième ligne : 2fr - 1fr -->
-    <div class="flex gap-4 h-1/2">
+<div class="flex gap-4 h-1/2">
         <div class="flex-1 bg-gradient-to-br from-blue-500/20 to-cyan-500/20 rounded-xl border border-white/10 flex items-center justify-center overflow-hidden cursor-pointer group" onclick="openPlaquetteOverlay('/public/plaquette-2.png', 'Plaquette A4 Page 2 - Détails charges')">
             <img src="/public/plaquette-2.png" alt="Plaquette A4 Page 2 - Détails charges" class="w-full h-full object-contain transition-transform duration-300 group-hover:scale-110">
         </div>
@@ -312,17 +312,15 @@ document.addEventListener('keydown', function(e) {
     </div>
 </div>
 </div>
-
 </div>
 
 
-<div class="flex">
-<div class="bg-gradient-to-r from-emerald-900/20 to-teal-900/20 backdrop-blur-sm border border-white/20 rounded-2xl p-8 mb-12 flex-1">
+<div class="bg-gradient-to-r from-emerald-900/20 to-teal-900/20 backdrop-blur-sm border border-white/20 rounded-2xl p-8 mb-12">
 
 <h2 class="text-3xl font-bold text-white mb-6">🎬 Motion Design</h2>
 
-div
-<div class="bg-white/10 rounded-lg p-6 border border-white/10 mb-8">
+<div class="flex">
+<div class="bg-white/10 rounded-lg p-6 border border-white/10 mb-8 flex-1">
 
 <h3 class="text-2xl font-bold text-white mb-4">📹 Vidéo Pédagogique Animée</h3>
 
@@ -345,7 +343,8 @@ div
 </div>
 
 <!-- Emplacement vidéo avec texte à côté -->
-<div class="flex flex-col lg:flex-row gap-8 items-center lg:items-start mb-8 flex-1">
+<div class="flex-1   w-full">
+<div class="flex flex-col lg:flex-row gap-8 items-center lg:items-start mb-8">
     <!-- Section vidéo -->
     <div class="flex-shrink-0">
         <div class="relative w-80 h-[500px] bg-gradient-to-b from-purple-600/20 to-pink-600/20 rounded-2xl border border-white/10 overflow-hidden">
@@ -368,18 +367,15 @@ div
                     <p class="text-xs mt-4 opacity-50">Ajoutez votre fichier :<br/>/public/motion-design-video.mp4</p>
                 </div>
             </div>
-            </div>
-            
-<!-- Bouton play custom si vidéo disponible -->
-<div id="customPlayButton" class="absolute inset-0 flex items-center justify-center bg-black/30 opacity-0 hover:opacity-100 transition-opacity cursor-pointer hidden">
-                <div class="w-16 h-16 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center">
-                    <div class="w-0 h-0 border-l-[20px] border-l-white border-t-[12px] border-t-transparent border-b-[12px] border-b-transparent ml-1"></div>
-                </div>
-            </div>
         </div>
     </div>
+</div>
+</div>
+</div>
     
-<div class="flex-1 space-y-6">
+        
+
+<div class="space-y-6">
         <div class="bg-white/5 border border-white/10 rounded-lg p-6">
             <h4 class="text-xl font-bold text-white mb-4">🎯 Objectifs de la vidéo</h4>
             <ul class="text-white/80 space-y-2">
@@ -447,24 +443,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
 <div class="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-8 mb-12">
 
-<h2 class="text-3xl font-bold text-white mb-6">📱 Contenus Digitaux</h2>
-
-<div class="bg-white/5 border border-white/10 rounded-lg p-6 mb-8">
-
-<h3 class="text-2xl font-bold text-white mb-4">📸 Posts Instagram</h3>
-
-**Production :** Série de visuels informatifs adaptés aux **formats mobiles**
-
-**Ciblage :** Mêmes personas (personnes en précarité, jeunes, publics en reconversion)
-
-**Caractéristiques créatives :**
-- **Ton simple, bienveillant et direct**
-- **Design volontairement sobre** pour renforcer la lisibilité
-- **Éviter la surcharge cognitive**
-- **Adaptation aux codes Instagram** tout en gardant le sérieux institutionnel
-
-</div>
-
 <div class="bg-white/5 border border-white/10 rounded-lg p-6">
 
 <h3 class="text-2xl font-bold text-white mb-4">🌐 Site Internet Prototype</h3>
@@ -481,68 +459,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
 **UX Design :** Parcours utilisateur pensé pour répondre aux différents profils identifiés lors de la phase de recherche
 
-</div>
 
 </div>
 
-<div class="bg-gradient-to-r from-violet-900/30 to-purple-900/30 backdrop-blur-sm border border-white/20 rounded-2xl p-8 mb-12">
 
-<h2 class="text-3xl font-bold text-white mb-6">🎯 Présentation et Validation</h2>
-
-<div class="bg-white/10 rounded-lg p-6 border border-white/10 mb-8">
-
-<h3 class="text-2xl font-bold text-white mb-4">🎤 Présentation Finale Client</h3>
-
-**Contexte :** Présentation auprès des interlocuteurs de Limoges Habitat
-
-**Contenu de la soutenance :**
-- **Justification des choix stratégiques** : pourquoi ces orientations
-- **Explication des choix narratifs** : ton, structure, messages
-- **Défense des choix visuels** : style, couleurs, typographie
-- **Démonstration des livrables** en situation d'usage
-
-**Résultat :** Validation de l'ensemble des supports par le client
 
 </div>
-
-<div class="bg-white/10 rounded-lg p-6 border border-white/10">
-
-<h3 class="text-2xl font-bold text-white mb-4">📊 Compétences Développées</h3>
-
-**Gestion de projet :**
-- Pilotage d'équipe et coordination
-- Maîtrise qualité en projet multimédia
-- Méthodes agiles appliquées
-
-**Communication :**
-- Défense de projet de manière convaincante
-- Collaboration avec parties prenantes
-- Production de discours adapté aux cibles
-
-**Création :**
-- Démarche originale et personnelle
-- Design system cohérent
-- Expérience utilisateur sophistiquée
-
-</div>
-
-</div>
-
-<div class="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-8 mb-12">
-
-<h2 class="text-3xl font-bold text-white mb-6">📚 Apprentissages et Méthodologie</h2>
-
-<div class="bg-white/10 rounded-lg p-6 border border-white/10">
-
-<h3 class="text-2xl font-bold text-white mb-4">💡 Points Clés du Projet</h3>
-
-**Importance de la recherche :** La phase d'analyse approfondie (légale, concurrentielle, utilisateur) s'est révélée cruciale pour la pertinence des créations.
-
-**Collaboration client :** Les deux points de validation avec Limoges Habitat ont permis d'ajuster le tir et de livrer des supports vraiment adaptés aux besoins.
-
-**Accessibilité universelle :** Adapter le discours à tous les publics, notamment ceux éloignés du numérique, représente un défi créatif enrichissant.
-
-**Cohérence de marque :** Décliner une identité sur supports print, digital et motion tout en gardant la cohérence.
 
 </div>
 
