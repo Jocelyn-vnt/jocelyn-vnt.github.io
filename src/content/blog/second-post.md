@@ -2,7 +2,7 @@
 title: "Limoges Habitat - Campagne de Communication sur les Charges Locatives"
 description: "Projet universitaire en équipe : création d'une campagne de communication claire et pédagogique pour Limoges Habitat autour des charges locatives. Gestion de projet agile, design graphique et motion design."
 pubDate: 'Dec 15 2024'
-heroImage: '/Kusmi-Tea.jpg'
+heroImage: '/CoverLH.png'
 ---
 
 <div class="prose prose-invert max-w-none">
