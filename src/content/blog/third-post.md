@@ -176,43 +176,104 @@ onCollect: function (event) {
 </div>
 
 <div class="space-y-6">
-<div class="bg-white/5 border border-white/10 rounded-lg p-6">
-<h4 class="text-xl font-bold text-white mb-4">🌊 Environnement Aquatique</h4>
-<p class="text-white/80">
-<strong>Système d'eau avancé :</strong> Utilisation du composant ada-water avec effets de vagues, mousse et transparence pour créer un océan réaliste autour de l'île de Kame.
-</p>
-<ul class="text-sm text-white/70 mt-2 space-y-1">
-<li>• Échelle massive (100x100) pour horizon infini</li>
-<li>• Effets Voronoi avec 15 points pour texture naturelle</li>
-<li>• Couleurs authentiques : bleu océan et mousse blanche</li>
-</ul>
+
+<!-- Section Environnement Aquatique avec image -->
+<div class="flex flex-col lg:flex-row gap-6 bg-white/5 border border-white/10 rounded-lg p-6">
+    <div class="flex-1">
+        <h4 class="text-xl font-bold text-white mb-4">🌊 Environnement Aquatique</h4>
+        <p class="text-white/80 mb-4">
+            <strong>Système d'eau avancé :</strong> Utilisation du composant ada-water avec effets de vagues, mousse et transparence pour créer un océan réaliste autour de l'île de Kame.
+        </p>
+        <ul class="text-sm text-white/70 space-y-1">
+            <li>• Échelle massive (100x100) pour horizon infini</li>
+            <li>• Effets Voronoi avec 15 points pour texture naturelle</li>
+            <li>• Couleurs authentiques : bleu océan et mousse blanche</li>
+        </ul>
+    </div>
+    
+<!-- Emplacement image environnement aquatique -->
+   <div class="flex-shrink-0 w-full lg:w-80">
+        <div class="w-full h-48 lg:h-full bg-gradient-to-br from-blue-500/20 to-cyan-500/20 rounded-xl border border-white/10 flex items-center justify-center overflow-hidden cursor-pointer group">
+            <img src="/WATER.png" alt="Système d'eau Dragon Ball Z" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110">
+        </div>
+    </div>
 </div>
 
-<div class="bg-white/5 border border-white/10 rounded-lg p-6">
-<h4 class="text-xl font-bold text-white mb-4">🏠 Modélisation Architecturale</h4>
-<p class="text-white/80">
-<strong>Maison de Kame :</strong> Reproduction 3D fidèle de la maison iconique de Tortue Géniale avec tous les détails caractéristiques.
-</p>
-<ul class="text-sm text-white/70 mt-2 space-y-1">
-<li>• Couleur rose authentique de l'anime</li>
-<li>• Proportions respectées de l'original</li>
-<li>• Placement géographique cohérent avec l'île</li>
-</ul>
+<!-- Section Modélisation Architecturale avec image -->
+<div class="flex flex-col lg:flex-row gap-6 bg-white/5 border border-white/10 rounded-lg p-6">
+    <div class="flex-1">
+        <h4 class="text-xl font-bold text-white mb-4">🏠 Modélisation Architecturale</h4>
+        <p class="text-white/80 mb-4">
+            <strong>Maison de Kame :</strong> Reproduction 3D fidèle de la maison iconique de Tortue Géniale avec tous les détails caractéristiques.
+        </p>
+        <ul class="text-sm text-white/70 space-y-1">
+            <li>• Couleur rose authentique de l'anime</li>
+            <li>• Proportions respectées de l'original</li>
+            <li>• Placement géographique cohérent avec l'île</li>
+        </ul>
+    </div>
+    
+<div class="flex-shrink-0 w-full lg:w-80">
+        <div class="w-full h-48 lg:h-full bg-gradient-to-br from-pink-500/20 to-red-500/20 rounded-xl border border-white/10 flex items-center justify-center overflow-hidden cursor-pointer group">
+            <!-- Remplacez cette div par votre image -->
+            <img src="/MAISON1.png" alt="Maison de Kame modèle 3D" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110">
+        </div>
+    </div>
 </div>
 
-<div class="bg-white/5 border border-white/10 rounded-lg p-6">
-<h4 class="text-xl font-bold text-white mb-4">✨ Effets Visuels Interactifs</h4>
-<p class="text-white/80">
-<strong>Dragon Balls animées :</strong> Chaque Dragon Ball possède ses propres textures HUD et animations de collection.
-</p>
-<ul class="text-sm text-white/70 mt-2 space-y-1">
-<li>• 7 modèles uniques avec étoiles correspondantes (1-7 étoiles)</li>
-<li>• Effets de disparition fluides lors de la collecte</li>
-<li>• Placement stratégique dans l'environnement pour encourager l'exploration</li>
-</ul>
-</div>
+<!-- Section Effets Visuels avec image -->
+<div class="flex flex-col lg:flex-row gap-6 bg-white/5 border border-white/10 rounded-lg p-6">
+    <div class="flex-1">
+        <h4 class="text-xl font-bold text-white mb-4">✨ Effets Visuels Interactifs</h4>
+        <p class="text-white/80 mb-4">
+            <strong>Dragon Balls animées :</strong> Chaque Dragon Ball possède ses propres textures HUD et animations de collection.
+        </p>
+        <ul class="text-sm text-white/70 space-y-1">
+            <li>• 7 modèles uniques avec étoiles correspondantes (1-7 étoiles)</li>
+            <li>• Effets de disparition fluides lors de la collecte</li>
+            <li>• Placement stratégique dans l'environnement pour encourager l'exploration</li>
+        </ul>
+    </div>
+    <div class="flex-shrink-0 w-full lg:w-80">
+        <div class="w-full h-48 lg:h-full bg-gradient-to-br from-orange-500/20 to-yellow-500/20 rounded-xl border border-white/10 flex items-center justify-center overflow-hidden cursor-pointer group">
+            <img src="/BOULES.png" alt="Dragon Balls modèles 3D" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110">
+        </div>
+    </div>
 </div>
 
+</div>
+<!-- iframe de l'expérience VR -->
+<div class="relative w-full" style="height: 600px;">
+    <iframe 
+        id="vrIframe"
+        src="https://jocelyn-vnt.github.io/vr-dragonball/"
+        class="w-full h-full border-0"
+        allow="xr-spatial-tracking; accelerometer; gyroscope; magnetometer"
+        allowfullscreen
+        loading="lazy"
+        title="Dragon Ball Z VR Experience"
+    ></iframe>
+        <!-- Overlay de chargement -->
+ <div id="loadingOverlay" class="absolute inset-0 bg-black/80 flex items-center justify-center">
+        <div class="text-center text-white">
+            <div class="animate-spin text-4xl mb-4">🐉</div>
+            <p class="text-lg font-bold">Chargement de l'univers Dragon Ball...</p>
+            <p class="text-sm text-white/70 mt-2">Préparation de l'expérience VR</p>
+        </div>
+    </div>
+</div>
+
+<!-- Instructions en bas -->
+<div class="bg-gradient-to-r from-orange-900/50 to-yellow-900/50 backdrop-blur-md p-4 border-t border-orange-400/30">
+    <div class="text-center">
+        <p class="text-white/90 text-sm mb-2">
+            <strong>🎯 Objectif :</strong> Trouvez les 7 Dragon Balls dispersées sur l'île de Kame pour obtenir le Nuage Magique !
+        </p>
+        <p class="text-white/70 text-xs">
+            💡 Conseil : Commencez par parler à Tortue Géniale près de la maison rose pour recevoir votre mission
+        </p>
+    </div>
+</div>
 </div>
 
 <div class="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-8 mb-12">
@@ -301,32 +362,7 @@ Cette boucle respecte les mécaniques classiques de Dragon Ball où la quête de
 
 </div>
 
-<div class="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-8 mb-12">
 
-<h2 class="text-3xl font-bold text-white mb-6">📊 Impact et Retours</h2>
-
-<div class="grid md:grid-cols-2 gap-8">
-<div class="space-y-3">
-<h4 class="font-bold text-green-300">🎯 Engagement Utilisateur</h4>
-<ul class="text-sm space-y-1 text-white/80">
-<li>• **Temps de session moyen :** 15-20 minutes</li>
-<li>• **Taux de completion :** 85% des joueurs collectent les 7 Dragon Balls</li>
-<li>• **Rejouabilité :** Exploration libre après déblocage du vol</li>
-<li>• **Accessibilité :** Fonctionne sur 95% des navigateurs modernes</li>
-</ul>
-</div>
-<div class="space-y-3">
-<h4 class="font-bold text-blue-300">🏆 Achievements Techniques</h4>
-<ul class="text-sm space-y-1 text-white/80">
-<li>• **WebXR natif** : Pas d'installation requise</li>
-<li>• **Cross-platform** : VR, desktop, mobile simultanément</li>
-<li>• **Performance** : 60 FPS stable en VR</li>
-<li>• **Fidélité artistique** : Respect total de l'univers original</li>
-</ul>
-</div>
-</div>
-
-</div>
 
 <div class="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 text-center">
 
