@@ -2,7 +2,7 @@
 title: 'Dragon Ball Z - Projet 3D Fan Art'
 description: 'Création d\'un univers 3D immersif Dragon Ball Z : exploration interactive avec collecte des Dragon Balls, navigation en réalité virtuelle et hommage authentique à l\'univers de Toriyama.'
 pubDate: 'Jan 10 2025'
-heroImage: '/Teaser.png'
+heroImage: '/CoverDBZ.png'
 ---
 
 <div class="prose prose-invert max-w-none">
