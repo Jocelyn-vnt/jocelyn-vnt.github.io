@@ -2,7 +2,7 @@
 title: 'Carlton'
 description: 'Lorem ipsum dolor sit amet'
 pubDate: 'Jul 08 2022'
-heroImage: '/Kusmi-Tea.jpg'
+heroImage: '/CoverCarlton.png'
 ---
 <div class="prose prose-invert max-w-none">
 🚀 SAE301 - Click & Collect Project
