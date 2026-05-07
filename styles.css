@@ -282,7 +282,7 @@
 
     /* project slider */
     .proj-stage{grid-template-columns:1fr}
-    .proj-stack-wrap{height:320px}
+    .proj-stack-wrap{height:320px !important}
     .proj-stack-sticky{height:320px}
     .proj-stack-sticky::before,.proj-stack-sticky::after{display:none}
 
