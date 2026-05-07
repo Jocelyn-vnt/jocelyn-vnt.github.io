@@ -330,7 +330,7 @@ const PROJECT_DETAILS = {
   datwitch: { sections:[
     { label:"01 — Le stream", title:["BRM sur","Valorant"], body:"Stream Valorant sous le pseudo BRM. Tout l'habillage visuel du stream est designé et produit par mes soins — une identité cohérente du début à la fin de chaque session.", tags:["Twitch","Valorant","OBS","Direction artistique"], flip:false, img:"assets/twitch/banner-orange.png", img2:"assets/twitch/banner-lavender.png" },
     { label:"02 — Assets & overlays", title:["Widgets,","banners & HUD"], body:"Création de l'ensemble des assets : banners de chaîne, overlays de jeu, widgets de score, cam mask, écrans BRB et écran d'attente. Chaque élément suit la même charte graphique.", tags:["Overlays","Banner","Widget","Cam mask","BRB"], flip:true, img:"assets/twitch/brb-orange.png", img2:"assets/twitch/brb-lavender.png" },
-    { label:"03 — Alertes animées", title:["Follow, Sub,","Raid & Hype"], body:"5 alertes animées en CSS/HTML : follow, abonnement, bits, raid et hype train. Animations keyframe, timing calibré pour l'impact en live, intégration directe dans OBS via source navigateur.", tags:["CSS Animations","@keyframes","Source navigateur","OBS"], flip:false, img:"assets/twitch/triade-alerts.png" },
+    { label:"03 — Alertes animées", title:["Follow, Sub,","Raid & Hype"], body:"5 alertes animées en CSS/HTML : follow, abonnement, bits, raid et hype train. Animations keyframe, timing calibré pour l'impact en live, intégration directe dans OBS via source navigateur.", tags:["CSS Animations","@keyframes","Source navigateur","OBS"], flip:false, img:"assets/twitch/alert-follow.png", img2:"assets/twitch/alert-bits.png", img3:"assets/twitch/panel-about.png" },
   ]},
   skullking: { sections:[
     { label:"01 — Le jeu", title:["Skull King","digitalisé"], body:"Skull King est un jeu de plis où les mises et les bonus rendent le calcul très complexe. L'app automatise tout : mise, plis gagnés, pirates, sirènes, Skull King sur 10 manches.", tags:["Game design","Score tracker","UX"], flip:false },
@@ -345,7 +345,7 @@ const PROJECT_DETAILS = {
   vrdragonball: { sections:[
     { label:"01 — L'univers", title:["Dragon Ball","WebXR"], body:"Une île navigable avec Kame House, palmiers et 7 boules de cristal disséminées. Système d'eau avancé (ada-water) avec vagues, mousse et horizon infini. HUD de progression, sons d'ambiance positionnels, vidéo intro déclenchée par proximité.", tags:["A-Frame","WebXR","WebGL","3D"], flip:false, img:"assets/dragon-ball/cover.png", img2:"assets/dragon-ball/water.png" },
     { label:"02 — Le gameplay", title:["Collecter","pour voler"], body:"Navigation mesh qui contraint le joueur au sol. Chaque Dragon Ball possède ses propres textures et animations de collection. Une fois les 7 collectées, Tortue Géniale offre le Nuage Magique — mode vol libre débloqué.", tags:["Navigation mesh","Interaction","GLTF","Dragon Balls"], flip:true, img:"assets/dragon-ball/boules.png", img2:"assets/dragon-ball/maison.png" },
-    { label:"03 — Technique", title:["A-Frame","& Three.js"], body:"Construit avec A-Frame sur Three.js. Flat shading pour reproduire l'esthétique anime en 3D, composants custom JS pour la détection de proximité, l'audio positionnel et le déclenchement des récompenses. Compatible VR, desktop et mobile.", tags:["A-Frame","Three.js","Flat shading","JS components"], flip:false, img:"assets/dragon-ball/cover.png" },
+    { label:"03 — Technique", title:["A-Frame","& Three.js"], body:"Construit avec A-Frame sur Three.js. Flat shading pour reproduire l'esthétique anime en 3D, composants custom JS pour la détection de proximité, l'audio positionnel et le déclenchement des récompenses. Compatible VR, desktop et mobile.", tags:["A-Frame","Three.js","Flat shading","JS components"], flip:false },
   ]},
   secretsanta: { sections:[
     { label:"01 — L'app", title:["Secret Santa","numérique"], body:"Ajout / suppression de participants, tirage aléatoire avec appariement 2 par 2, affichage des résultats. UI festive et claire, conçue pour être utilisée en famille.", tags:["React","UI Design","UX","Tirage au sort"], flip:false },
@@ -357,11 +357,11 @@ const PROJECT_DETAILS = {
   ]},
   nuitmmi: { sections:[
     { label:"01 — L'événement", title:["Nuit MMI","2025"], body:"La Nuit MMI est un hackathon créatif annuel où les étudiants MMI créent un projet en une seule nuit. Contrainte de temps extrême, liberté créative totale.", tags:["Hackathon","Creative coding","24h","MMI"], flip:false, img:"assets/nuit-mmi/cover.png" },
-    { label:"02 — Le projet", title:["Génératif","avec p5.js"], body:"Expérience visuelle et interactive construite avec p5.js. Système génératif basé sur l'input utilisateur, rendu en temps réel, exploration du chaos contrôlé.", tags:["p5.js","Génératif","Canvas","Interactif"], flip:true, img:"assets/nuit-mmi/cover.png" },
+    { label:"02 — Le projet", title:["Génératif","avec p5.js"], body:"Expérience visuelle et interactive construite avec p5.js. Système génératif basé sur l'input utilisateur, rendu en temps réel, exploration du chaos contrôlé.", tags:["p5.js","Génératif","Canvas","Interactif"], flip:true },
   ]},
   kusmitea: { sections:[
     { label:"01 — La SAE", title:["Kusmi Tea","WordPress"], body:"SAE-301 en BUT Multimédia : concevoir et intégrer un site WordPress pour Kusmi Tea. Thème enfant sur mesure, personnalisation du back-office et des templates de pages.", tags:["WordPress","PHP","Thème enfant","SAE BUT"], flip:false, img:"assets/kusmi-tea/cover.jpg" },
-    { label:"02 — Technique", title:["Intégration","pixel-perfect"], body:"Intégration des maquettes en HTML/CSS dans l'environnement WordPress. Hooks PHP pour personnaliser les fonctionnalités natives. Styles cohérents avec l'identité de la marque Kusmi Tea.", tags:["PHP","CSS","HTML","WordPress hooks"], flip:true, img:"assets/kusmi-tea/cover.jpg" },
+    { label:"02 — Technique", title:["Intégration","pixel-perfect"], body:"Intégration des maquettes en HTML/CSS dans l'environnement WordPress. Hooks PHP pour personnaliser les fonctionnalités natives. Styles cohérents avec l'identité de la marque Kusmi Tea.", tags:["PHP","CSS","HTML","WordPress hooks"], flip:true },
   ]},
   limousininformatique: { sections:[
     { label:"01 — Analyse & Stratégie", title:["Limousin","Informatique"], body:"Analyse concurrentielle sur le marché IT en Nouvelle-Aquitaine, définition de personas (TPE/PME, particuliers, secteur public) et audit de l'existant. Identification des forces, faiblesses et opportunités pour moderniser la présence digitale.", tags:["Stratégie digitale","Analyse concurrentielle","Personas","Audit UX"], flip:false, img:"assets/limousin-info/cover.png", img2:"assets/limousin-info/design-system.png" },
@@ -371,16 +371,16 @@ const PROJECT_DETAILS = {
   limogeshabitat: { sections:[
     { label:"01 — La campagne", title:["Limoges Habitat","Charges locatives"], body:"Campagne de communication pour Limoges Habitat visant à vulgariser les charges locatives. Chef de projet, coordination d'une équipe étudiante en agence fictive — méthode agile, sprints et rétroplanning.", tags:["Chef de projet","Communication","Agile","Kanban"], flip:false, img:"assets/limoges-habitat/cover.png", img2:"assets/limoges-habitat/deroulement.png" },
     { label:"02 — Les flyers", title:["Campagne","d'affichage"], body:"Série de 5 flyers pédagogiques pour expliquer les charges locatives aux locataires. Ton accessible, design épuré adapté à tous les publics, y compris ceux éloignés du numérique.", tags:["Flyers","Print","Accessibilité","Vulgarisation"], flip:true, img:"assets/limoges-habitat/flyer.png", img2:"assets/limoges-habitat/plaquette-1.png" },
-    { label:"03 — Plaquettes", title:["Supports","imprimés"], body:"Conception de plaquettes d'information structurées en sections claires pour guider les locataires dans la compréhension de leurs charges. Validées directement avec les agents Limoges Habitat.", tags:["Plaquette","Layout","Print","Figma"], flip:false, img:"assets/limoges-habitat/plaquette-1.png", img2:"assets/limoges-habitat/plaquette-2.png" },
-    { label:"04 — Motion design", title:["Vidéo","pédagogique"], body:"Vidéo motion design d'1 minute 30 réalisée sur After Effects : animation 2D, motion typography, transitions fluides et sound design institutionnel. Rendre les charges locatives accessibles à travers un format engageant et partageable.", tags:["After Effects","Motion design","Animation 2D","Sound design"], flip:true, img:"assets/limoges-habitat/motion-design.mp4", img2:"assets/limoges-habitat/cover.png" },
+    { label:"03 — Plaquettes", title:["Supports","imprimés"], body:"Conception de plaquettes d'information structurées en sections claires pour guider les locataires dans la compréhension de leurs charges. Validées directement avec les agents Limoges Habitat.", tags:["Plaquette","Layout","Print","Figma"], flip:false, img:"assets/limoges-habitat/plaquette-2.png" },
+    { label:"04 — Motion design", title:["Vidéo","pédagogique"], body:"Vidéo motion design d'1 minute 30 réalisée sur After Effects : animation 2D, motion typography, transitions fluides et sound design institutionnel. Rendre les charges locatives accessibles à travers un format engageant et partageable.", tags:["After Effects","Motion design","Animation 2D","Sound design"], flip:true, img:"assets/limoges-habitat/motion-design.mp4", portrait:true },
   ]},
   coachella: { sections:[
     { label:"01 — Le concept", title:["Coachella 2025","× Dragon Ball Z"], body:"Refonte identitaire du festival Coachella dans un univers Dragon Ball Z. Palette sombre et contrastée, typographie brutale — une direction artistique inspirée du manga pour une expérience visuelle forte et mémorable.", tags:["Direction artistique","Identité","Festival","Dragon Ball"], flip:false, img:"assets/coachella/cover.png" },
-    { label:"02 — Motion design", title:["Campagne","animée"], body:"Déclinaison de l'identité en supports animés : teasers, motion graphics, campagne réseaux sociaux. Palette #1B263B · #0D0D0D · #F5F5F5 pour un rendu cinématique et épuré.", tags:["After Effects","Motion","Social media","Animation"], flip:true, img:"assets/coachella/cover.png" },
+    { label:"02 — Motion design", title:["Campagne","animée"], body:"Déclinaison de l'identité en supports animés : teasers, motion graphics, campagne réseaux sociaux. Palette #1B263B · #0D0D0D · #F5F5F5 pour un rendu cinématique et épuré.", tags:["After Effects","Motion","Social media","Animation"], flip:true },
   ]},
   carlton: { sections:[
     { label:"01 — Le projet", title:["Carlton","Click & Collect"], body:"Conception et développement d'un site Click & Collect pour Carlton en 2 semaines. Personas, user stories, user flows, 20 wireframes mobile + desktop, système de composants Figma et prototypage interactif.", tags:["Wireframes","Figma","UX","Prototypage"], flip:false, img:"assets/carlton/cover.png" },
-    { label:"02 — Développement", title:["WordPress","WooCommerce"], body:"Développement avec WordPress et WooCommerce. Structure itérative en sprints, répartition des rôles selon les compétences, intégration TailwindCSS pour la cohérence visuelle.", tags:["WordPress","WooCommerce","TailwindCSS","HTML/CSS"], flip:true, img:"assets/carlton/cover.png" },
+    { label:"02 — Développement", title:["WordPress","WooCommerce"], body:"Développement avec WordPress et WooCommerce. Structure itérative en sprints, répartition des rôles selon les compétences, intégration TailwindCSS pour la cohérence visuelle.", tags:["WordPress","WooCommerce","TailwindCSS","HTML/CSS"], flip:true },
   ]},
 };
 
@@ -422,7 +422,7 @@ function ProjectPage({ project, onBack, onNext, scrollY }) {
       {details.sections.map((s, i) => {
         const [sp1, sp2] = speeds[i % speeds.length];
         const rot1 = (i % 2 === 0 ? 1.8 : -2.2);
-        const rot2 = (i % 2 === 0 ? -13 : 11);
+        const rot2 = (i % 2 === 0 ? -7 : 6);
         const secSide = s.flip ? { left: "-12%", top: "8%" } : { left: "-12%", bottom: "8%" };
         const triSide = s.flip ? { right: "-8%", top: "6%" } : { right: "-8%", bottom: "6%" };
         return (
@@ -438,12 +438,14 @@ function ProjectPage({ project, onBack, onNext, scrollY }) {
               </div>
             </div>
             <div className="pp-float-area">
-              <div className="pp-card-sec"
-                style={{...secSide, zIndex:1, transform:`translateY(${scrollY * sp2}px) rotate(${rot2}deg)`}}>
-                {(s.img2||s.img) ? ((s.img2||s.img).endsWith('.mp4') ? <video src={s.img2||s.img} style={{width:"100%",height:"100%",objectFit:"cover",display:"block"}} autoPlay muted loop playsInline/> : <img src={s.img2||s.img} style={{width:"100%",height:"100%",objectFit:"cover",display:"block"}} alt=""/>) : <CardVisual p={project}/>}
-              </div>
+              {s.img2 && (
+                <div className="pp-card-sec"
+                  style={{...secSide, zIndex:1, transform:`translateY(${scrollY * sp2}px) rotate(${rot2}deg)`}}>
+                  {s.img2.endsWith('.mp4') ? <video src={s.img2} style={{width:"100%",height:"100%",objectFit:"cover",display:"block"}} autoPlay muted loop playsInline/> : <img src={s.img2} style={{width:"100%",height:"100%",objectFit:"cover",display:"block"}} alt=""/>}
+                </div>
+              )}
               <div className="pp-card-main"
-                style={{position:"relative", zIndex:2, transform:`translateY(${scrollY * sp1}px) rotate(${rot1}deg)`}}>
+                style={{position:"relative", zIndex:2, transform:`translateY(${scrollY * sp1}px) rotate(${rot1}deg)`, ...(s.portrait && {aspectRatio:"9/16", width:"min(220px,24vw)"})}}>
                 {s.img ? (s.img.endsWith('.mp4') ? <video src={s.img} style={{width:"100%",height:"100%",objectFit:"cover",display:"block"}} autoPlay muted loop playsInline/> : <img src={s.img} style={{width:"100%",height:"100%",objectFit:"cover",display:"block"}} alt=""/>) : <CardVisual p={project}/>}
               </div>
               {s.img3 && (
