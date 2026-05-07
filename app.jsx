@@ -15,7 +15,7 @@ const PROJECTS = [
     id: "datwitch",
     tag: "01 — Direction artistique / Stream",
     title: "BRM Stream",
-    client: "Personnel · BRM",
+    client: "Perso",
     year: "2026",
     role: "DA · Assets · Motion",
     stack: "HTML · CSS · After Effects",
@@ -29,7 +29,7 @@ const PROJECTS = [
     id: "limogeshabitat",
     tag: "02 — Communication / Chef de projet",
     title: "Limoges Habitat",
-    client: "Limoges Habitat · BUT",
+    client: "BUT · Limoges Habitat",
     year: "2024",
     role: "Chef de projet · ID visuelle",
     stack: "Figma · Suite Adobe · Agile",
@@ -44,11 +44,11 @@ const PROJECTS = [
     id: "coachella",
     tag: "03 — Motion Design / Identité visuelle",
     title: "Coachella 2025",
-    client: "Projet créatif",
+    client: "Perso",
     year: "2025",
     role: "Direction artistique · Motion",
     stack: "After Effects · Illustrator · Figma",
-    desc: "Refonte identitaire du festival Coachella 2025 dans un univers Dragon Ball Z. Direction artistique sombre, motion design et campagne de communication — palette minimaliste noir/bleu.",
+    desc: "Refonte identité du festival Coachella 2025 dans un univers Dragon Ball Z. Direction artistique sombre, motion design et campagne de communication — palette minimaliste noir/bleu.",
     accent: "#f59e0b",
     swatch: ["#0d0d0d", "#f59e0b", "#1b263b"],
     link: "https://jocelyn-vnt.github.io/blog/fifth-post/",
@@ -59,7 +59,7 @@ const PROJECTS = [
     id: "carlton",
     tag: "04 — E-commerce / Intégration",
     title: "Carlton",
-    client: "IUT Limousin · SAE 301",
+    client: "BUT · IUT Limousin",
     year: "2022",
     role: "Design · Intégration",
     stack: "WordPress · WooCommerce · Figma",
@@ -89,7 +89,7 @@ const PROJECTS = [
     id: "kusmitea",
     tag: "06 — Site web / WordPress",
     title: "Kusmi Tea",
-    client: "Projet BUT (SAE-301)",
+    client: "BUT",
     year: "2023",
     role: "Webdesign · Intégration",
     stack: "WordPress · PHP · CSS",
@@ -117,7 +117,7 @@ const PROJECTS = [
     id: "skullking",
     tag: "08 — Développement web / UI",
     title: "Skull King",
-    client: "Personnel",
+    client: "Perso",
     year: "2026",
     role: "Design · Développement",
     stack: "Vanilla JS · CSS",
@@ -131,7 +131,7 @@ const PROJECTS = [
     id: "harmonies",
     tag: "09 — Jeu / Développement",
     title: "Harmonies",
-    client: "Personnel",
+    client: "Perso",
     year: "2026",
     role: "Game design · Développement",
     stack: "React · JavaScript",
@@ -145,7 +145,7 @@ const PROJECTS = [
     id: "secretsanta",
     tag: "10 — Application web / UI",
     title: "Secret Santa",
-    client: "Personnel",
+    client: "Perso",
     year: "2024",
     role: "Design · Développement",
     stack: "React · Vite · TailwindCSS",
@@ -375,7 +375,7 @@ const PROJECT_DETAILS = {
     { label:"04 — Motion design", title:["Vidéo","pédagogique"], body:"Vidéo motion design d'1 minute 30 réalisée sur After Effects : animation 2D, motion typography, transitions fluides et sound design institutionnel. Rendre les charges locatives accessibles à travers un format engageant et partageable.", tags:["After Effects","Motion design","Animation 2D","Sound design"], flip:true, img:"assets/limoges-habitat/motion-design.mp4", portrait:true },
   ]},
   coachella: { sections:[
-    { label:"01 — Le concept", title:["Coachella 2025","× Dragon Ball Z"], body:"Refonte identitaire du festival Coachella dans un univers Dragon Ball Z. Palette sombre et contrastée, typographie brutale — une direction artistique inspirée du manga pour une expérience visuelle forte et mémorable.", tags:["Direction artistique","Identité","Festival","Dragon Ball"], flip:false, img:"assets/coachella/cover.png" },
+    { label:"01 — Le concept", title:["Coachella 2025","× Dragon Ball Z"], body:"Refonte identité du festival Coachella dans un univers Dragon Ball Z. Palette sombre et contrastée, typographie brutale — une direction artistique inspirée du manga pour une expérience visuelle forte et mémorable.", tags:["Direction artistique","Identité","Festival","Dragon Ball"], flip:false, img:"assets/coachella/cover.png" },
     { label:"02 — Motion design", title:["Campagne","animée"], body:"Déclinaison de l'identité en supports animés : teasers, motion graphics, campagne réseaux sociaux. Palette #1B263B · #0D0D0D · #F5F5F5 pour un rendu cinématique et épuré.", tags:["After Effects","Motion","Social media","Animation"], flip:true },
   ]},
   carlton: { sections:[
@@ -445,7 +445,7 @@ function ProjectPage({ project, onBack, onNext, scrollY }) {
                 </div>
               )}
               <div className="pp-card-main"
-                style={{position:"relative", zIndex:2, transform:`translateY(${scrollY * sp1}px) rotate(${rot1}deg)`, ...(s.portrait && {aspectRatio:"9/16", width:"min(220px,24vw)"})}}>
+                style={{position:"relative", zIndex:2, transform:`translateY(${scrollY * sp1}px) rotate(${rot1}deg)`, ...(s.portrait && {aspectRatio:"9/16", width:"min(200px,42vw)"})}}>
                 {s.img ? (s.img.endsWith('.mp4') ? <video src={s.img} style={{width:"100%",height:"100%",objectFit:"cover",display:"block"}} autoPlay muted loop playsInline/> : <img src={s.img} style={{width:"100%",height:"100%",objectFit:"cover",display:"block"}} alt=""/>) : <CardVisual p={project}/>}
               </div>
               {s.img3 && (
@@ -482,7 +482,7 @@ function Hero({ scrollY, parallaxMult }) {
       <div className="hero-meta">
         <div className="v">PORTFOLIO 2025 / V.04</div>
         <div>JOCELYN VINATIÉ</div>
-        <div>FR · LYON · DISPONIBLE Q2</div>
+        <div>FR · BDX · DISPONIBLE Q2</div>
       </div>
 
       <div className="hero-glass glass g1" style={{transform:`rotate(8deg) translateY(${py1}px)`}}>
@@ -508,7 +508,7 @@ function Hero({ scrollY, parallaxMult }) {
           UI/UX, motion, graphisme et acquisition — avec une maîtrise
           des outils IA et du tracking avancé.
         </p>
-        <div className="scroll-hint">SCROLL ↓</div>
+        <div className="scroll-hint">SCROLL</div>
         <div className="stats">
           <div className="s"><div className="n">UI</div><div className="l">UX Design</div></div>
           <div className="s"><div className="n">SEA</div><div className="l">Google Ads</div></div>
@@ -530,17 +530,24 @@ function ProjectsSection({ onProjectOpen }) {
       if (!el) return;
       const rect = el.getBoundingClientRect();
       const total = rect.height - window.innerHeight;
+      if (total <= 0) return;
       const p = Math.max(0, Math.min(0.9999, -rect.top / total));
       const idx = Math.min(PROJECTS.length - 1, Math.floor(p * PROJECTS.length));
-      if (idx !== activeRef.current) {
-        activeRef.current = idx;
-        setActive(idx);
-      }
+      if (idx !== activeRef.current) { activeRef.current = idx; setActive(idx); }
     };
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
+
+  const goTo = (idx) => {
+    const el = wrapRef.current;
+    if (!el) return;
+    const total = el.offsetHeight - window.innerHeight;
+    if (total <= 0) { activeRef.current = idx; setActive(idx); return; }
+    const elTop = el.getBoundingClientRect().top + window.scrollY;
+    window.scrollTo({ top: elTop + (idx / PROJECTS.length) * total, behavior: "smooth" });
+  };
 
   const getCardStyle = (i) => {
     const pos = i - active;
@@ -594,7 +601,10 @@ function ProjectsSection({ onProjectOpen }) {
           <div className="proj-side-sticky">
             <div className="proj-counter">
               <span><span className="accent">{String(active+1).padStart(2,"0")}</span> / {String(PROJECTS.length).padStart(2,"0")}</span>
-              <span>SCROLL ↓</span>
+              <div className="proj-nav">
+                <button className="proj-nav-btn" onClick={() => goTo(Math.max(0, active-1))} disabled={active===0}>←</button>
+                <button className="proj-nav-btn" onClick={() => goTo(Math.min(PROJECTS.length-1, active+1))} disabled={active===PROJECTS.length-1}>→</button>
+              </div>
             </div>
             <div className="proj-info">
               {PROJECTS.map((p, i) => (
@@ -617,7 +627,7 @@ function ProjectsSection({ onProjectOpen }) {
             </div>
             <div className="proj-progress">
               {PROJECTS.map((_, i) => (
-                <span key={i} className={i===active ? "active" : i<active ? "passed" : ""}><i/></span>
+                <span key={i} className={i===active ? "active" : i<active ? "passed" : ""} onClick={() => goTo(i)}><i/></span>
               ))}
             </div>
           </div>
@@ -632,12 +642,12 @@ function About() {
     <section className="about" data-screen-label="03 About" id="about">
       <div className="sh" style={{padding:0, marginBottom:60, borderBottom:0}}>
         <div className="ix">03 / À PROPOS</div>
-        <h2>Qui je <em>suis</em></h2>
+        <h2>Qui <em>suis-je</em></h2>
         <div className="meta">BUT MULTIMÉDIA<br/>LIMOGES · FR</div>
       </div>
       <div className="about-grid">
         <div className="about-lead">
-          Design numérique, <span className="ac">marketing digital</span>
+          Design numérique, <span className="ac">marketing digital</span>{" "}
           et IA — du concept au <em>résultat</em>.
         </div>
         <div className="about-body">
@@ -766,7 +776,7 @@ function Footer() {
           <a href="https://www.linkedin.com/in/jocelyn-vnt" target="_blank" rel="noopener">LinkedIn</a>
           <a href="https://instagram.com/jocelyn.vnt" target="_blank" rel="noopener">Instagram</a>
         </div>
-        <div>FR · LYON</div>
+        <div>FR · BDX</div>
       </div>
     </footer>
   );
@@ -775,7 +785,7 @@ function Footer() {
 function Nav() {
   return (
     <nav className="nav glass">
-      <span className="brand">JV<span style={{color:"var(--accent)"}}>·</span></span>
+      <span className="brand">JV</span>
       <a className="lnk" href="#">Travaux</a>
       <a className="lnk" href="#about">À propos</a>
       <a className="lnk" href="#services">Services</a>
