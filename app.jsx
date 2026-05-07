@@ -438,17 +438,17 @@ function ProjectPage({ project, onBack, onNext, scrollY }) {
               </div>
             </div>
             <div className="pp-float-area">
-              <div className="pp-card-main"
-                style={{transform:`translateY(${scrollY * sp1}px) rotate(${rot1}deg)`}}>
-                {s.img ? (s.img.endsWith('.mp4') ? <video src={s.img} style={{width:"100%",height:"100%",objectFit:"cover",display:"block"}} autoPlay muted loop playsInline/> : <img src={s.img} style={{width:"100%",height:"100%",objectFit:"cover",display:"block"}} alt=""/>) : <CardVisual p={project}/>}
-              </div>
               <div className="pp-card-sec"
-                style={{...secSide, zIndex:-1, transform:`translateY(${scrollY * sp2}px) rotate(${rot2}deg)`}}>
+                style={{...secSide, zIndex:1, transform:`translateY(${scrollY * sp2}px) rotate(${rot2}deg)`}}>
                 {(s.img2||s.img) ? ((s.img2||s.img).endsWith('.mp4') ? <video src={s.img2||s.img} style={{width:"100%",height:"100%",objectFit:"cover",display:"block"}} autoPlay muted loop playsInline/> : <img src={s.img2||s.img} style={{width:"100%",height:"100%",objectFit:"cover",display:"block"}} alt=""/>) : <CardVisual p={project}/>}
+              </div>
+              <div className="pp-card-main"
+                style={{position:"relative", zIndex:2, transform:`translateY(${scrollY * sp1}px) rotate(${rot1}deg)`}}>
+                {s.img ? (s.img.endsWith('.mp4') ? <video src={s.img} style={{width:"100%",height:"100%",objectFit:"cover",display:"block"}} autoPlay muted loop playsInline/> : <img src={s.img} style={{width:"100%",height:"100%",objectFit:"cover",display:"block"}} alt=""/>) : <CardVisual p={project}/>}
               </div>
               {s.img3 && (
                 <div className="pp-card-tri"
-                  style={{...triSide, zIndex:-2, transform:`translateY(${scrollY * (sp1 * -0.7)}px) rotate(${-rot2 * 0.8}deg)`}}>
+                  style={{...triSide, zIndex:0, transform:`translateY(${scrollY * (sp1 * -0.7)}px) rotate(${-rot2 * 0.8}deg)`}}>
                   <img src={s.img3} style={{width:"100%",height:"100%",objectFit:"cover",display:"block"}} alt=""/>
                 </div>
               )}
