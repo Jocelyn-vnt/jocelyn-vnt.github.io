@@ -422,10 +422,9 @@ function ProjectPage({ project, onBack, onNext, scrollY }) {
       {details.sections.map((s, i) => {
         const [sp1, sp2] = speeds[i % speeds.length];
         const rot1 = (i % 2 === 0 ? 1.8 : -2.2);
-        const rot2 = (i % 2 === 0 ? -5 : 4.5);
-        const secOffset = ["-8%","auto"][i%2];
-        const secSide = s.flip ? { right: secOffset, bottom:"6%" } : { left: secOffset, bottom:"6%" };
-        const triSide = s.flip ? { left: secOffset, top:"6%" } : { right: secOffset, top:"6%" };
+        const rot2 = (i % 2 === 0 ? -13 : 11);
+        const secSide = s.flip ? { left: "-12%", top: "8%" } : { left: "-12%", bottom: "8%" };
+        const triSide = s.flip ? { right: "-8%", top: "6%" } : { right: "-8%", bottom: "6%" };
         return (
           <div key={i} className={`pp-section${s.flip ? " pp-flip" : ""}`}>
             <div className="pp-text">
